@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/SamHou.png">
-  <title>使用windows计划任务实现插入移动硬盘自动运行程序</title>
+  <title>windows UAC跳过教程</title>
   
     
       <meta 
         property="og:title" 
-        content="使用windows计划任务实现插入移动硬盘自动运行程序">
+        content="windows UAC跳过教程">
     
     
       <meta 
         property="og:url" 
-        content="https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/index.html">
+        content="https://samhou2007.github.io/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/index.html">
     
     
       <meta 
@@ -46,7 +46,7 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2021-09-05">
+        content="2021-10-05">
       <meta 
         property="og:article:modified_time" 
         content="2021-10-10">
@@ -264,16 +264,16 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      使用windows计划任务实现插入移动硬盘自动运行程序
+      windows UAC跳过教程
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2021-09-04T16:00:00.000Z">
+    <time datetime="2021-10-04T16:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2021-09-05</span>
+      <span>2021-10-05</span>
     </time>
     
       <span class="dot"></span>
@@ -287,7 +287,7 @@
     
     
       <span class="dot"></span>
-      <span>217 字</span>
+      <span>356 字</span>
     
   </div>
   
@@ -295,13 +295,26 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。</p>
-<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><ol>
-<li>插入移动硬盘</li>
-<li>右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的DistributedCOM事件，如下图<br><img src="https://z3.ax1x.com/2021/10/07/5p3FRP.png" alt="DistributedCOM" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/07/5p3FRP.png" class="lozad post-image"></li>
-<li>右键这个警告事件，选择将“任务附加到此事件”，通过这个向导即可创建一个自动任务。</li>
+    <h1 id="什么是UAC"><a href="#什么是UAC" class="headerlink" title="什么是UAC"></a>什么是UAC</h1><p>安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本<br><img src="https://z3.ax1x.com/2021/10/07/5p3kxf.png" alt="管理员运行记事本" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/07/5p3kxf.png" class="lozad post-image"></p>
+<p>有时候，运行一些程序可能需要管理员权限，比如某些电脑清理软件。</p>
+<h1 id="第一种方法：直接关闭UAC"><a href="#第一种方法：直接关闭UAC" class="headerlink" title="第一种方法：直接关闭UAC"></a>第一种方法：直接关闭UAC</h1><ol>
+<li>打开控制面板-系统和安全-安全和维护</li>
+<li>在用户账户控制那里点击更改设置</li>
+<li>下拉到“从不通知”</li>
 </ol>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>这个功能用途很多，比如插入后自动运行备份程序，关键看需求。</p>
+<h1 id="第二种方法：使用任务计划程序"><a href="#第二种方法：使用任务计划程序" class="headerlink" title="第二种方法：使用任务计划程序"></a>第二种方法：使用任务计划程序</h1><ol>
+<li>右键windows图标</li>
+<li>选择计算机管理</li>
+<li>选择左侧的任务计划程序-任务计划程序库</li>
+<li>点击右侧“创建任务…”</li>
+<li>名称随便填，勾选<img src="https://z3.ax1x.com/2021/10/07/5p3iGt.png" alt="最高权限运行" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/07/5p3iGt.png" class="lozad post-image"></li>
+<li>操作一栏中选择新建，弹出这么个窗口：<br><img src="https://z3.ax1x.com/2021/10/07/5pIiY4.png" alt="新建操作" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/07/5pIiY4.png" class="lozad post-image"></li>
+<li>这里就选择启动程序，点浏览，选择要跳过UAC的程序，确定保存</li>
+<li>根据需要设定剩下的条件、设置、触发器</li>
+<li>如果需要开机启动，请选择<strong>登录时</strong>，不要选择<del>启动时</del>（因为要登陆再启动程序）</li>
+<li>设置完成，现在添加一个对于新建的任务的快捷方式：在电脑桌面上右键新建-快捷方式，位置一栏输入<code>SCHTASKS /RUN /TN 任务名称</code>，把任务名称改为在第5步中创建的名称</li>
+<li>现在建立了快捷方式，双击桌面上的图标即可跳过UAC运行软件~</li>
+</ol>
 
   </div>
   <div>
@@ -321,8 +334,8 @@
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/">
-            https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/
+            href="https://samhou2007.github.io/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/">
+            https://samhou2007.github.io/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，如引用博客内容，请注明出处！</p>
@@ -332,20 +345,20 @@
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
+  
+    <div class="nav-item-next">
       <a 
-        href="/2021/10/05/2021-10-5-windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/" 
+        href="/2021/09/05/%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/" 
         class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
-          <div class="nav-label">上一篇</div>
+          <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">windows UAC跳过教程 </div>
+            <div class="nav-title">使用windows计划任务实现插入移动硬盘自动运行程序 </div>
           
         </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
       </a>
     </div>
-  
   
 </div>
 
@@ -358,7 +371,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFUAC"><span class="toc-text">什么是UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E7%9B%B4%E6%8E%A5%E5%85%B3%E9%97%ADUAC"><span class="toc-text">第一种方法：直接关闭UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E4%BD%BF%E7%94%A8%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F"><span class="toc-text">第二种方法：使用任务计划程序</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -406,7 +419,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFUAC"><span class="toc-text">什么是UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E7%9B%B4%E6%8E%A5%E5%85%B3%E9%97%ADUAC"><span class="toc-text">第一种方法：直接关闭UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E4%BD%BF%E7%94%A8%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F"><span class="toc-text">第二种方法：使用任务计划程序</span></a></li></ol>
       </div>
     </article>
   
@@ -460,7 +473,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFUAC"><span class="toc-text">什么是UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E7%9B%B4%E6%8E%A5%E5%85%B3%E9%97%ADUAC"><span class="toc-text">第一种方法：直接关闭UAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E4%BD%BF%E7%94%A8%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F"><span class="toc-text">第二种方法：使用任务计划程序</span></a></li></ol>
     </article>
   
   
@@ -476,12 +489,12 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-10-05</div>
-        <a href="/2021/10/05/2021-10-5-windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/"><div class="recent-posts-item-content">windows UAC跳过教程</div></a>
+        <a href="/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/"><div class="recent-posts-item-content">windows UAC跳过教程</div></a>
       </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-09-05</div>
-        <a href="/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/"><div class="recent-posts-item-content">使用windows计划任务实现插入移动硬盘自动运行程序</div></a>
+        <a href="/2021/09/05/%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/"><div class="recent-posts-item-content">使用windows计划任务实现插入移动硬盘自动运行程序</div></a>
       </div>
     
   </div>
