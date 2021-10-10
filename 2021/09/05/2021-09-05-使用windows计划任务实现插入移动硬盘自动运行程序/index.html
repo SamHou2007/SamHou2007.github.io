@@ -1,236 +1,406 @@
 <!DOCTYPE html>
 <html>
+<meta  lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff" id="theme-color">
+  <link rel="icon" href="/img/SamHou.png">
+  <title>SamHou's blog</title>
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+    var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+      }
+    };
+    setDarkmode();
+  </script>
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  </script>
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_vpj3dq9ceqa.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  <link rel="preload" href="//cdn.jsdelivr.net/npm/fslightbox@3.1.0/index.min.js" as="script">
   
   
-  <title>使用windows计划任务实现插入移动硬盘自动运行程序 | SamHou&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="思路在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。 实现方法 插入移动硬盘 右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的Distri">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用windows计划任务实现插入移动硬盘自动运行程序">
-<meta property="og:url" content="https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/index.html">
-<meta property="og:site_name" content="SamHou&#39;s blog">
-<meta property="og:description" content="思路在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。 实现方法 插入移动硬盘 右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的Distri">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://z3.ax1x.com/2021/10/07/5p3FRP.png">
-<meta property="article:published_time" content="2021-09-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-10T04:44:32.187Z">
-<meta property="article:author" content="Sam Hou">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://z3.ax1x.com/2021/10/07/5p3FRP.png">
-  
-    <link rel="alternate" href="/atom.xml" title="SamHou's blog" type="application/atom+xml">
+  <link rel="preload" href="/js/lib/lozad.min.js" as="script">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/main.css">
 
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_vpj3dq9ceqa.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
 
+  
+  
   
 <meta name="generator" content="Hexo 5.4.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SamHou&#39;s blog</a>
-      </h1>
+  <div class="wrapper">
+    
+    <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">blog</a>
-        </h2>
+      <img class="navbar-logo-img" src="/img/SamHou.png">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://samhou2007.github.io"></form>
-      </div>
-    </div>
+      <span class="navbar-logo-dsc">SamHou's blog</span>
+    </span>
   </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-2021-09-05-使用windows计划任务实现插入移动硬盘自动运行程序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-09-04T16:00:00.000Z" itemprop="datePublished">2021-09-05</time>
-</a>
+  <div class="navbar-menu">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/windows%E6%95%99%E7%A8%8B/">windows教程</a>
+    <a href="/" class="navbar-menu-item">首页 </a>
+    
+    <a href="/archives" class="navbar-menu-item">归档 </a>
+    
+    <a href="/tags" class="navbar-menu-item">标签 </a>
+    
+    <a href="/categories" class="navbar-menu-item">分类 </a>
+    
+    <a href="/about" class="navbar-menu-item">关于 </a>
+    
+    <a href="/links" class="navbar-menu-item">友链 </a>
+    
+    <a class="navbar-menu-item darknavbar" id="dark"><i class="iconfont icon-weather"></i></a>
   </div>
-
-  </div>
-  <div class="article-inner">
+</nav>
     
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
+    <div class="section-wrap">
+      <div class="container">
+        <div class="columns">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
       使用windows计划任务实现插入移动硬盘自动运行程序
     </h1>
-  
-
-      </header>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-09-04T16:00:00.000Z" style="display: flex; align-items: center;">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2021-09-05</span>
+    </time>
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。</p>
+    <span class="dot"></span>
+    
+    <a href="/categories/windows教程/" class="post-meta-link">windows教程</a>
+    
+    
+    
+    <span class="dot"></span>
+    <span>217 字</span>
+    
+  </div>
+  
+  </header>
+  <div id="section" class="post-content">
+    <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。</p>
 <h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><ol>
 <li>插入移动硬盘</li>
-<li>右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的DistributedCOM事件，如下图<br><img src="https://z3.ax1x.com/2021/10/07/5p3FRP.png" alt="DistributedCOM"></li>
+<li>右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的DistributedCOM事件，如下图<br><img src="https://z3.ax1x.com/2021/10/07/5p3FRP.png" alt="DistributedCOM" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/07/5p3FRP.png" class="lozad post-image"></li>
 <li>右键这个警告事件，选择将“任务附加到此事件”，通过这个向导即可创建一个自动任务。</li>
 </ol>
 <h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>这个功能用途很多，比如插入后自动运行备份程序，关键看需求。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/" data-id="ckukqrgl500007ww8ag5nab89" data-title="使用windows计划任务实现插入移动硬盘自动运行程序" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
+  </div>
+  <div>
+  
+  <div class="post-note note-warning copyright" style="margin-top: 42px">
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://samhou2007.github.io/about">SamHou</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/">https://samhou2007.github.io/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/</a></p>
+    <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，如引用博客内容，请注明出处！</p>
   </div>
   
-    
-<nav id="article-nav">
+  </div>
+</article>
+<div class="nav">
   
-    <a href="/2021/10/05/2021-10-5-windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
+  <div class="nav-item-prev">
+    <a href="/2021/10/05/2021-10-5-windowsUAC跳过教程/" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">上一篇</div>
         
-          windows UAC跳过教程
+        <div class="nav-title">windows UAC跳过教程 </div>
         
       </div>
     </a>
+  </div>
   
   
-</nav>
+</div>
 
-  
-</article>
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+</div></main>
+          <aside class="left-column">
+            
+            <div class="card card-author">
+              
+<img src="/img/SamHou.png" class="author-img">
 
+<p class="author-name">SamHou</p>
+<p class="author-description">Created by SamHou</p>
+<div class="author-message">
+  <a class="author-posts-count" href="/archives">
+    <span>2</span>
+    <span>文章</span>
+  </a>
+  <a class="author-categories-count" href="/categories">
+    <span>1</span>
+    <span>分类</span>
+  </a>
+  <a class="author-tags-count" href="/tags">
+    <span>0</span>
+    <span>标签</span>
+  </a>
+</div>
 
-</section>
-        
-          <aside id="sidebar">
+            </div>
+            
+            <div class="sticky-tablet">
   
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+    </div>
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="categories-card">
+  <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>分类</div>
+  <div class="categories-list">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/windows%E6%95%99%E7%A8%8B/">windows教程</a></li></ul>
+      <a href="/categories/windows教程">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content">
+    <div class="tags-card">
+  <div class="tags-header"><i class="iconfont icon-biaoqian" style="padding-right: 2px;"></i>热门标签</div>
+  <div class="tags-list">
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+          <aside class="right-column">
+            <div class="sticky-widescreen">
+  
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94"><span class="toc-text">用途</span></a></li></ol>
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header"><i class="iconfont icon-wenzhang_huaban" style="padding-right: 2px;"></i>最近文章</div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-05</div>
+        <a href="/2021/10/05/2021-10-5-windowsUAC跳过教程/"><div class="recent-posts-item-content">windows UAC跳过教程</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-09-05</div>
+        <a href="/2021/09/05/2021-09-05-使用windows计划任务实现插入移动硬盘自动运行程序/"><div class="recent-posts-item-content">使用windows计划任务实现插入移动硬盘自动运行程序</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+        </div>
+      </div>
     </div>
   </div>
-
-
   
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li></ul>
+  <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>Copyright ©
+          
+          2020 -
+          
+          2021
+        </span>
+        <a href="/" class="footer-link">SamHou's blog </a>
+      </div>
     </div>
-  </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/10/05/2021-10-5-windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/">windows UAC跳过教程</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/05/2021-09-05-%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/">使用windows计划任务实现插入移动硬盘自动运行程序</a>
-          </li>
-        
-      </ul>
+    <div class="footer-dsc">
+      
+      
+      Powered by
+      <a href="https://hexo.io/" class="footer-link" target="_blank" rel="nofollow noopener noreferrer">&nbsp;Hexo </a>
+      
+      
+      <span>&nbsp;|&nbsp;</span>
+      
+      
+      
+      Theme -
+      <a href="https://github.com/theme-kaze" class="footer-link" target="_blank"
+        rel="nofollow noopener noreferrer">&nbsp;Kaze</a>
+      
     </div>
-  </div>
-
-  
-</aside>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+        <span>&nbsp;|&nbsp;</span>
+        
+        
+        本站总访客数<span id="busuanzi_value_site_uv"></span>次
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
       
-      &copy; 2021 Sam Hou<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
+</footer>
+  <a role="button" id="scrollbutton" class="basebutton" >
+  <i class="iconfont icon-arrowleft button-icon"></i>
+</a>
+<a role="button" id="menubutton" class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a role="button" id="popbutton" class="basebutton">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a role="button" id="darkbutton" class="basebutton darkwidget">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+  
+  
+  <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img');
+    var i;
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a');
+      wrapper.setAttribute('data-fslightbox', 'gallery');
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'));
+      wrapper.setAttribute('style', 'width: 100%; display: flex; justify-content: center;');
+      img[i].parentElement.insertBefore(wrapper, img[i]);
+      wrapper.appendChild(img[i]);
+    }
+    refreshFsLightbox();
+  }
+</script>
+<script>loadScript("//cdn.jsdelivr.net/npm/fslightbox@3.1.0/index.min.js", addImgLayout)</script>
+  
+  
+  
+<script src="/js/main.js"></script>
 
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
+  
+  <script>loadScript("/js/lib/busuanzi.min.js")</script>
+  
+  
+  <script>
+    var addLazyload = function () {
+      var observer = lozad('.lozad', {
+        load: function (el) {
+          el.srcset = el.getAttribute('data-src');
+        },
+        loaded: function (el) {
+          el.classList.add('loaded');
+        }
+      });
+      observer.observe();
+    }
+  </script>
+  <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
+  
+  
 </body>
+
 </html>
