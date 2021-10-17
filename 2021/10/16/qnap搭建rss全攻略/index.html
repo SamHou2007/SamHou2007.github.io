@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="A blog">
+  <link 
+    rel="icon" 
+    href="/img/SamHou.png">
+  <title>qnap搭建rss全攻略</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="qnap搭建rss全攻略">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://samhou2007.github.io/2021/10/16/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/SamHou.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="A blog">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-10-16">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-10-17">
+      <meta 
+        property="og:article:author" 
+        content="SamHou">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="qnap">
+        
+          <meta 
+            property="og:article:tag" 
+            content="rss">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="/img/SamHou.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">SamHou's blog</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/about" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          友链
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      qnap搭建rss全攻略
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-10-16T09:31:01.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-10-16</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/qnap%E6%95%99%E7%A8%8B/" 
+          class="post-meta-link">
+          qnap教程
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>1k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/qnap/" 
+            class="post-meta-link">
+            qnap
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/rss/" 
+            class="post-meta-link">
+            rss
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>在qnap nas上搭建ttrss、rsshub，并通过fluent reader连接到所搭建的服务，实现多端同步。过程中踩了很多坑，所以这篇文章将列出所有遇到的坑，完整详细地讲解如何搭建一个可以正常使用的rss系统。</p>
+<h1 id="nas搭建教程"><a href="#nas搭建教程" class="headerlink" title="nas搭建教程"></a>nas搭建教程</h1><h2 id="awesome-ttrss-（文档）"><a href="#awesome-ttrss-（文档）" class="headerlink" title="awesome ttrss （文档）"></a>awesome ttrss （<a target="_blank" rel="noopener" href="http://ttrss.henry.wang/zh">文档</a>）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>一个一站式rss客户端解决方案，可以多端同步浏览记录。其中的fever插件允许应用程序接入。</p>
+<h3 id="创建数据库文件夹"><a href="#创建数据库文件夹" class="headerlink" title="创建数据库文件夹"></a>创建数据库文件夹</h3><p>ttrss需要数据库来保存文件。在File station中Container共享文件夹中右键创建文件夹，右键新建的文件夹选择属性，记下文件路径。</p>
+<p>注意：显示的文件路径不全，需要在前面补上<code>/share</code>，在后面补上<code>/文件夹名称</code>，最终路径应该像这样：<code>/share/.../文件夹名称</code></p>
+<h3 id="使用docker安装"><a href="#使用docker安装" class="headerlink" title="使用docker安装"></a>使用docker安装</h3><p>qnap提供container station，可以运行docker容器。首先在app center里安装container station（这里已经装好）:</p>
+<p><img src="https://z3.ax1x.com/2021/10/17/5tlA7n.png" alt="container station" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/17/5tlA7n.png" class="lozad post-image"></p>
+<p>打开之后选择创建(create)，右上角选择create application:<br><img src="https://z3.ax1x.com/2021/10/17/5tlyNt.png" alt="创建" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/17/5tlyNt.png" class="lozad post-image"></p>
+<p>弹出一个窗口，随便取个名字，然后把下面的代码粘贴到YAML一栏（这段代码在官方文档里有）：</p>
+<pre class="highlight"><span class="line">version: &quot;3&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  service.rss:</span><br><span class="line">    image: wangqiru/ttrss:latest</span><br><span class="line">    container_name: ttrss</span><br><span class="line">    ports:</span><br><span class="line">      - 181:80</span><br><span class="line">    environment:</span><br><span class="line">      - SELF_URL_PATH=http://ip:181/ # please change to your own domain</span><br><span class="line">      - DB_PASS=ttrss # use the same password defined in `database.postgres`</span><br><span class="line">      - PUID=1000</span><br><span class="line">      - PGID=1000</span><br><span class="line">      - ALLOW_PORTS=1200</span><br><span class="line">    volumes:</span><br><span class="line">      - feed-icons:/var/www/feed-icons/</span><br><span class="line">    networks:</span><br><span class="line">      - public_access</span><br><span class="line">      - service_only</span><br><span class="line">      - database_only</span><br><span class="line">    stdin_open: true</span><br><span class="line">    tty: true</span><br><span class="line">    restart: always</span><br><span class="line"></span><br><span class="line">  service.mercury: # set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page</span><br><span class="line">    image: wangqiru/mercury-parser-api:latest</span><br><span class="line">    container_name: mercury</span><br><span class="line">    networks:</span><br><span class="line">      - public_access</span><br><span class="line">      - service_only</span><br><span class="line">    restart: always</span><br><span class="line"></span><br><span class="line">  service.opencc: # set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page</span><br><span class="line">    image: wangqiru/opencc-api-server:latest</span><br><span class="line">    container_name: opencc</span><br><span class="line">    environment:</span><br><span class="line">      - NODE_ENV=production</span><br><span class="line">    networks:</span><br><span class="line">      - service_only</span><br><span class="line">    restart: always</span><br><span class="line"></span><br><span class="line">  database.postgres:</span><br><span class="line">    image: postgres:13-alpine</span><br><span class="line">    container_name: postgres</span><br><span class="line">    environment:</span><br><span class="line">      - POSTGRES_PASSWORD=ttrss # feel free to change the password</span><br><span class="line">    volumes:</span><br><span class="line">      - 数据库路径:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host</span><br><span class="line">    networks:</span><br><span class="line">      - database_only</span><br><span class="line">    restart: always</span><br><span class="line"></span><br><span class="line">  # utility.watchtower:</span><br><span class="line">  #   container_name: watchtower</span><br><span class="line">  #   image: containrrr/watchtower:latest</span><br><span class="line">  #   volumes:</span><br><span class="line">  #     - /var/run/docker.sock:/var/run/docker.sock</span><br><span class="line">  #   environment:</span><br><span class="line">  #     - WATCHTOWER_CLEANUP=true</span><br><span class="line">  #     - WATCHTOWER_POLL_INTERVAL=86400</span><br><span class="line">  #   restart: always</span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  feed-icons:</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  public_access: # Provide the access for ttrss UI</span><br><span class="line">  service_only: # Provide the communication network between services only</span><br><span class="line">    internal: true</span><br><span class="line">  database_only: # Provide the communication between ttrss and database only</span><br><span class="line">    internal: true</span><br></pre>
+<p>粘贴后，修改ip、数据库路径。ip即nas的ip地址，数据库路径即在第一步中创建的文件夹路径。</p>
+<p>注意：其中allow_ports为除80,443端口外ttrss可以访问的端口号，这里设置为1200是为了rsshub能够正常订阅。</p>
+<p>设置完成后，点确定就可以创建ttrss了。等待一段时间，装好后访问<code>http://ip:181/</code>就可以访问到ttrss界面了。</p>
+<h3 id="设置ttrss"><a href="#设置ttrss" class="headerlink" title="设置ttrss"></a>设置ttrss</h3><p>打开ttrss后，默认账号<code>admin</code>，密码<code>password</code>。在右上角偏好设置-用户里可以改。</p>
+<h3 id="启用fever插件"><a href="#启用fever插件" class="headerlink" title="启用fever插件"></a>启用fever插件</h3><p>为了让客户端可以访问ttrss，必须借助fever插件。<br>偏好设置-偏好设置-Fever Emulation里设个密码：<br><img src="https://z3.ax1x.com/2021/10/17/5t8ZtI.png" alt="fever" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/17/5t8ZtI.png" class="lozad post-image"></p>
+<h3 id="连接fever（以开源的fluent-reader为例，支持windows-ios-android等平台）"><a href="#连接fever（以开源的fluent-reader为例，支持windows-ios-android等平台）" class="headerlink" title="连接fever（以开源的fluent reader为例，支持windows,ios,android等平台）"></a>连接fever（以开源的<a target="_blank" rel="noopener" href="https://github.com/yang991178/fluent-reader">fluent reader</a>为例，支持windows,ios,android等平台）</h3><p>打开设置，选择服务，fever api。在“端点”中填入<code>http://ip:181/plugins/fever/</code>。用户名为ttrss用户名，<strong>密码是fever插件中设置的密码，不是ttrss的密码！</strong></p>
+<p>到此，ttrss设置完毕，可以正常订阅、阅读rss内容了。下面配置rsshub。</p>
+<h2 id="rsshub（文档）"><a href="#rsshub（文档）" class="headerlink" title="rsshub（文档）"></a>rsshub（<a target="_blank" rel="noopener" href="https://docs.rsshub.app/">文档</a>）</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>一个可以为不提供rss站点生成rss的项目。</p>
+<h3 id="docker搭建"><a href="#docker搭建" class="headerlink" title="docker搭建"></a>docker搭建</h3><p>因为这次不需要多个容器（ttrss需要有数据库和本体），所以不需要输入代码，所有操作都可以在图形界面进行，首先安装rsshub容器（从左到右按照图示操作）：<br><img src="https://z3.ax1x.com/2021/10/17/5t4xL8.png" alt="安装rsshub" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/10/17/5t4xL8.png" class="lozad post-image"></p>
+<p>版本选latest，到最后选择<code>advanced settings&gt;&gt;</code>，选择network一栏，把network mode调成bridge，选择use static IP，把ip address改成不同于nas的（一般改最后一位即可）。</p>
+<p><strong>注意：请根据实际网络情况配置该项。</strong></p>
+<p><em>为什么要这么做？</em></p>
+<p>实际测试无法自己访问自己，所以将容器独立出来，为它在局域网内分配一个单独ip，即可正常访问。</p>
+<p>接下来建立容器，等待一段时间后访问<code>ip:1200</code>，若出现welcome to rsshub即建立成功。</p>
+<p>到此，所有配置全部完成，应该可以正常使用了。</p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            SamHou
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://samhou2007.github.io/2021/10/16/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/">
+            https://samhou2007.github.io/2021/10/16/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，所有发布平台在about页列出。如引用博客内容，请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">windows UAC跳过教程 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nas%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="toc-text">nas搭建教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#awesome-ttrss-%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">awesome ttrss （文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">创建数据库文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85"><span class="toc-text">使用docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEttrss"><span class="toc-text">设置ttrss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8fever%E6%8F%92%E4%BB%B6"><span class="toc-text">启用fever插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5fever%EF%BC%88%E4%BB%A5%E5%BC%80%E6%BA%90%E7%9A%84fluent-reader%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%94%AF%E6%8C%81windows-ios-android%E7%AD%89%E5%B9%B3%E5%8F%B0%EF%BC%89"><span class="toc-text">连接fever（以开源的fluent reader为例，支持windows,ios,android等平台）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rsshub%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">rsshub（文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E6%90%AD%E5%BB%BA"><span class="toc-text">docker搭建</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/SamHou.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">SamHou</p>
+<p class="author-description">Created by SamHou</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>3</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>2</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>5</span>
+    <span>标签</span>
+  </a>
+</div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nas%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="toc-text">nas搭建教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#awesome-ttrss-%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">awesome ttrss （文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">创建数据库文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85"><span class="toc-text">使用docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEttrss"><span class="toc-text">设置ttrss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8fever%E6%8F%92%E4%BB%B6"><span class="toc-text">启用fever插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5fever%EF%BC%88%E4%BB%A5%E5%BC%80%E6%BA%90%E7%9A%84fluent-reader%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%94%AF%E6%8C%81windows-ios-android%E7%AD%89%E5%B9%B3%E5%8F%B0%EF%BC%89"><span class="toc-text">连接fever（以开源的fluent reader为例，支持windows,ios,android等平台）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rsshub%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">rsshub（文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E6%90%AD%E5%BB%BA"><span class="toc-text">docker搭建</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/qnap%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          qnap教程
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/windows/" 
+        title="windows">
+        <div class="tags-list-item">windows</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
+        title="任务计划程序">
+        <div class="tags-list-item">任务计划程序</div>
+      </a>
+    
+      <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
+        href="/tags/rss/" 
+        title="rss">
+        <div class="tags-list-item">rss</div>
+      </a>
+    
+      <a 
+        href="/tags/qnap/" 
+        title="qnap">
+        <div class="tags-list-item">qnap</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nas%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="toc-text">nas搭建教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#awesome-ttrss-%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">awesome ttrss （文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">创建数据库文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85"><span class="toc-text">使用docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEttrss"><span class="toc-text">设置ttrss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8fever%E6%8F%92%E4%BB%B6"><span class="toc-text">启用fever插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5fever%EF%BC%88%E4%BB%A5%E5%BC%80%E6%BA%90%E7%9A%84fluent-reader%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%94%AF%E6%8C%81windows-ios-android%E7%AD%89%E5%B9%B3%E5%8F%B0%EF%BC%89"><span class="toc-text">连接fever（以开源的fluent reader为例，支持windows,ios,android等平台）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rsshub%EF%BC%88%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">rsshub（文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E6%90%AD%E5%BB%BA"><span class="toc-text">docker搭建</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-16</div>
+        <a href="/2021/10/16/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/"><div class="recent-posts-item-content">qnap搭建rss全攻略</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-05</div>
+        <a href="/2021/10/05/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/"><div class="recent-posts-item-content">windows UAC跳过教程</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-09-05</div>
+        <a href="/2021/09/05/%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/"><div class="recent-posts-item-content">使用windows计划任务实现插入移动硬盘自动运行程序</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2021 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          SamHou's blog
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+  </body>
+</html>
