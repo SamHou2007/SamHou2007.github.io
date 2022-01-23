@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/SamHou.png">
-  <title>Csharp读书笔记（二）-数组</title>
+  <title>obsidian文章发布到hexo攻略</title>
   
     
       <meta 
         property="og:title" 
-        content="Csharp读书笔记（二）-数组">
+        content="obsidian文章发布到hexo攻略">
     
     
       <meta 
         property="og:url" 
-        content="https://samhou2007.github.io/2022/01/22/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/index.html">
+        content="https://samhou2007.github.io/2022/01/23/obsidian%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0hexo%E6%94%BB%E7%95%A5/index.html">
     
     
       <meta 
@@ -46,10 +46,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2022-01-22">
+        content="2022-01-23">
       <meta 
         property="og:article:modified_time" 
-        content="2022-01-22">
+        content="2022-01-23">
       <meta 
         property="og:article:author" 
         content="SamHou">
@@ -57,11 +57,11 @@
         
           <meta 
             property="og:article:tag" 
-            content="csharp">
+            content="obsidian">
         
           <meta 
             property="og:article:tag" 
-            content="hfc">
+            content="hexo">
         
       
     
@@ -272,30 +272,30 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      Csharp读书笔记（二）-数组
+      obsidian文章发布到hexo攻略
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2022-01-22T09:40:49.000Z">
+    <time datetime="2022-01-23T04:03:41.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2022-01-22</span>
+      <span>2022-01-23</span>
     </time>
     
       <span class="dot"></span>
       
         <a 
-          href="/categories/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+          href="/categories/hexo%E6%95%99%E7%A8%8B/" 
           class="post-meta-link">
-          Csharp读书笔记
+          hexo教程
         </a>
       
     
     
       <span class="dot"></span>
-      <span>205 字</span>
+      <span>466 字</span>
     
   </div>
   
@@ -310,18 +310,18 @@
         
           
           <a 
-            href="/tags/csharp/" 
+            href="/tags/obsidian/" 
             class="post-meta-link">
-            csharp
+            obsidian
           </a>
         
           
             <span class="dot"></span>
           
           <a 
-            href="/tags/hfc/" 
+            href="/tags/hexo/" 
             class="post-meta-link">
-            hfc
+            hexo
           </a>
         
       </div>
@@ -331,26 +331,27 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
-<li><p>数组是一组变量，可以存储和修改多个数据</p>
-</li>
-<li><p>创建数组时，需要指定类型、名称和元素数量</p>
-</li>
-<li><p>可以为<a href="/2021/12/25/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/" title="引用">引用</a>创建数组，但是创建时只会创建引用变量，不会创建实例</p>
-</li>
-<li><p>必须分别为每一个对象创建实例</p>
-</li>
-<li><p>数组的索引是从0开始的</p>
-</li>
-<li><p>比如，创建一个元素数量为6的int数组，<code>int[] numbers=new int[6]</code>，此时访问<code>numbers[5]</code>，这时获取的元素为第6个</p>
-</li>
-<li><p><code>Random</code>类可以随机生成数字</p>
-</li>
-<li><p>使用时，先创建实例，再使用<code>Next()</code>方法，举例：调用<code>GetRandom()</code>时，以下代码会返回一个9到100间的随机整数</p>
-<pre class="highlight"><span class="line"><span class="keyword">public</span> Random Randomizer;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">GetRandom</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span>(Randomizer.Next(<span class="number">9</span>,<span class="number">100</span>));</span><br><span class="line">&#125;</span><br></pre></li>
-<li><p>对价格使用decimal类型时，要在值后面加上M</p>
-</li>
+    <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>将obsidian中带有反向链接的markdown文章在hexo中正常显示</li>
+<li>快速添加文章头部的标题、时间、标签等</li>
 </ul>
+<h2 id="使用的软件-项目"><a href="#使用的软件-项目" class="headerlink" title="使用的软件/项目"></a>使用的软件/项目</h2><ul>
+<li>obsidian</li>
+<li>vscode</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">markdownlint插件</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Cyrusky/hexo-backlink">Cyrusky/hexo-backlink</a></li>
+</ul>
+<h2 id="迁移项目文件"><a href="#迁移项目文件" class="headerlink" title="迁移项目文件"></a>迁移项目文件</h2><p>首先，复制要发布的文档到_post文件夹。然后在vscode中打开hexo文件夹。</p>
+<h2 id="规范markdown格式"><a href="#规范markdown格式" class="headerlink" title="规范markdown格式"></a>规范markdown格式</h2><p>vscode中安装markdownlint插件，启用后打开要发布的文章，打开问题面板。<br>这时可能会检测出几个问题，右键选择一个问题，点击<img src="https://s4.ax1x.com/2022/01/23/74K5CV.png" alt="pic" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://s4.ax1x.com/2022/01/23/74K5CV.png" class="lozad post-image">即可一键规范格式。</p>
+<h2 id="使用用户片段"><a href="#使用用户片段" class="headerlink" title="使用用户片段"></a>使用用户片段</h2><p>在vscode中选择文件-设置-用户片段，选择新建“xxx”文件夹的代码片段文件，随便取个名字然后回车。然后把下面的代码黏贴到大括号里面</p>
+<pre class="highlight"><span class="line"> <span class="string">&quot;xxx&quot;</span>: </span><br><span class="line">&#123;</span><br><span class="line"> <span class="attr">&quot;scope&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line"> <span class="attr">&quot;prefix&quot;</span>: <span class="string">&quot;xxx&quot;</span>,</span><br><span class="line"> <span class="attr">&quot;body&quot;</span>: [</span><br><span class="line">  <span class="string">&quot;---&quot;</span>,</span><br><span class="line">  <span class="string">&quot;title: $TM_FILENAME_BASE&quot;</span>,</span><br><span class="line"> <span class="string">&quot;date:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND&quot;</span>,</span><br><span class="line">  <span class="string">&quot;tags:&quot;</span>,</span><br><span class="line">  <span class="string">&quot;- $1&quot;</span>,</span><br><span class="line">  <span class="string">&quot;categories: $2&quot;</span>,</span><br><span class="line">  <span class="string">&quot;---&quot;</span></span><br><span class="line"> ],</span><br><span class="line"> <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;xxx&quot;</span></span><br><span class="line"></span><br><span class="line"> &#125;,</span><br></pre>
+
+<p>把第一个xxx随便取个名字，第二个输入一个随便的单词，第三个随便写个描述，然后保存。<br>接下来按ctrl+shift+p打开命令面板，输入json，选择首选项：打开工作区设置，会打开一个json文件，然后把里面的内容替换为下面的代码</p>
+<pre class="highlight"><span class="line">&#123;</span><br><span class="line"> <span class="attr">&quot;[markdown]&quot;</span>: &#123;</span><br><span class="line"> <span class="attr">&quot;editor.quickSuggestions&quot;</span>: <span class="literal">true</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre>
+
+<p>现在你已经开启可输入建议，可以使用代码片段了。打开你的文章，在首行输入你设定的第二个xxx中的单词，按下tab，就会自动生成一段片段，完成添加。</p>
+<h2 id="正常显示反向链接"><a href="#正常显示反向链接" class="headerlink" title="正常显示反向链接"></a>正常显示反向链接</h2><p>打开终端，输入<code>npm install hexo-backlink</code>等待安装完成（<a target="_blank" rel="noopener" href="https://github.com/Cyrusky/hexo-backlink">项目文档</a>），该插件会在生成时自动转换反向链接。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><a href="https://samhou2007.github.io/categories/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">利用github发布的博客</a></p>
 
   </div>
   <div>
@@ -370,8 +371,8 @@
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="https://samhou2007.github.io/2022/01/22/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/">
-            https://samhou2007.github.io/2022/01/22/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/
+            href="https://samhou2007.github.io/2022/01/23/obsidian%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0hexo%E6%94%BB%E7%95%A5/">
+            https://samhou2007.github.io/2022/01/23/obsidian%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0hexo%E6%94%BB%E7%95%A5/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，所有发布平台在about页列出。如引用博客内容，请注明出处！</p>
@@ -381,29 +382,15 @@
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/2022/01/22/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">Csharp读书笔记（三）-封装 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/2021/12/25/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/" 
+        href="/2022/01/22/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">Csharp读书笔记（一）-对象与引用 </div>
+            <div class="nav-title">Csharp读书笔记（四）-继承 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -421,7 +408,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6-%E9%A1%B9%E7%9B%AE"><span class="toc-text">使用的软件&#x2F;项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-text">迁移项目文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83markdown%E6%A0%BC%E5%BC%8F"><span class="toc-text">规范markdown格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E7%89%87%E6%AE%B5"><span class="toc-text">使用用户片段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5"><span class="toc-text">正常显示反向链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -469,7 +456,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6-%E9%A1%B9%E7%9B%AE"><span class="toc-text">使用的软件&#x2F;项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-text">迁移项目文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83markdown%E6%A0%BC%E5%BC%8F"><span class="toc-text">规范markdown格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E7%89%87%E6%AE%B5"><span class="toc-text">使用用户片段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5"><span class="toc-text">正常显示反向链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol>
       </div>
     </article>
   
@@ -527,45 +514,9 @@
   <div class="tags-list">
     
       <a 
-        href="/tags/hfc/" 
-        title="hfc">
-        <div class="tags-list-item">hfc</div>
-      </a>
-    
-      <a 
-        href="/tags/csharp/" 
-        title="csharp">
-        <div class="tags-list-item">csharp</div>
-      </a>
-    
-      <a 
-        href="/tags/windows/" 
-        title="windows">
-        <div class="tags-list-item">windows</div>
-      </a>
-    
-      <a 
-        href="/tags/hexo/" 
-        title="hexo">
-        <div class="tags-list-item">hexo</div>
-      </a>
-    
-      <a 
-        href="/tags/obsidian/" 
-        title="obsidian">
-        <div class="tags-list-item">obsidian</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
-        title="任务计划程序">
-        <div class="tags-list-item">任务计划程序</div>
-      </a>
-    
-      <a 
-        href="/tags/UAC/" 
-        title="UAC">
-        <div class="tags-list-item">UAC</div>
+        href="/tags/qnap/" 
+        title="qnap">
+        <div class="tags-list-item">qnap</div>
       </a>
     
       <a 
@@ -575,9 +526,45 @@
       </a>
     
       <a 
-        href="/tags/qnap/" 
-        title="qnap">
-        <div class="tags-list-item">qnap</div>
+        href="/tags/windows/" 
+        title="windows">
+        <div class="tags-list-item">windows</div>
+      </a>
+    
+      <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
+        title="任务计划程序">
+        <div class="tags-list-item">任务计划程序</div>
+      </a>
+    
+      <a 
+        href="/tags/csharp/" 
+        title="csharp">
+        <div class="tags-list-item">csharp</div>
+      </a>
+    
+      <a 
+        href="/tags/hfc/" 
+        title="hfc">
+        <div class="tags-list-item">hfc</div>
+      </a>
+    
+      <a 
+        href="/tags/obsidian/" 
+        title="obsidian">
+        <div class="tags-list-item">obsidian</div>
+      </a>
+    
+      <a 
+        href="/tags/hexo/" 
+        title="hexo">
+        <div class="tags-list-item">hexo</div>
       </a>
     
   </div>
@@ -598,7 +585,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6-%E9%A1%B9%E7%9B%AE"><span class="toc-text">使用的软件&#x2F;项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-text">迁移项目文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83markdown%E6%A0%BC%E5%BC%8F"><span class="toc-text">规范markdown格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E7%89%87%E6%AE%B5"><span class="toc-text">使用用户片段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5"><span class="toc-text">正常显示反向链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol>
     </article>
   
   
