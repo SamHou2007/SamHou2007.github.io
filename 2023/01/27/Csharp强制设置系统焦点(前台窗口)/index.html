@@ -299,7 +299,7 @@
     
     
       <span class="dot"></span>
-      <span>556 字</span>
+      <span>612 字</span>
     
   </div>
   
@@ -357,41 +357,16 @@
 
 <p>但是，文档上指出这样设置需要满足几个条件中的任意一个：</p>
 <blockquote>
-<p>此过程是前台进程。</p>
-</blockquote>
-<blockquote>
-<p>进程由前台进程启动。</p>
-</blockquote>
-<blockquote>
-<p>进程收到了最后一个输入事件。</p>
-</blockquote>
-<blockquote>
-<p>没有前台进程。</p>
-</blockquote>
-<blockquote>
-<p>正在调试该过程。</p>
-</blockquote>
-<blockquote>
-<p>前台进程不是新式应用程序或“开始”屏幕。</p>
-</blockquote>
-<blockquote>
-<p>前台未锁定， (请参阅 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow">LockSetForegroundWindow</a>) 。</p>
-</blockquote>
-<blockquote>
-<p>前台锁定超时已过期， (在 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa">SystemParametersInfo</a>) 中看到<strong>SPI_GETFOREGROUNDLOCKTIMEOUT</strong>。</p>
-</blockquote>
-<blockquote>
-<p>没有活动菜单。</p>
-</blockquote>
-<blockquote>
-<p>当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。</p>
+<p>此过程是前台进程。/进程由前台进程启动。/进程收到了最后一个输入事件。/没有前台进程。/正在调试该过程。/前台进程不是新式应用程序或“开始”屏幕。/前台未锁定， (请参阅 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow">LockSetForegroundWindow</a>) 。/前台锁定超时已过期， (在 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa">SystemParametersInfo</a>) 中看到<strong>SPI_GETFOREGROUNDLOCKTIMEOUT</strong>。/没有活动菜单。/当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。</p>
 </blockquote>
 <p>这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。</p>
 <h2 id="强制设置"><a href="#强制设置" class="headerlink" title="强制设置"></a>强制设置</h2><p>Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。</p>
-<pre class="highlight"><span class="line">Process[] processes = Process.GetProcessesByName(<span class="string">&quot;msedge&quot;</span>);</span><br><span class="line">IntPtr handle = processes[<span class="number">0</span>].MainWindowHandle;</span><br><span class="line">SetForegroundWindow(handle);</span><br><span class="line"><span class="keyword">if</span> (handle!=GetForegroundWindow())</span><br><span class="line">&#123;</span><br><span class="line">     Process.Start(Application.ExecutablePath);</span><br><span class="line">     Environment.Exit(<span class="number">0</span>);<span class="comment">//重启</span></span><br><span class="line">&#125;</span><br></pre>
+<p>这里还用到了另一个Api <code>GetForegroundWindow()</code>用于获取当前焦点[3]，调用方式同上，此处不再解释。</p>
+<pre class="highlight"><span class="line">[<span class="meta">DllImport(<span class="meta-string">&quot;user32.dll&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">GetForegroundWindow</span>(<span class="params"></span>)</span>;</span><br><span class="line">...</span><br><span class="line">Process[] processes = Process.GetProcessesByName(<span class="string">&quot;msedge&quot;</span>);</span><br><span class="line">IntPtr handle = processes[<span class="number">0</span>].MainWindowHandle;</span><br><span class="line">SetForegroundWindow(handle);</span><br><span class="line"><span class="keyword">if</span> (handle!=GetForegroundWindow())</span><br><span class="line">&#123;</span><br><span class="line">     Process.Start(Application.ExecutablePath);</span><br><span class="line">     Environment.Exit(<span class="number">0</span>);<span class="comment">//重启</span></span><br><span class="line">&#125;</span><br></pre>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow">https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow</a></p>
 <p>[2] <a target="_blank" rel="noopener" href="https://www.cnblogs.com/code1992/p/5965997.html">https://www.cnblogs.com/code1992/p/5965997.html</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow">https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow</a></p>
 
   </div>
   <div>
@@ -579,15 +554,15 @@
       </a>
     
       <a 
-        href="/tags/UAC/" 
-        title="UAC">
-        <div class="tags-list-item">UAC</div>
-      </a>
-    
-      <a 
         href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
         title="任务计划程序">
         <div class="tags-list-item">任务计划程序</div>
+      </a>
+    
+      <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
       </a>
     
       <a 
