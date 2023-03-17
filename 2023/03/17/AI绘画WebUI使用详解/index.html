@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/img/SamHou.jpg">
-  <title>标签</title>
+  <title>AI绘画WebUI使用详解</title>
   
     
       <meta 
         property="og:title" 
-        content="标签">
+        content="AI绘画WebUI使用详解">
     
     
       <meta 
         property="og:url" 
-        content="https://samhou0.github.io/tags/qnap/index.html">
+        content="https://samhou0.github.io/2023/03/17/AI%E7%BB%98%E7%94%BBWebUI%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/index.html">
     
     
       <meta 
@@ -40,6 +40,26 @@
         property="og:img" 
         content="A blog">
     
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2023-03-17">
+      <meta 
+        property="og:article:modified_time" 
+        content="2023-03-17">
+      <meta 
+        property="og:article:author" 
+        content="SamHou">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="AI">
+        
+      
     
   
   <script>
@@ -144,6 +164,8 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
@@ -243,31 +265,143 @@
         <div class="container">
           <div class="columns">
             <main class="main-column">
-<div class="card card-content tag-page-card">
-  <div class="tags-page-title">标签&nbsp-&nbspqnap</div>
-</div>
-<div class="archive-timeline">
-  
-  
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      AI绘画WebUI使用详解
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2023-03-17T13:03:41.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2023-03-17</span>
+    </time>
     
-      <div class="archive-timeline-tag"><span>2021</span></div>
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/AI/" 
+          class="post-meta-link">
+          AI
+        </a>
       
     
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-16</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/16/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/" 
-              class="archive-timeline-post-item">
-              qnap搭建rss全攻略
-            </a>
-          </div>
-        </div>
+    
+      <span class="dot"></span>
+      <span>783 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/AI/" 
+            class="post-meta-link">
+            AI
+          </a>
+        
       </div>
     </div>
   
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>AI绘画目前主要使用的是在Github上的Stable-Diffusion-WebUI这个项目，链接：<a target="_blank" rel="noopener" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">WebUI</a></p>
+<p>在整个安装、部署和学习的过程中踩了不少坑，所以写这么一篇文章来记录一下。</p>
+<p>要想对该项目进行实践，必须满足以下必要条件：</p>
+<ul>
+<li>电脑显存至少2GB，内存至少16GB</li>
+<li>可以访问Github</li>
+</ul>
+<h2 id="安装与部署"><a href="#安装与部署" class="headerlink" title="安装与部署"></a>安装与部署</h2><p>这里已经有了一篇完整的指南，这里不再赘述：<a target="_blank" rel="noopener" href="https://rentry.org/voldy">Guide</a></p>
+<p>要注意的是AI绘画可以用很多不同的模型，热门的NovelAI在这篇指南的第二节</p>
+<p>这里有两点提醒：</p>
+<ol>
+<li>启动的是webui-user.bat，不要点错了</li>
+<li>如果你需要编辑webui-user.bat里的COMMANDLINE_ARGS，等号后面加的东西不需要任何引号！</li>
+<li>除非想要关闭面板，否则不要关闭打开的命令行黑窗口</li>
+</ol>
+<h2 id="运行AI绘画"><a href="#运行AI绘画" class="headerlink" title="运行AI绘画"></a>运行AI绘画</h2><p>根据上面的指南内容，应该已经打开了一个WebUI窗口（在浏览器里），现在你已经可以使用这个面板了，下面对部分内容进行翻译：</p>
+<ul>
+<li>txt2img，字符转图片</li>
+<li>img2img，图片转图片<br>（将鼠标悬停在每一项上面，有详细的描述）</li>
+</ul>
+<p>由于这个教程是零基础的，所以这里只讲解txt2img这种简单方式，img2img不作提及。</p>
+<p>左上角的CheckPoint，就是当前选择的模型。在Prompt中，你可以用自然语言描述图片内容，Negative Prompt就是负面内容（画面中不应该出现），Sampling steps是采样步骤（可以理解为AI尝试修改的次数），Batch count一次生成的照片数量，Batch size同时生成的照片数量（就是几张图一起生成，加快速度，不过对性能要求也更高），CFG Scale是AI对你的内容的“遵守度”，数值越小，AI的自由发挥空间越大。</p>
+<p>关于调参、绘画等内容，由于本教程针对的是技术问题，此处略过，仅放链接：<a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k">入门魔法书</a>，<a target="_blank" rel="noopener" href="https://aitag.top/">Prompt词典</a></p>
+<h2 id="加载模型"><a href="#加载模型" class="headerlink" title="加载模型"></a>加载模型</h2><p>你可能已经在上面的Guide中看到了一个网站，civitai，这是一个模型分享网站，可以下载到训练好的自定义的模型。</p>
+<p>这里有一个大坑：CheckPoint和其他类型是不一样的！！！模型会标注其类型，要放到WebUI的对应文件夹里！不是CheckPoint的模型放到Checkpoint里会产生奇怪的错误！我的理解是CheckPoint模型是基础，在基础上叠加其他类型来达到自定义的效果。模型怎么使用，一定要看看文档（在civitai模型类型旁边有个小问号，点进去就可以看到了）</p>
+<h2 id="错误排除"><a href="#错误排除" class="headerlink" title="错误排除"></a>错误排除</h2><p>如果你遇到错误，先照着错误消息做，如果还是不行，最简单的方式就是问搜索引擎，把错误消息贴进去。也可以去Github Issues搜索，或者去读一读文档。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本文讲了AI绘画的运行、部署之间的大坑，希望能够节约更多人的时间，避开坑，快速生成理想的作品</p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            SamHou
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://samhou0.github.io/2023/03/17/AI%E7%BB%98%E7%94%BBWebUI%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/">
+            https://samhou0.github.io/2023/03/17/AI%E7%BB%98%E7%94%BBWebUI%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，所有发布平台在about页列出。如引用博客内容，请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2023/01/29/%E5%AF%B9%E6%8B%96%E5%BB%B6%E7%9A%84%E6%8E%A2%E7%B4%A2/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">对拖延的探索 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">安装与部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CAI%E7%BB%98%E7%94%BB"><span class="toc-text">运行AI绘画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9E%8B"><span class="toc-text">加载模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%8E%92%E9%99%A4"><span class="toc-text">错误排除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -306,6 +440,18 @@
               </div>
                <div class="sticky-tablet">
   
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">安装与部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CAI%E7%BB%98%E7%94%BB"><span class="toc-text">运行AI绘画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9E%8B"><span class="toc-text">加载模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%8E%92%E9%99%A4"><span class="toc-text">错误排除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
+      </div>
+    </article>
   
   
   <article class="card card-content categories-widget">
@@ -482,115 +628,21 @@
   </article>
   
   
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2023" 
-            class="archive-card-list-item">
-            2023
-            <span class="archive-card-list-item-badge">3</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">9</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">3</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
 </div>
             </aside>
             <aside class="right-column">
               <div class="sticky-widescreen">
   
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">安装与部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CAI%E7%BB%98%E7%94%BB"><span class="toc-text">运行AI绘画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9E%8B"><span class="toc-text">加载模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%8E%92%E9%99%A4"><span class="toc-text">错误排除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
+    </article>
   
   
   <article class="card card-content">
@@ -627,110 +679,6 @@
 </div>
   </article>
   
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2023" 
-            class="archive-card-list-item">
-            2023
-            <span class="archive-card-list-item-badge">3</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">9</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">3</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
   
 </div>
             </aside>
@@ -842,6 +790,36 @@
 </a> 
      
      
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
      
      
     <script src="/js/main.js"></script> 
