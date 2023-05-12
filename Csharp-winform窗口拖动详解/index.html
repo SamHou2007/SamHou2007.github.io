@@ -156,6 +156,9 @@
   
   
   
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" as="script">
+  
   
   
   <link rel="stylesheet" href="/css/main.css">
@@ -388,6 +391,40 @@
   
 </div>
 
+  <div 
+    class="card card-content comment-card" 
+    style="margin-top: 16px;">
+    <div class="comment-card-title">评论</div>
+    
+  <div id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+  
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+  
+<script src="/js/lib/md5.min.js"></script>
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '250ab128dc819c4492e5',
+      clientSecret: 'bf87272b268d5c2da1f0919f22470c9468f247b1',
+      repo: 'SamHou0.github.io',
+      owner: 'SamHou0',
+      admin: ["SamHou0"],
+      id: md5(location.href),
+      distractionFreeMode: false,
+      language: 'zh-CN || zh-CN',
+      labels: ["Gitalk"],
+      perPage: 10
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+  </div>
+
 <div 
   class="card card-content toc-card" 
   id="mobiletoc">
@@ -554,15 +591,15 @@
       </a>
     
       <a 
-        href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
-        title="任务计划程序">
-        <div class="tags-list-item">任务计划程序</div>
-      </a>
-    
-      <a 
         href="/tags/UAC/" 
         title="UAC">
         <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%A8%8B%E5%BA%8F/" 
+        title="任务计划程序">
+        <div class="tags-list-item">任务计划程序</div>
       </a>
     
       <a 
@@ -590,18 +627,6 @@
       </a>
     
       <a 
-        href="/tags/%E7%84%A6%E7%82%B9/" 
-        title="焦点">
-        <div class="tags-list-item">焦点</div>
-      </a>
-    
-      <a 
-        href="/tags/%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6/" 
-        title="窗口控制">
-        <div class="tags-list-item">窗口控制</div>
-      </a>
-    
-      <a 
         href="/tags/csharp%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/" 
         title="csharp图解教程">
         <div class="tags-list-item">csharp图解教程</div>
@@ -611,6 +636,18 @@
         href="/tags/winform/" 
         title="winform">
         <div class="tags-list-item">winform</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%84%A6%E7%82%B9/" 
+        title="焦点">
+        <div class="tags-list-item">焦点</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6/" 
+        title="窗口控制">
+        <div class="tags-list-item">窗口控制</div>
       </a>
     
       <a 
