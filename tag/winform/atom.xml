@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.samhou.top</id>
+    <title>SamHou&#39;s blog • Posts by &#34;winform&#34; tag</title>
+    <link href="https://blog.samhou.top" />
+    <updated>2022-05-29T08:05:02.000Z</updated>
+    <category term="winform" />
+    <category term="AI" />
+    <category term="csharp" />
+    <category term="csharp图解教程" />
+    <category term="hfc" />
+    <category term="窗口控制" />
+    <category term="焦点" />
+    <category term="obsidian" />
+    <category term="hexo" />
+    <category term="qnap" />
+    <category term="rss" />
+    <category term="Steam" />
+    <category term="手机游戏" />
+    <category term="电脑游戏" />
+    <category term="单机游戏" />
+    <category term="网络游戏" />
+    <category term="windows" />
+    <category term="UAC" />
+    <category term="小说" />
+    <category term="蔚蓝档案" />
+    <category term="科幻" />
+    <category term="任务计划程序" />
+    <category term="拖延症" />
+    <category term="学习方法" />
+    <category term="Bing" />
+    <entry>
+        <id>https://blog.samhou.top/Csharp-winform%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8%E8%AF%A6%E8%A7%A3/</id>
+        <title>Csharp-winform窗口拖动详解</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp-winform%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8%E8%AF%A6%E8%A7%A3/"/>
+        <content type="html">&lt;h2 id=&#34;代码实现&#34;&gt;&lt;a href=&#34;#代码实现&#34; class=&#34;headerlink&#34; title=&#34;代码实现&#34;&gt;&lt;/a&gt;代码实现&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;首先，在设计器里双击增加以下三个方法，然后填入以下代码&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; Point mouseLocation;&lt;span class=&#34;comment&#34;&gt;//表示鼠标对于窗口左上角的坐标的负数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; isDragging;&lt;span class=&#34;comment&#34;&gt;//标识鼠标是否按下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseDown&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (e.Button == MouseButtons.Left)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              mouseLocation = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Point(-e.X, -e.Y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//表示鼠标当前位置相对于窗口左上角的坐标，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//并取负数,这里的e是参数，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//可以获取鼠标位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              isDragging = &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//标识鼠标已经按下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseMove&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (isDragging)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              Point newMouseLocation = MousePosition;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//获取鼠标当前位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              newMouseLocation.Offset(mouseLocation.X, mouseLocation.Y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//用鼠标当前位置加上鼠标相较于窗体左上角的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//坐标的负数，也就获取到了新的窗体左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              Location = newMouseLocation;&lt;span class=&#34;comment&#34;&gt;//设置新的窗体左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseUp&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (isDragging)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              isDragging = &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//鼠标已抬起，标识为false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;详解&#34;&gt;&lt;a href=&#34;#详解&#34; class=&#34;headerlink&#34; title=&#34;详解&#34;&gt;&lt;/a&gt;详解&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;鼠标在窗体上按下时，窗体跟随鼠标，鼠标抬起时，窗体停止移动&lt;/li&gt;
+&lt;li&gt;窗体的Location属性为&lt;strong&gt;左上角&lt;/strong&gt;的坐标&lt;/li&gt;
+&lt;li&gt;为了实现拖动，需要获取2个坐标：鼠标相较于窗体左上角的位置，以及鼠标现在的坐标&lt;/li&gt;
+&lt;li&gt;举个例子：按下鼠标时，鼠标位置(300,400)，获取鼠标相较于窗体左上角位置为(150,100)，那么此时窗体位置是(150,300)，鼠标移动到(300,401)，那么此时窗体位置应该是(150,301)。也就是说，新的窗体位置就是新的鼠标位置减去一开始鼠标相较于窗体左上角位置&lt;/li&gt;
+&lt;li&gt;调用.OffSet()，就是把前面的坐标加上括号里的坐标，比如上面的例子，newMouseLocation是(300,401)，mouseLocation把鼠标相较于窗体左上角位置作为负数存储，mouseLocation是(-150,-100)，那么新的newMouseLocation就是(150,301)了~&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="winform" />
+        <updated>2022-05-29T08:05:02.000Z</updated>
+    </entry>
+</feed>

@@ -181,7 +181,7 @@
     <link rel="prefetch" href="//unpkg.com/@waline/client@v2/dist/waline.js" as="script">
   
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
   <body>
     <div class="wrapper">
@@ -351,16 +351,16 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/AI/">
+      <a href="/categories/Csharp/">
         <div class="categories-list-item">
-          AI
+          Csharp
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
-      <a href="/categories/Csharp/">
+      <a href="/categories/AI/">
         <div class="categories-list-item">
-          Csharp
+          AI
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
@@ -379,13 +379,6 @@
         </div>
       </a>
     
-      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
-        <div class="categories-list-item">
-          windows教程
-          <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
       <a href="/categories/qnap%E6%95%99%E7%A8%8B/">
         <div class="categories-list-item">
           qnap教程
@@ -397,6 +390,13 @@
         <div class="categories-list-item">
           游戏攻略
           <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -507,6 +507,12 @@
       </a>
     
       <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
         href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
         title="单机游戏">
         <div class="tags-list-item">单机游戏</div>
@@ -516,12 +522,6 @@
         href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" 
         title="电脑游戏">
         <div class="tags-list-item">电脑游戏</div>
-      </a>
-    
-      <a 
-        href="/tags/Steam/" 
-        title="Steam">
-        <div class="tags-list-item">Steam</div>
       </a>
     
   </div>
@@ -587,8 +587,9 @@
     id="section" 
     class="post-content">
     <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><ul>
-<li>首先，在设计器里双击增加以下三个方法，然后填入以下代码<pre class="highlight"><span class="line">      <span class="keyword">private</span> Point mouseLocation;<span class="comment">//表示鼠标对于窗口左上角的坐标的负数</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">bool</span> isDragging;<span class="comment">//标识鼠标是否按下</span></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseDown</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (e.Button == MouseButtons.Left)</span><br><span class="line">          &#123;</span><br><span class="line">              mouseLocation = <span class="keyword">new</span> Point(-e.X, -e.Y);</span><br><span class="line">              <span class="comment">//表示鼠标当前位置相对于窗口左上角的坐标，</span></span><br><span class="line">              <span class="comment">//并取负数,这里的e是参数，</span></span><br><span class="line">              <span class="comment">//可以获取鼠标位置</span></span><br><span class="line">              isDragging = <span class="literal">true</span>;<span class="comment">//标识鼠标已经按下</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseMove</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (isDragging)</span><br><span class="line">          &#123;</span><br><span class="line">              Point newMouseLocation = MousePosition;</span><br><span class="line">              <span class="comment">//获取鼠标当前位置</span></span><br><span class="line">              newMouseLocation.Offset(mouseLocation.X, mouseLocation.Y);</span><br><span class="line">              <span class="comment">//用鼠标当前位置加上鼠标相较于窗体左上角的</span></span><br><span class="line">              <span class="comment">//坐标的负数，也就获取到了新的窗体左上角位置</span></span><br><span class="line">              Location = newMouseLocation;<span class="comment">//设置新的窗体左上角位置</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseUp</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (isDragging)</span><br><span class="line">          &#123;</span><br><span class="line">              isDragging = <span class="literal">false</span>;<span class="comment">//鼠标已抬起，标识为false</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre>
-<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2></li>
+<li>首先，在设计器里双击增加以下三个方法，然后填入以下代码<pre class="highlight"><span class="line">      <span class="keyword">private</span> Point mouseLocation;<span class="comment">//表示鼠标对于窗口左上角的坐标的负数</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">bool</span> isDragging;<span class="comment">//标识鼠标是否按下</span></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseDown</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (e.Button == MouseButtons.Left)</span><br><span class="line">          &#123;</span><br><span class="line">              mouseLocation = <span class="keyword">new</span> Point(-e.X, -e.Y);</span><br><span class="line">              <span class="comment">//表示鼠标当前位置相对于窗口左上角的坐标，</span></span><br><span class="line">              <span class="comment">//并取负数,这里的e是参数，</span></span><br><span class="line">              <span class="comment">//可以获取鼠标位置</span></span><br><span class="line">              isDragging = <span class="literal">true</span>;<span class="comment">//标识鼠标已经按下</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseMove</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (isDragging)</span><br><span class="line">          &#123;</span><br><span class="line">              Point newMouseLocation = MousePosition;</span><br><span class="line">              <span class="comment">//获取鼠标当前位置</span></span><br><span class="line">              newMouseLocation.Offset(mouseLocation.X, mouseLocation.Y);</span><br><span class="line">              <span class="comment">//用鼠标当前位置加上鼠标相较于窗体左上角的</span></span><br><span class="line">              <span class="comment">//坐标的负数，也就获取到了新的窗体左上角位置</span></span><br><span class="line">              Location = newMouseLocation;<span class="comment">//设置新的窗体左上角位置</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainWindow_MouseUp</span>(<span class="params"><span class="built_in">object</span> sender, MouseEventArgs e</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span> (isDragging)</span><br><span class="line">          &#123;</span><br><span class="line">              isDragging = <span class="literal">false</span>;<span class="comment">//鼠标已抬起，标识为false</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></li>
+</ul>
+<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><ul>
 <li>鼠标在窗体上按下时，窗体跟随鼠标，鼠标抬起时，窗体停止移动</li>
 <li>窗体的Location属性为<strong>左上角</strong>的坐标</li>
 <li>为了实现拖动，需要获取2个坐标：鼠标相较于窗体左上角的位置，以及鼠标现在的坐标</li>
@@ -925,6 +926,24 @@
     
     <script src="//instant.page/5.1.0" type="module"
       integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <script>
+        var googleAnalytics = function () {
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+          gtag('config', 'G-RQECZS079J')
+        }
+    </script>
+      <script>
+        loadScript(
+          'https://www.googletagmanager.com/gtag/js?id=' +
+            'G-RQECZS079J',
+          googleAnalytics
+        )
+      </script>
     
     
       <script>

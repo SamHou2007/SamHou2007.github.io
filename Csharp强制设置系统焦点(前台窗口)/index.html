@@ -189,7 +189,7 @@
     <link rel="prefetch" href="//unpkg.com/@waline/client@v2/dist/waline.js" as="script">
   
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
   <body>
     <div class="wrapper">
@@ -359,16 +359,16 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/AI/">
+      <a href="/categories/Csharp/">
         <div class="categories-list-item">
-          AI
+          Csharp
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
-      <a href="/categories/Csharp/">
+      <a href="/categories/AI/">
         <div class="categories-list-item">
-          Csharp
+          AI
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
@@ -387,13 +387,6 @@
         </div>
       </a>
     
-      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
-        <div class="categories-list-item">
-          windows教程
-          <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
       <a href="/categories/qnap%E6%95%99%E7%A8%8B/">
         <div class="categories-list-item">
           qnap教程
@@ -405,6 +398,13 @@
         <div class="categories-list-item">
           游戏攻略
           <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -515,6 +515,12 @@
       </a>
     
       <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
         href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
         title="单机游戏">
         <div class="tags-list-item">单机游戏</div>
@@ -524,12 +530,6 @@
         href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" 
         title="电脑游戏">
         <div class="tags-list-item">电脑游戏</div>
-      </a>
-    
-      <a 
-        href="/tags/Steam/" 
-        title="Steam">
-        <div class="tags-list-item">Steam</div>
       </a>
     
   </div>
@@ -567,7 +567,7 @@
     
     
       <span class="dot"></span>
-      <span>639 字</span>
+      <span>648 字</span>
     
   </div>
   
@@ -618,19 +618,19 @@
 <pre class="highlight"><span class="line"><span class="function">BOOL <span class="title">SetForegroundWindow</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  [in] HWND hWnd<span class="comment">//窗口句柄</span></span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br></pre>
 
 <p>C#里没有HWND类型，与之对应的是IntPtr类型，所以可以这样导入Api[2]</p>
-<pre class="highlight"><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;<span class="comment">//这是调用所必须的</span></span><br><span class="line">[<span class="meta">DllImport(<span class="meta-string">&quot;user32.dll&quot;</span>)</span>]<span class="comment">//调用dll</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">bool</span> <span class="title">SetForegroundWindow</span>(<span class="params">IntPtr handle</span>)</span>;<span class="comment">//这个函数签名必须和文档一模一样</span></span><br></pre>
+<pre class="highlight"><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;<span class="comment">//这是调用所必须的</span></span><br><span class="line">[<span class="meta">DllImport(<span class="string">&quot;user32.dll&quot;</span>)</span>]<span class="comment">//调用dll</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">bool</span> <span class="title">SetForegroundWindow</span>(<span class="params">IntPtr handle</span>)</span>;<span class="comment">//这个函数签名必须和文档一模一样</span></span><br></pre>
 
 <p>下面来调用导入的内容（以设置edge浏览器为例子）</p>
 <pre class="highlight"><span class="line">Process[] processes = Process.GetProcessesByName(<span class="string">&quot;msedge&quot;</span>);<span class="comment">//查找edge浏览器进程</span></span><br><span class="line">IntPtr handle = processes[<span class="number">0</span>].MainWindowHandle;<span class="comment">//获取主窗口句柄</span></span><br><span class="line">SetForegroundWindow(handle);</span><br></pre>
 
 <p>但是，文档上指出这样设置需要满足几个条件中的任意一个：</p>
 <blockquote>
-<p>此过程是前台进程。/进程由前台进程启动。/进程收到了最后一个输入事件。/没有前台进程。/正在调试该过程。/前台进程不是新式应用程序或“开始”屏幕。/前台未锁定， (请参阅 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow">LockSetForegroundWindow</a>) 。/前台锁定超时已过期， (在 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa">SystemParametersInfo</a>) 中看到<strong>SPI_GETFOREGROUNDLOCKTIMEOUT</strong>。/没有活动菜单。/当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。</p>
+<p>此过程是前台进程。&#x2F;进程由前台进程启动。&#x2F;进程收到了最后一个输入事件。&#x2F;没有前台进程。&#x2F;正在调试该过程。&#x2F;前台进程不是新式应用程序或“开始”屏幕。&#x2F;前台未锁定， (请参阅 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow">LockSetForegroundWindow</a>) 。&#x2F;前台锁定超时已过期， (在 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa">SystemParametersInfo</a>) 中看到<strong>SPI_GETFOREGROUNDLOCKTIMEOUT</strong>。&#x2F;没有活动菜单。&#x2F;当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。</p>
 </blockquote>
 <p>这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。</p>
 <h2 id="强制设置"><a href="#强制设置" class="headerlink" title="强制设置"></a>强制设置</h2><p>Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。</p>
 <p>这里还用到了另一个Api <code>GetForegroundWindow()</code>用于获取当前焦点[3]，调用方式同上，此处不再解释。</p>
-<pre class="highlight"><span class="line">[<span class="meta">DllImport(<span class="meta-string">&quot;user32.dll&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">GetForegroundWindow</span>(<span class="params"></span>)</span>;</span><br><span class="line">...</span><br><span class="line">Process[] processes = Process.GetProcessesByName(<span class="string">&quot;msedge&quot;</span>);</span><br><span class="line">IntPtr handle = processes[<span class="number">0</span>].MainWindowHandle;</span><br><span class="line">SetForegroundWindow(handle);</span><br><span class="line"><span class="keyword">if</span> (handle!=GetForegroundWindow())</span><br><span class="line">&#123;</span><br><span class="line">     Process.Start(Application.ExecutablePath);</span><br><span class="line">     Environment.Exit(<span class="number">0</span>);<span class="comment">//重启</span></span><br><span class="line">&#125;</span><br></pre>
+<pre class="highlight"><span class="line">[<span class="meta">DllImport(<span class="string">&quot;user32.dll&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">GetForegroundWindow</span>()</span>;</span><br><span class="line">...</span><br><span class="line">Process[] processes = Process.GetProcessesByName(<span class="string">&quot;msedge&quot;</span>);</span><br><span class="line">IntPtr handle = processes[<span class="number">0</span>].MainWindowHandle;</span><br><span class="line">SetForegroundWindow(handle);</span><br><span class="line"><span class="keyword">if</span> (handle!=GetForegroundWindow())</span><br><span class="line">&#123;</span><br><span class="line">     Process.Start(Application.ExecutablePath);</span><br><span class="line">     Environment.Exit(<span class="number">0</span>);<span class="comment">//重启</span></span><br><span class="line">&#125;</span><br></pre>
 
 <p>注意，该方法仅30%成功率，若连续10次重启仍未获得焦点，建议放弃(</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow">https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow</a></p>
@@ -966,6 +966,24 @@
     
     <script src="//instant.page/5.1.0" type="module"
       integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <script>
+        var googleAnalytics = function () {
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+          gtag('config', 'G-RQECZS079J')
+        }
+    </script>
+      <script>
+        loadScript(
+          'https://www.googletagmanager.com/gtag/js?id=' +
+            'G-RQECZS079J',
+          googleAnalytics
+        )
+      </script>
     
     
       <script>

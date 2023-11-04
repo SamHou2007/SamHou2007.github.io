@@ -185,7 +185,7 @@
     <link rel="prefetch" href="//unpkg.com/@waline/client@v2/dist/waline.js" as="script">
   
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
   <body>
     <div class="wrapper">
@@ -355,16 +355,16 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/AI/">
+      <a href="/categories/Csharp/">
         <div class="categories-list-item">
-          AI
+          Csharp
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
-      <a href="/categories/Csharp/">
+      <a href="/categories/AI/">
         <div class="categories-list-item">
-          Csharp
+          AI
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
@@ -383,13 +383,6 @@
         </div>
       </a>
     
-      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
-        <div class="categories-list-item">
-          windows教程
-          <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
       <a href="/categories/qnap%E6%95%99%E7%A8%8B/">
         <div class="categories-list-item">
           qnap教程
@@ -401,6 +394,13 @@
         <div class="categories-list-item">
           游戏攻略
           <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -511,6 +511,12 @@
       </a>
     
       <a 
+        href="/tags/UAC/" 
+        title="UAC">
+        <div class="tags-list-item">UAC</div>
+      </a>
+    
+      <a 
         href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
         title="单机游戏">
         <div class="tags-list-item">单机游戏</div>
@@ -520,12 +526,6 @@
         href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" 
         title="电脑游戏">
         <div class="tags-list-item">电脑游戏</div>
-      </a>
-    
-      <a 
-        href="/tags/Steam/" 
-        title="Steam">
-        <div class="tags-list-item">Steam</div>
       </a>
     
   </div>
@@ -621,7 +621,7 @@
 <li>举个例子，假设你有一个电器类，很多类都继承了它，比如电脑、电视、冰箱……但是现在你想要用一个可以处理食物的类作为参数（比如面包机、烤箱、微波炉……），这时无法使用继承（因为你只能继承一个类），就需要编写一个可处理食物的接口，把要用到的方法属性放进去，在可处理食物的类中实现这个接口，把参数改成这样一个接口引用，就可以解决这个问题</li>
 <li>C#<strong>拒绝继承多个类</strong>，并通过接口提供<strong>保护</strong>，这是为了<strong>避免二义性</strong></li>
 <li>二义性：当两个类<strong>分别继承一个基类</strong>，并且重写了基类中的同一个方法，这时如果允许继承多个类（这称为多重继承），那么<strong>继承这两个类的子类</strong>调用该方法（假设子类没有重写）时应该调用哪个方法？这就会出现问题：子类<strong>不知道应该调用哪个方法</strong>，因为继承了<strong>两个同名的不同方法</strong></li>
-<li>这也被称作“致命的死亡菱形”（如果[[Csharp/Csharp读书笔记/Csharp读书笔记（一）-对象与引用#创建类图|画出类图]]，会发现这像一个菱形）</li>
+<li>这也被称作“致命的死亡菱形”（如果[[Csharp&#x2F;Csharp读书笔记&#x2F;Csharp读书笔记（一）-对象与引用#创建类图|画出类图]]，会发现这像一个菱形）</li>
 <li>所以C#<strong>通过接口提供保护</strong>，接口并没有方法体（它不做任何事情），因为它没有方法体，所以一个类可以实现多个接口，即使接口中有同名方法，这个类也<strong>只能实现这一个方法</strong>，避免了二义性</li>
 </ul>
 <h3 id="接口引用"><a href="#接口引用" class="headerlink" title="接口引用"></a>接口引用</h3><ul>
@@ -997,6 +997,24 @@
     
     <script src="//instant.page/5.1.0" type="module"
       integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <script>
+        var googleAnalytics = function () {
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+          gtag('config', 'G-RQECZS079J')
+        }
+    </script>
+      <script>
+        loadScript(
+          'https://www.googletagmanager.com/gtag/js?id=' +
+            'G-RQECZS079J',
+          googleAnalytics
+        )
+      </script>
     
     
       <script>

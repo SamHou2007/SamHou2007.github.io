@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>SamHou&#39;s blog • Posts by &#34;bing&#34; tag</title>
+        <link>https://blog.samhou.top</link>
+        <description>A blog</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 07 Jun 2023 21:06:13 +0800</pubDate>
+        <lastBuildDate>Wed, 07 Jun 2023 21:06:13 +0800</lastBuildDate>
+        <category>winform</category>
+        <category>AI</category>
+        <category>csharp</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>窗口控制</category>
+        <category>焦点</category>
+        <category>obsidian</category>
+        <category>hexo</category>
+        <category>qnap</category>
+        <category>rss</category>
+        <category>Steam</category>
+        <category>手机游戏</category>
+        <category>电脑游戏</category>
+        <category>单机游戏</category>
+        <category>网络游戏</category>
+        <category>windows</category>
+        <category>UAC</category>
+        <category>小说</category>
+        <category>蔚蓝档案</category>
+        <category>科幻</category>
+        <category>任务计划程序</category>
+        <category>拖延症</category>
+        <category>学习方法</category>
+        <category>Bing</category>
+        <item>
+            <guid isPermalink="true">https://blog.samhou.top/%E8%87%AA%E8%A1%8C%E6%90%AD%E5%BB%BABing%20AI%E9%95%9C%E5%83%8F%E5%85%8D%E9%AD%94%E6%B3%95%E8%AE%BF%E9%97%AEBing/</guid>
+            <title>自行搭建Bing AI镜像免魔法访问Bing</title>
+            <link>https://blog.samhou.top/%E8%87%AA%E8%A1%8C%E6%90%AD%E5%BB%BABing%20AI%E9%95%9C%E5%83%8F%E5%85%8D%E9%AD%94%E6%B3%95%E8%AE%BF%E9%97%AEBing/</link>
+            <category>AI</category>
+            <category>Bing</category>
+            <pubDate>Wed, 07 Jun 2023 21:06:13 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;偶然发现了一个神奇的开源项目&lt;a href=&#34;https://github.com/adams549659584/go-proxy-bingai&#34;&gt;go-proxy-bingai&lt;/a&gt;，可以搭建直接可用的Bing AI镜像。&lt;/p&gt;
+&lt;h3 id=&#34;准备工作&#34;&gt;&lt;a href=&#34;#准备工作&#34; class=&#34;headerlink&#34; title=&#34;准备工作&#34;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Github账号+邮箱一个&lt;/li&gt;
+&lt;li&gt;一个自己的域名（可选）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;镜像&#34;&gt;&lt;a href=&#34;#镜像&#34; class=&#34;headerlink&#34; title=&#34;镜像&#34;&gt;&lt;/a&gt;镜像&lt;/h3&gt;&lt;p&gt;首先打开上面的开源项目的地址（GitHub打不开自行搜索镜像），项目作者已经搭建好了几个网站，如果不会搭建可以直接用。&lt;/p&gt;
+&lt;h3 id=&#34;开始自行搭建&#34;&gt;&lt;a href=&#34;#开始自行搭建&#34; class=&#34;headerlink&#34; title=&#34;开始自行搭建&#34;&gt;&lt;/a&gt;开始自行搭建&lt;/h3&gt;&lt;h4 id=&#34;网页端&#34;&gt;&lt;a href=&#34;#网页端&#34; class=&#34;headerlink&#34; title=&#34;网页端&#34;&gt;&lt;/a&gt;网页端&lt;/h4&gt;&lt;p&gt;作者提供了3种方式，Railway&amp;#x2F;Vercel&amp;#x2F;Render，各有优劣。&lt;/p&gt;
+&lt;p&gt;Railway有每月运行时间限制200小时，到了就停机，且速度较慢。&lt;/p&gt;
+&lt;p&gt;Vercel无法使用其自带域名在国内直接访问，需要绑定自己的域名，但速度较快。&lt;/p&gt;
+&lt;p&gt;Render也无法访问，速度慢。综合建议用Vercel，没域名的就用Railway吧。&lt;/p&gt;
+&lt;p&gt;这部分的部署攻略作者已经做了图片提示，就不写教程了，各位自己看就行了。&lt;/p&gt;
+&lt;h3 id=&#34;搭建聊天服务器&#34;&gt;&lt;a href=&#34;#搭建聊天服务器&#34; class=&#34;headerlink&#34; title=&#34;搭建聊天服务器&#34;&gt;&lt;/a&gt;搭建聊天服务器&lt;/h3&gt;&lt;p&gt;目前作者提供了Cloudflare Workers方式进行部署，但CF worker国内也无法直接访问，所以还是需要自己的域名。&lt;/p&gt;
+&lt;p&gt;首先，绑定域名到Cloudflare，你只需要在买域名的地方把dns改成Cloudflare提供的就行了。&lt;/p&gt;
+&lt;p&gt;然后选择Workers 和 Pages，创建应用程序，把下面链接里代码复制贴进去&lt;a href=&#34;https://github.com/adams549659584/go-proxy-bingai/blob/master/cloudflare/worker.js&#34;&gt;Worker.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;保存部署，然后再自定义域名那里添加域名，直接写一个子域名就行了，注意别和前面网页端重复（比如wbing.xxxx.xxx），然后网页端服务选择里自定义填上就行&lt;/p&gt;
+&lt;p&gt;如果你想让你的网页端直接用上聊天服务器，那么你需要添加workers路由。&lt;/p&gt;
+&lt;p&gt;先选择网站-你的域名，选择Workers路由，按照下面这样填写：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/06/07/pCFLyR0.png&#34; alt=&#34;图片&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s1.ax1x.com/2023/06/07/pCFLyR0.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后再进网站，你会发现服务选择里的主站亮了，能用了。&lt;/p&gt;
+&lt;p&gt;如果搭建失败，直接用项目原作者内置也不是不可以（&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

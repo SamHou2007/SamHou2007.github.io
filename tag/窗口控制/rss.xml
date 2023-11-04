@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>SamHou&#39;s blog • Posts by &#34;窗口控制&#34; tag</title>
+        <link>https://blog.samhou.top</link>
+        <description>A blog</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 27 Jan 2023 09:01:20 +0800</pubDate>
+        <lastBuildDate>Fri, 27 Jan 2023 09:01:20 +0800</lastBuildDate>
+        <category>winform</category>
+        <category>AI</category>
+        <category>csharp</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>窗口控制</category>
+        <category>焦点</category>
+        <category>obsidian</category>
+        <category>hexo</category>
+        <category>qnap</category>
+        <category>rss</category>
+        <category>Steam</category>
+        <category>手机游戏</category>
+        <category>电脑游戏</category>
+        <category>单机游戏</category>
+        <category>网络游戏</category>
+        <category>windows</category>
+        <category>UAC</category>
+        <category>小说</category>
+        <category>蔚蓝档案</category>
+        <category>科幻</category>
+        <category>任务计划程序</category>
+        <category>拖延症</category>
+        <category>学习方法</category>
+        <category>Bing</category>
+        <item>
+            <guid isPermalink="true">https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/</guid>
+            <title>Csharp强制设置系统焦点(前台窗口)</title>
+            <link>https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/</link>
+            <category>csharp</category>
+            <category>窗口控制</category>
+            <category>焦点</category>
+            <pubDate>Fri, 27 Jan 2023 09:01:20 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;系统焦点&#34;&gt;&lt;a href=&#34;#系统焦点&#34; class=&#34;headerlink&#34; title=&#34;系统焦点&#34;&gt;&lt;/a&gt;系统焦点&lt;/h2&gt;&lt;p&gt;在Windows中，系统的焦点就是当前处于前台的窗口。通过设置焦点，可以控制用户正在使用的应用程序。这里以winform应用为例。&lt;/p&gt;
+&lt;h2 id=&#34;Api调用&#34;&gt;&lt;a href=&#34;#Api调用&#34; class=&#34;headerlink&#34; title=&#34;Api调用&#34;&gt;&lt;/a&gt;Api调用&lt;/h2&gt;&lt;p&gt;C#需要调用Win32 Api才可以控制焦点，这里用到的是user32.dll中的SetForegroundWindow()函数&lt;/p&gt;
+&lt;p&gt;在微软提供的文档中[1]，可以看到C++里的用法：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;BOOL &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;  [in] HWND hWnd&lt;span class=&#34;comment&#34;&gt;//窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;C#里没有HWND类型，与之对应的是IntPtr类型，所以可以这样导入Api[2]&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; System.Runtime.InteropServices;&lt;span class=&#34;comment&#34;&gt;//这是调用所必须的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//调用dll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;IntPtr handle&lt;/span&gt;)&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//这个函数签名必须和文档一模一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面来调用导入的内容（以设置edge浏览器为例子）&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//查找edge浏览器进程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;span class=&#34;comment&#34;&gt;//获取主窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是，文档上指出这样设置需要满足几个条件中的任意一个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此过程是前台进程。&amp;#x2F;进程由前台进程启动。&amp;#x2F;进程收到了最后一个输入事件。&amp;#x2F;没有前台进程。&amp;#x2F;正在调试该过程。&amp;#x2F;前台进程不是新式应用程序或“开始”屏幕。&amp;#x2F;前台未锁定， (请参阅 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow&#34;&gt;LockSetForegroundWindow&lt;/a&gt;) 。&amp;#x2F;前台锁定超时已过期， (在 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa&#34;&gt;SystemParametersInfo&lt;/a&gt;) 中看到&lt;strong&gt;SPI_GETFOREGROUNDLOCKTIMEOUT&lt;/strong&gt;。&amp;#x2F;没有活动菜单。&amp;#x2F;当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。&lt;/p&gt;
+&lt;h2 id=&#34;强制设置&#34;&gt;&lt;a href=&#34;#强制设置&#34; class=&#34;headerlink&#34; title=&#34;强制设置&#34;&gt;&lt;/a&gt;强制设置&lt;/h2&gt;&lt;p&gt;Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。&lt;/p&gt;
+&lt;p&gt;这里还用到了另一个Api &lt;code&gt;GetForegroundWindow()&lt;/code&gt;用于获取当前焦点[3]，调用方式同上，此处不再解释。&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; IntPtr &lt;span class=&#34;title&#34;&gt;GetForegroundWindow&lt;/span&gt;()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (handle!=GetForegroundWindow())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Process.Start(Application.ExecutablePath);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Environment.Exit(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意，该方法仅30%成功率，若连续10次重启仍未获得焦点，建议放弃(&lt;/p&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;&lt;a href=&#34;#参考文献&#34; class=&#34;headerlink&#34; title=&#34;参考文献&#34;&gt;&lt;/a&gt;参考文献&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;https://www.cnblogs.com/code1992/p/5965997.html&#34;&gt;https://www.cnblogs.com/code1992/p/5965997.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.samhou.top</id>
+    <title>SamHou&#39;s blog • Posts by &#34;csharp&#34; tag</title>
+    <link href="https://blog.samhou.top" />
+    <updated>2023-01-27T01:01:20.000Z</updated>
+    <category term="winform" />
+    <category term="AI" />
+    <category term="csharp" />
+    <category term="csharp图解教程" />
+    <category term="hfc" />
+    <category term="窗口控制" />
+    <category term="焦点" />
+    <category term="obsidian" />
+    <category term="hexo" />
+    <category term="qnap" />
+    <category term="rss" />
+    <category term="Steam" />
+    <category term="手机游戏" />
+    <category term="电脑游戏" />
+    <category term="单机游戏" />
+    <category term="网络游戏" />
+    <category term="windows" />
+    <category term="UAC" />
+    <category term="小说" />
+    <category term="蔚蓝档案" />
+    <category term="科幻" />
+    <category term="任务计划程序" />
+    <category term="拖延症" />
+    <category term="学习方法" />
+    <category term="Bing" />
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/</id>
+        <title>Csharp强制设置系统焦点(前台窗口)</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/"/>
+        <content type="html">&lt;h2 id=&#34;系统焦点&#34;&gt;&lt;a href=&#34;#系统焦点&#34; class=&#34;headerlink&#34; title=&#34;系统焦点&#34;&gt;&lt;/a&gt;系统焦点&lt;/h2&gt;&lt;p&gt;在Windows中，系统的焦点就是当前处于前台的窗口。通过设置焦点，可以控制用户正在使用的应用程序。这里以winform应用为例。&lt;/p&gt;
+&lt;h2 id=&#34;Api调用&#34;&gt;&lt;a href=&#34;#Api调用&#34; class=&#34;headerlink&#34; title=&#34;Api调用&#34;&gt;&lt;/a&gt;Api调用&lt;/h2&gt;&lt;p&gt;C#需要调用Win32 Api才可以控制焦点，这里用到的是user32.dll中的SetForegroundWindow()函数&lt;/p&gt;
+&lt;p&gt;在微软提供的文档中[1]，可以看到C++里的用法：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;BOOL &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;  [in] HWND hWnd&lt;span class=&#34;comment&#34;&gt;//窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;C#里没有HWND类型，与之对应的是IntPtr类型，所以可以这样导入Api[2]&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; System.Runtime.InteropServices;&lt;span class=&#34;comment&#34;&gt;//这是调用所必须的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//调用dll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;IntPtr handle&lt;/span&gt;)&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//这个函数签名必须和文档一模一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面来调用导入的内容（以设置edge浏览器为例子）&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//查找edge浏览器进程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;span class=&#34;comment&#34;&gt;//获取主窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是，文档上指出这样设置需要满足几个条件中的任意一个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此过程是前台进程。&amp;#x2F;进程由前台进程启动。&amp;#x2F;进程收到了最后一个输入事件。&amp;#x2F;没有前台进程。&amp;#x2F;正在调试该过程。&amp;#x2F;前台进程不是新式应用程序或“开始”屏幕。&amp;#x2F;前台未锁定， (请参阅 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow&#34;&gt;LockSetForegroundWindow&lt;/a&gt;) 。&amp;#x2F;前台锁定超时已过期， (在 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa&#34;&gt;SystemParametersInfo&lt;/a&gt;) 中看到&lt;strong&gt;SPI_GETFOREGROUNDLOCKTIMEOUT&lt;/strong&gt;。&amp;#x2F;没有活动菜单。&amp;#x2F;当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。&lt;/p&gt;
+&lt;h2 id=&#34;强制设置&#34;&gt;&lt;a href=&#34;#强制设置&#34; class=&#34;headerlink&#34; title=&#34;强制设置&#34;&gt;&lt;/a&gt;强制设置&lt;/h2&gt;&lt;p&gt;Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。&lt;/p&gt;
+&lt;p&gt;这里还用到了另一个Api &lt;code&gt;GetForegroundWindow()&lt;/code&gt;用于获取当前焦点[3]，调用方式同上，此处不再解释。&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; IntPtr &lt;span class=&#34;title&#34;&gt;GetForegroundWindow&lt;/span&gt;()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (handle!=GetForegroundWindow())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Process.Start(Application.ExecutablePath);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Environment.Exit(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意，该方法仅30%成功率，若连续10次重启仍未获得焦点，建议放弃(&lt;/p&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;&lt;a href=&#34;#参考文献&#34; class=&#34;headerlink&#34; title=&#34;参考文献&#34;&gt;&lt;/a&gt;参考文献&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;https://www.cnblogs.com/code1992/p/5965997.html&#34;&gt;https://www.cnblogs.com/code1992/p/5965997.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="csharp" />
+        <category term="窗口控制" />
+        <category term="焦点" />
+        <updated>2023-01-27T01:01:20.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E6%8E%A5%E5%8F%A3%E8%BF%9B%E9%98%B6/</id>
+        <title>Csharp接口进阶</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E6%8E%A5%E5%8F%A3%E8%BF%9B%E9%98%B6/"/>
+        <content type="html">&lt;p&gt;在&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;这篇文章&#34;&gt;这篇文章&lt;/a&gt;里，曾经讲解过C#接口的基本概念。掌握这些基本概念后，本文将补充一个进阶内容。&lt;/p&gt;
+&lt;h2 id=&#34;显式接口成员实现&#34;&gt;&lt;a href=&#34;#显式接口成员实现&#34; class=&#34;headerlink&#34; title=&#34;显式接口成员实现&#34;&gt;&lt;/a&gt;显式接口成员实现&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;该功能用于为同一个类中实现的不同接口创建不同的方法（方法名称相同）&lt;/li&gt;
+&lt;li&gt;语法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I1&lt;/span&gt;&amp;#123;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Method&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s&lt;/span&gt;)&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I2&lt;/span&gt;&amp;#123;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Method&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s&lt;/span&gt;)&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyClass&lt;/span&gt;:&lt;span class=&#34;title&#34;&gt;I1&lt;/span&gt;,&lt;span class=&#34;title&#34;&gt;I2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I1.Method&lt;/span&gt;(&lt;span class=&#34;title&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;s&lt;/span&gt;)&amp;#123;...&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; I2.Method(&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s)&amp;#123;...&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当以上面的方式来创建类中的方法时，仅能通过接口引用访问该方法，无法通过类的引用来访问，即使是同一个类中的方法也不行&lt;/li&gt;
+&lt;li&gt;针对以上问题，可以通过强制转换来进行，举个例子：&lt;code&gt;((I1)MyClass1).Method&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="csharp图解教程" />
+        <updated>2022-12-30T13:12:24.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/</id>
+        <title>Csharp读书笔记（六）-枚举与集合</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/"/>
+        <content type="html">&lt;h2 id=&#34;枚举&#34;&gt;&lt;a href=&#34;#枚举&#34; class=&#34;headerlink&#34; title=&#34;枚举&#34;&gt;&lt;/a&gt;枚举&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;枚举只允许几个特定的值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enum&lt;/code&gt;数据类型只允许某个数据取某些特定的值&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;enum&lt;/span&gt; Computers&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer1=&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;comment&#34;&gt;//不仅可以指定名称，还可以指定值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer2=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer3=&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;comment&#34;&gt;//这个逗号可以省略&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enum&lt;/code&gt;也是一种类型，每一项都可以当作参数传递，如&lt;code&gt;Computers.Computer1&lt;/code&gt;这样传递&lt;/li&gt;
+&lt;li&gt;枚举中的每一项都必须有名称，但不一定需要指定一个值&lt;/li&gt;
+&lt;li&gt;可以使用&lt;code&gt;.ToString()&lt;/code&gt;方法来获得任意一项的名称，使用强制转换获得其值&lt;/li&gt;
+&lt;li&gt;比如：&lt;code&gt;Computers.Computer1.ToString()&lt;/code&gt;得到string&lt;code&gt;Computer1&lt;/code&gt;,&lt;code&gt;(int)Computers.Computer1&lt;/code&gt;得到int&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也可以把int转换回去，例如&lt;code&gt;Computers computer0=(Computers)3;&lt;/code&gt;该代码会创建一个指向&lt;code&gt;Computer3&lt;/code&gt;的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;&lt;code&gt;computer0&lt;/code&gt;（因为等号右边的数字是3，回到&lt;code&gt;Computers&lt;/code&gt;中寻找值3，所对应的项为&lt;code&gt;Computer3&lt;/code&gt;)，于是&lt;code&gt;computer0.ToString()&lt;/code&gt;获得的就是string&lt;code&gt;Computer3&lt;/code&gt;了&lt;/li&gt;
+&lt;li&gt;如果没有为项指定值，那么C#会自动按照顺序赋值，第一项为0，以此类推&lt;/li&gt;
+&lt;li&gt;可以用&lt;code&gt;:&lt;/code&gt;指定所需要的类型，例如&lt;code&gt;enum Computers:long&lt;/code&gt;这样就可以为其中的项指定非常大的值了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;集合&#34;&gt;&lt;a href=&#34;#集合&#34; class=&#34;headerlink&#34; title=&#34;集合&#34;&gt;&lt;/a&gt;集合&lt;/h2&gt;&lt;h3 id=&#34;列表与数组&#34;&gt;&lt;a href=&#34;#列表与数组&#34; class=&#34;headerlink&#34; title=&#34;列表与数组&#34;&gt;&lt;/a&gt;列表与数组&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/&#34; title=&#34;数组&#34;&gt;数组&lt;/a&gt;都有一个长度，它是固定的，需要手动调整长度&lt;/li&gt;
+&lt;li&gt;不能直接移动数组的元素&lt;/li&gt;
+&lt;li&gt;可以使用集合来存储数据，就可以避免以上两个问题&lt;/li&gt;
+&lt;li&gt;常用的集合是&lt;code&gt;List&amp;lt;T&amp;gt;&lt;/code&gt;，&lt;code&gt;&amp;lt;T&amp;gt;&lt;/code&gt;表示类型，把类型放在尖括号中间&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;.Add()&lt;/code&gt;可以添加集合中的项目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;没有大小限制，它会动态调整大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;有&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;多态&#34;&gt;多态&lt;/a&gt;性，也就是可以添加接口、抽象类、基类等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;List的使用&#34;&gt;&lt;a href=&#34;#List的使用&#34; class=&#34;headerlink&#34; title=&#34;List的使用&#34;&gt;&lt;/a&gt;List的使用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Contains()&lt;/code&gt;可以检查是否有特定元素，括号内写上需要查找的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.IndexOf()&lt;/code&gt;可以获取特定元素的索引，括号内写上需要查找的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Remove()&lt;/code&gt;可以删除元素，括号内写上需要删除的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.RemoveAt()&lt;/code&gt;可以删除元素，括号内写上需要删除元素的索引号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;本身也是一个对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;foreach循环&#34;&gt;&lt;a href=&#34;#foreach循环&#34; class=&#34;headerlink&#34; title=&#34;foreach循环&#34;&gt;&lt;/a&gt;&lt;code&gt;foreach&lt;/code&gt;循环&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;foreach&lt;/code&gt;可以对list中每个对象执行语句，&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/&#34; title=&#34;数组&#34;&gt;数组&lt;/a&gt;也可以这么用&lt;/li&gt;
+&lt;li&gt;注意，使用&lt;code&gt;foreach&lt;/code&gt;时不能修改这个集合，也就是不能使用该list对应的&lt;code&gt;.Remove()&lt;/code&gt;等方法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.ToList()&lt;/code&gt;可以创建副本并赋值给新的变量&lt;/li&gt;
+&lt;li&gt;使用foreach就是在使用&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;以下代码实现的效果完全相同&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; (Duck duck &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; ducks)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Console.WriteLine(duck);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//上下两种方式实现的效果完全相同&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IEnumerator&amp;lt;Duck&amp;gt; enumerator = ducks.GetEnumerator();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; (enumerator.MoveNext())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Console.WriteLine(enumerator.Current);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IDisposable disposable = enumerator &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; IDisposable;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (disposable != &lt;span class=&#34;literal&#34;&gt;null&lt;/span&gt;) disposable.Dispose();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;集合初始化方法&#34;&gt;&lt;a href=&#34;#集合初始化方法&#34; class=&#34;headerlink&#34; title=&#34;集合初始化方法&#34;&gt;&lt;/a&gt;集合初始化方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;可以用集合初始化方法来提供初始数据项列表&lt;/li&gt;
+&lt;li&gt;直接在创建列表后面添加大括号，各个初始项中使用逗号隔开&lt;/li&gt;
+&lt;li&gt;可以包含new创建的对象，还可以包含变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;集合的排序&#34;&gt;&lt;a href=&#34;#集合的排序&#34; class=&#34;headerlink&#34; title=&#34;集合的排序&#34;&gt;&lt;/a&gt;集合的排序&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Sort()&lt;/code&gt;可以使列表中的所有项重新有序排列，它已经知道如何重排大部分类型&lt;/li&gt;
+&lt;li&gt;有两种排序方法，分别是&lt;code&gt;CompareTo()&lt;/code&gt;和实现&lt;code&gt;IComparer&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;排序1：使用CompareTo-方法&#34;&gt;&lt;a href=&#34;#排序1：使用CompareTo-方法&#34; class=&#34;headerlink&#34; title=&#34;排序1：使用CompareTo()方法&#34;&gt;&lt;/a&gt;排序1：使用&lt;code&gt;CompareTo()&lt;/code&gt;方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Sort()&lt;/code&gt;知道如何对实现了&lt;code&gt;IComparable&amp;lt;T&amp;gt;&lt;/code&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;接口&#34;&gt;接口&lt;/a&gt;的类排序&lt;/li&gt;
+&lt;li&gt;该接口只有一个成员，是&lt;code&gt;CompareTo()&lt;/code&gt;方法，传入一个要比较的对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CompareTo()&lt;/code&gt;方法会返回一个int值，该方法传入一个要比较的对象x，它把传入的对象与当前对象y（也就是该方法所在的对象）比较，如果x应排在y后面（也就是x&amp;gt;y）则返回正数，反之则返回负数。如果比较相同，则返回0。（如果你实现了正向排列，想要倒序排列，只需在调换正负数的位置即可）&lt;/li&gt;
+&lt;li&gt;实现接口后，直接使用&lt;code&gt;.Sort()&lt;/code&gt;即可排序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;排序2：新建一个实现了IComparable的类&#34;&gt;&lt;a href=&#34;#排序2：新建一个实现了IComparable的类&#34; class=&#34;headerlink&#34; title=&#34;排序2：新建一个实现了IComparable&amp;lt;T&amp;gt;的类&#34;&gt;&lt;/a&gt;排序2：新建一个实现了&lt;code&gt;IComparable&amp;lt;T&amp;gt;&lt;/code&gt;的类&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以向&lt;code&gt;.Sort()&lt;/code&gt;传入一个实现了&lt;code&gt;IComparer&amp;lt;T&amp;gt;&lt;/code&gt;接口的实例&lt;/li&gt;
+&lt;li&gt;该接口有一个&lt;code&gt;Compare()&lt;/code&gt;方法，传入两个要比较的对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compare()&lt;/code&gt;方法会返回一个int值，该方法传入两个要比较的对象（假设它们是x,y），它把传入的两个对象比较，如果x应排在y后面（x&amp;gt;y），则返回正数，反之则返回负数。如果比较相同，则返回0。（如果你实现了正向排列，想要倒序排列，只需在调换正负数的位置即可）&lt;/li&gt;
+&lt;li&gt;实现接口后，先实例化这个新比较类，然后调用list对象的&lt;code&gt;.Sort()&lt;/code&gt;，把新的实例填到括号内，即可比较&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;多种排序方式&#34;&gt;&lt;a href=&#34;#多种排序方式&#34; class=&#34;headerlink&#34; title=&#34;多种排序方式&#34;&gt;&lt;/a&gt;多种排序方式&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以用第二种方式写不同的比较类，只要填入不同排序类，就可以以不同的方式排序&lt;/li&gt;
+&lt;li&gt;注意，以上两种方法可以共存。共存时，&lt;code&gt;.Sort()&lt;/code&gt;括号内可以不写，也可以填入比较类，此时会执行比较类中的方法（不会执行CompareTo）&lt;/li&gt;
+&lt;li&gt;也就是说，第二种方式有更大的灵活性！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ToString-方法&#34;&gt;&lt;a href=&#34;#ToString-方法&#34; class=&#34;headerlink&#34; title=&#34;ToString()方法&#34;&gt;&lt;/a&gt;ToString()方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每一个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;对象&#34;&gt;对象&lt;/a&gt;都有一个ToString()方法，把对象转换为一个字符串&lt;/li&gt;
+&lt;li&gt;使用+操作符会自动调用该方法，调试工具中的监视也用到了这个方法&lt;/li&gt;
+&lt;li&gt;它默认返回类名，但是我们可以覆盖它，让它返回不同的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;列表的向上强制转换&#34;&gt;&lt;a href=&#34;#列表的向上强制转换&#34; class=&#34;headerlink&#34; title=&#34;列表的向上强制转换&#34;&gt;&lt;/a&gt;列表的向上强制转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;列表的向上强制转换称作协变&lt;/li&gt;
+&lt;li&gt;实现了&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;接口的类才可以向上强制转换&lt;/li&gt;
+&lt;li&gt;使用该接口引用即可转换&lt;code&gt;IEnumerable&amp;lt;BaseClass&amp;gt; upcastBaseClasses = subclasses&lt;/code&gt;，这里subclasses即子类的列表，这个子类实现了IEnumerable&lt;/li&gt;
+&lt;li&gt;强制转换后，可以用&lt;code&gt;AddRange&lt;/code&gt;把内容添加到另一个列表中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;重载&#34;&gt;&lt;a href=&#34;#重载&#34; class=&#34;headerlink&#34; title=&#34;重载&#34;&gt;&lt;/a&gt;重载&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;重载即有多个参数不同的同名方法&lt;/li&gt;
+&lt;li&gt;直接写两个同名方法，即可使用重载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;IEnumerable&#34;&gt;&lt;a href=&#34;#IEnumerable&#34; class=&#34;headerlink&#34; title=&#34;IEnumerable&#34;&gt;&lt;/a&gt;IEnumerable&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;这个接口表示实现了任何集合，不止是List或数组&lt;/li&gt;
+&lt;li&gt;用于&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;强制转换&#34;&gt;强制转换&lt;/a&gt;、&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;foreach循环&#34;&gt;foreach循环&lt;/a&gt;等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;字典&#34;&gt;&lt;a href=&#34;#字典&#34; class=&#34;headerlink&#34; title=&#34;字典&#34;&gt;&lt;/a&gt;字典&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;字典可以将两个东西关联起来，形成一组&lt;/li&gt;
+&lt;li&gt;前一个叫键，后一个叫值&lt;/li&gt;
+&lt;li&gt;任何类型都可以！&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Add(key,value)&lt;/code&gt;可以添加一个项目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.ContainKey(key)&lt;/code&gt;可以返回是否有这个键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dict[key]&lt;/code&gt;可以获得键对应的值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Remove(key)&lt;/code&gt;可以移除一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;foreach(string key in myDict.Keys)&lt;/code&gt;可以遍历键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Count()&lt;/code&gt;可以获得项目数量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;更多集合类型——按顺序处理&#34;&gt;&lt;a href=&#34;#更多集合类型——按顺序处理&#34; class=&#34;headerlink&#34; title=&#34;更多集合类型——按顺序处理&#34;&gt;&lt;/a&gt;更多集合类型——按顺序处理&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常用的按照顺序处理的集合是queue和stack&lt;/li&gt;
+&lt;li&gt;queue类型表示先处理早提交的对象&lt;/li&gt;
+&lt;li&gt;stack则相反，先处理最后提交的对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;queue&#34;&gt;&lt;a href=&#34;#queue&#34; class=&#34;headerlink&#34; title=&#34;queue&#34;&gt;&lt;/a&gt;queue&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Enqueue()&lt;/code&gt;向queue中添加一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Peek()&lt;/code&gt;允许查看第一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Dequeue()&lt;/code&gt;允许取出第一项，将后面的对象上移到空出来的位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Count&lt;/code&gt;,&lt;code&gt;.Clear()&lt;/code&gt;与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;list&#34;&gt;list&lt;/a&gt;类似&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;stack&#34;&gt;&lt;a href=&#34;#stack&#34; class=&#34;headerlink&#34; title=&#34;stack&#34;&gt;&lt;/a&gt;stack&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以推入、弹出对象&lt;/li&gt;
+&lt;li&gt;添加时用&lt;code&gt;.Push()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;取出时用&lt;code&gt;.Pop()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Peek()&lt;/code&gt;类似queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;互相转换&#34;&gt;&lt;a href=&#34;#互相转换&#34; class=&#34;headerlink&#34; title=&#34;互相转换&#34;&gt;&lt;/a&gt;互相转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;list,queue,stack可以相互转换&lt;/li&gt;
+&lt;li&gt;比如下面这样做&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Queue&amp;lt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt;&amp;gt; myQueue=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Queue&amp;lt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt;&amp;gt;(mystack);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-02-11T04:02:27.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/</id>
+        <title>Csharp读书笔记（五）-接口与抽象类</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+        <content type="html">&lt;h2 id=&#34;接口&#34;&gt;&lt;a href=&#34;#接口&#34; class=&#34;headerlink&#34; title=&#34;接口&#34;&gt;&lt;/a&gt;接口&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口告诉类&lt;strong&gt;必须&lt;/strong&gt;实现某些方法和&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;属性&#34;&gt;属性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果没有实现，编译器会报错&lt;/li&gt;
+&lt;li&gt;接口可以定义一个类中必须有的方法，这样一个类只要实现接口，就可以做特定的事情&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;interface&lt;/code&gt;关键字定义接口&lt;/li&gt;
+&lt;li&gt;接口不能添加任何&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;，因为它不存储数据（但是可以包含&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;属性&#34;&gt;属性&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;命名规范：接口名称以&lt;code&gt;I&lt;/code&gt;开头&lt;/li&gt;
+&lt;li&gt;只需要在接口中添加方法名和参数，因为接口不做任何事情&lt;/li&gt;
+&lt;li&gt;接口中的所有方法都是抽象方法，不能有方法体 ^bbfa07&lt;/li&gt;
+&lt;li&gt;一个类只能继承一个类，但可以实现多个接口 ^018e94&lt;/li&gt;
+&lt;li&gt;不可以实例化接口，不过可以引用接口&lt;/li&gt;
+&lt;li&gt;接口就像清单，指出一个类可以做些什么事情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;为什么使用接口？&#34;&gt;&lt;a href=&#34;#为什么使用接口？&#34; class=&#34;headerlink&#34; title=&#34;为什么使用接口？&#34;&gt;&lt;/a&gt;&lt;em&gt;为什么使用接口？&lt;/em&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口并不是为了避免重复代码，&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;继承&#34;&gt;继承&lt;/a&gt;才是&lt;/li&gt;
+&lt;li&gt;如果有&lt;strong&gt;一件事&lt;/strong&gt;，&lt;strong&gt;多个类&lt;/strong&gt;都能实现，你需要这样一个类作为&lt;strong&gt;参数&lt;/strong&gt;，但&lt;strong&gt;不希望继承&lt;/strong&gt;时（比如你觉得根本用不到那些东西，&lt;strong&gt;不想让子类继承基类的方法和属性&lt;/strong&gt;），这时你无法用继承中的基类来作为参数，那么使用接口，就可以知道：&lt;strong&gt;只要类实现了这个接口，它就能做这件事，可以作为参数使用，而不必知道它到底是什么类型&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果有&lt;strong&gt;多件事&lt;/strong&gt;，&lt;strong&gt;一个类&lt;/strong&gt;能实现它们，这时&lt;strong&gt;无法使用&lt;/strong&gt;继承（&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;只能继承一个类&#34;&gt;只能继承一个类&lt;/a&gt;），就需要使用接口&lt;/li&gt;
+&lt;li&gt;继承只是给类“&lt;strong&gt;分层&lt;/strong&gt;”（减少重复），接口则可以给类“&lt;strong&gt;分类&lt;/strong&gt;”（可以&lt;strong&gt;规定这个类可以干什么&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;也就是说，当继承给你的类增加太多“负担”时，就应该考虑使用接口&lt;/li&gt;
+&lt;li&gt;举个例子，假设你有一个电器类，很多类都继承了它，比如电脑、电视、冰箱……但是现在你想要用一个可以处理食物的类作为参数（比如面包机、烤箱、微波炉……），这时无法使用继承（因为你只能继承一个类），就需要编写一个可处理食物的接口，把要用到的方法属性放进去，在可处理食物的类中实现这个接口，把参数改成这样一个接口引用，就可以解决这个问题&lt;/li&gt;
+&lt;li&gt;C#&lt;strong&gt;拒绝继承多个类&lt;/strong&gt;，并通过接口提供&lt;strong&gt;保护&lt;/strong&gt;，这是为了&lt;strong&gt;避免二义性&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;二义性：当两个类&lt;strong&gt;分别继承一个基类&lt;/strong&gt;，并且重写了基类中的同一个方法，这时如果允许继承多个类（这称为多重继承），那么&lt;strong&gt;继承这两个类的子类&lt;/strong&gt;调用该方法（假设子类没有重写）时应该调用哪个方法？这就会出现问题：子类&lt;strong&gt;不知道应该调用哪个方法&lt;/strong&gt;，因为继承了&lt;strong&gt;两个同名的不同方法&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;这也被称作“致命的死亡菱形”（如果[[Csharp&amp;#x2F;Csharp读书笔记&amp;#x2F;Csharp读书笔记（一）-对象与引用#创建类图|画出类图]]，会发现这像一个菱形）&lt;/li&gt;
+&lt;li&gt;所以C#&lt;strong&gt;通过接口提供保护&lt;/strong&gt;，接口并没有方法体（它不做任何事情），因为它没有方法体，所以一个类可以实现多个接口，即使接口中有同名方法，这个类也&lt;strong&gt;只能实现这一个方法&lt;/strong&gt;，避免了二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;接口引用&#34;&gt;&lt;a href=&#34;#接口引用&#34; class=&#34;headerlink&#34; title=&#34;接口引用&#34;&gt;&lt;/a&gt;接口引用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口引用与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;对象引用&#34;&gt;对象引用&lt;/a&gt;类似，可以保持一个类不被垃圾回收&lt;/li&gt;
+&lt;li&gt;可以移动接口引用，就像移动标签一样&lt;/li&gt;
+&lt;li&gt;一个类需要实现这个接口，才能添加该接口引用&lt;/li&gt;
+&lt;li&gt;使用接口引用访问类时，&lt;strong&gt;只能&lt;/strong&gt;访问该接口引用所&lt;strong&gt;对应的方法和属性&lt;/strong&gt; ^46c854&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;类与接口的强制转换&#34;&gt;&lt;a href=&#34;#类与接口的强制转换&#34; class=&#34;headerlink&#34; title=&#34;类与接口的强制转换&#34;&gt;&lt;/a&gt;类与接口的强制转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;可以使用&lt;code&gt;is&lt;/code&gt;关键字来查看一个类是否实现了这个接口&lt;/li&gt;
+&lt;li&gt;可以用&lt;code&gt;as&lt;/code&gt;关键字来把一个类看成实现了这个接口（前提是使用&lt;code&gt;is&lt;/code&gt;找出这个类确实实现了）&lt;/li&gt;
+&lt;li&gt;为什么使用as：有时候，C#并不知道一个类实现了一个接口（&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;使用了其他接口引用&#34;&gt;使用了其他接口引用&lt;/a&gt;），所以使用is之后还要让C#认为它确实实现了&lt;/li&gt;
+&lt;li&gt;举例： ^537c57&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//这里仅给出核心代码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IComputer[] computers=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; IComputer[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;];&lt;span class=&#34;comment&#34;&gt;//假设有一个叫做IComputer的接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Windows();&lt;span class=&#34;comment&#34;&gt;//假设Windows,Mac,Linux类实现了IComputer接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Mac();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Linux();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;i&amp;lt;computers.Length;i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(computers[i] &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; IServer)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; IServer myserver;&lt;span class=&#34;comment&#34;&gt;//IServer是一个假设的新接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; myserver=computers[i] &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; IServer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;//使用as，就能够让C#把这个对象看成实现了IServer,就可以使用IServer中的方法和属性了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; myserver.Run();&lt;span class=&#34;comment&#34;&gt;//假设IServer中有一个Run()方法，只有使用了as才能够使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在上面的例子中，C#知道computers数组中的类都实现了IComputer（因为这是个IComputer接口的数组），所以&lt;strong&gt;只能调用这些类中IComputer接口中包含的方法和属性&lt;/strong&gt;（可以把接口看作一个清单，这里&lt;strong&gt;只能调用清单中的内容&lt;/strong&gt;），而当使用&lt;code&gt;is&lt;/code&gt;关键字找出这个类确实实现了IServer接口时，C#&lt;strong&gt;仍然不认为&lt;/strong&gt;它实现了IServer（因为你根本没有告诉它这么认为，只是让他&lt;strong&gt;检查&lt;/strong&gt;了这个“清单”是否与类匹配，这是&lt;code&gt;is&lt;/code&gt;关键字所做的），所以你需要使用&lt;code&gt;as&lt;/code&gt;关键字，这样C#就会认为&lt;strong&gt;它确实实现了IServer&lt;/strong&gt;，就&lt;strong&gt;可以（且只能）调用IServer中的方法、属性了&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;由子类代替基类时，这称为向上强制转换&lt;/li&gt;
+&lt;li&gt;由基类代替子类时，这叫做向下强制转换&lt;/li&gt;
+&lt;li&gt;接口也可以这么做（上面的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;举例&#34;&gt;举例&lt;/a&gt;就是一个接口向下强制转换的例子）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;接口的继承&#34;&gt;&lt;a href=&#34;#接口的继承&#34; class=&#34;headerlink&#34; title=&#34;接口的继承&#34;&gt;&lt;/a&gt;接口的继承&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口可以继承其他接口&lt;/li&gt;
+&lt;li&gt;实现继承其他接口的接口时，&lt;strong&gt;必须&lt;/strong&gt;实现&lt;strong&gt;所有&lt;/strong&gt;继承的接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;访问修饰符&#34;&gt;&lt;a href=&#34;#访问修饰符&#34; class=&#34;headerlink&#34; title=&#34;访问修饰符&#34;&gt;&lt;/a&gt;访问修饰符&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;public表示任何其他类都可以访问&lt;/li&gt;
+&lt;li&gt;private表示只有该类中的成员及该类的&lt;strong&gt;其他实例&lt;/strong&gt;可以访问&lt;/li&gt;
+&lt;li&gt;protected表示对于该类的其他成员来说相当于private，而对于子类来说是public，也就是说子类成员可以访问子类成员及任何基类成员（注意：基类声明为protected后，无需使用base也可以访问基类中的公共类型）&lt;/li&gt;
+&lt;li&gt;internal表示只能从程序集或子类访问&lt;/li&gt;
+&lt;li&gt;sealed表示不能继承该类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;抽象类&#34;&gt;&lt;a href=&#34;#抽象类&#34; class=&#34;headerlink&#34; title=&#34;抽象类&#34;&gt;&lt;/a&gt;抽象类&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;抽象类不能实例化&lt;/li&gt;
+&lt;li&gt;有时候，你想在一个类中完成一部分代码，在子类中再完成其余部分，于是基类根本不应该被实例化（它并不能工作——因为你没有完成它），这时应该使用抽象类，防止你不小心创建了本不应该创建的实例&lt;/li&gt;
+&lt;li&gt;比如说，一个方法需要一个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;来计算，但是在基类中不想设置它的值，想在子类中设置，这时基类是不完整的，它无法计算，所以设置为抽象类，防止误实例化&lt;/li&gt;
+&lt;li&gt;可以在抽象类中添加抽象方法，也可以有具体方法，这与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;接口&#34;&gt;接口&lt;/a&gt;不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;面向对象的设计原则&#34;&gt;&lt;a href=&#34;#面向对象的设计原则&#34; class=&#34;headerlink&#34; title=&#34;面向对象的设计原则&#34;&gt;&lt;/a&gt;面向对象的设计原则&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;继承&#34;&gt;继承&lt;/a&gt;：一个类或一个接口继承另一个&lt;/li&gt;
+&lt;li&gt;抽象：建立一个类模型，首先时比较一般的类，然后继承的是更特殊的类，也就是由一般（基类）到特殊（子类）的过程&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;封装&#34;&gt;封装&lt;/a&gt;：创建一个对象，使用私有字段在内部记录其状态，通过公共属性、方法使其他类只能使用需要的数据以防止错误&lt;/li&gt;
+&lt;li&gt;多态：将一个对象用于需要其他对象的方法或语句，比如&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;类与接口的强制转换&#34;&gt;类与接口的强制转换&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-26T12:45:53.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/</id>
+        <title>Csharp读书笔记（四）-继承</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/"/>
+        <content type="html">&lt;h2 id=&#34;继承&#34;&gt;&lt;a href=&#34;#继承&#34; class=&#34;headerlink&#34; title=&#34;继承&#34;&gt;&lt;/a&gt;继承&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;继承可以构建彼此关联且有共同行为的类&lt;/li&gt;
+&lt;li&gt;被继承的叫做基类&lt;/li&gt;
+&lt;li&gt;继承别人的叫做子类&lt;/li&gt;
+&lt;li&gt;类图中，箭头由子类指向基类&lt;/li&gt;
+&lt;li&gt;沿着类图上行，可以发现类的相同特征越少&lt;/li&gt;
+&lt;li&gt;沿着类图下行，可以发现类的相同特征越多&lt;/li&gt;
+&lt;li&gt;这就好像生物的分类——界门科目纲属种&lt;/li&gt;
+&lt;li&gt;使用冒号可以继承一个基类&lt;/li&gt;
+&lt;li&gt;一个类只允许继承一个类，这是一种保护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;合并两个类&#34;&gt;&lt;a href=&#34;#合并两个类&#34; class=&#34;headerlink&#34; title=&#34;合并两个类&#34;&gt;&lt;/a&gt;合并两个类&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;首先&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;创建类图&#34;&gt;创建类图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;找出两个类相同的字段与方法&lt;/li&gt;
+&lt;li&gt;把相同的放到一个基类中去&lt;/li&gt;
+&lt;li&gt;把不同的放在子类，要[[#覆盖]]的也需要写入&lt;/li&gt;
+&lt;li&gt;画上子类指向基类的箭头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;覆盖&#34;&gt;&lt;a href=&#34;#覆盖&#34; class=&#34;headerlink&#34; title=&#34;覆盖&#34;&gt;&lt;/a&gt;覆盖&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;在子类中，可以覆盖基类的方法&lt;/li&gt;
+&lt;li&gt;举例，狗和猫都是动物，但是叫声不同，创建这样的类时，可以把Animal作为基类，Dog&amp;#x2F;Cat作为子类，在子类中覆盖Animal类的发出叫声的方法&lt;/li&gt;
+&lt;li&gt;执行顺序：对于C#，执行方法时总是先从基类中寻找，如果在该子类中找不到，会沿着类图上行，一个个寻找，直到找到对应的方法 ^7e9264&lt;/li&gt;
+&lt;li&gt;被覆盖的方法添加&lt;code&gt;virtual&lt;/code&gt;关键字&lt;/li&gt;
+&lt;li&gt;要覆盖别人的方法添加&lt;code&gt;override&lt;/code&gt;关键字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;隐藏的方法&#34;&gt;&lt;a href=&#34;#隐藏的方法&#34; class=&#34;headerlink&#34; title=&#34;隐藏的方法&#34;&gt;&lt;/a&gt;隐藏的方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果不添加这些关键字，则不会覆盖方法，而是隐藏了基类中的方法&lt;/li&gt;
+&lt;li&gt;隐藏会导致产生两个同名的方法 ^b0994f&lt;/li&gt;
+&lt;li&gt;在隐藏方法时，需要为子类中的方法添加&lt;code&gt;new&lt;/code&gt;关键字&lt;/li&gt;
+&lt;li&gt;如果隐藏了方法，调用时会根据&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;来执行，也就是调用对应引用类型的方法&lt;/li&gt;
+&lt;li&gt;如果调用了一个&lt;strong&gt;子类引用&lt;/strong&gt;中该子类&lt;strong&gt;对应基类&lt;/strong&gt;中的方法，且&lt;strong&gt;该方法&lt;/strong&gt;中调用了另一个&lt;strong&gt;隐藏的方法&lt;/strong&gt;（有两个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;同名方法&#34;&gt;同名方法&lt;/a&gt;），则会执行&lt;strong&gt;对应基类&lt;/strong&gt;中的隐藏方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承的用法&#34;&gt;&lt;a href=&#34;#继承的用法&#34; class=&#34;headerlink&#34; title=&#34;继承的用法&#34;&gt;&lt;/a&gt;继承的用法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;对于传递一个类的参数，如果该参数需要一个基类，则不仅可以传递该基类，还可以传递它的子类（任何一个都可以）&lt;/li&gt;
+&lt;li&gt;传递后，只能使用对应传递的类中的内容&lt;/li&gt;
+&lt;li&gt;比如传递一个基类，就不能使用它的子类的内容&lt;/li&gt;
+&lt;li&gt;传递一个子类，也&lt;strong&gt;不能&lt;/strong&gt;使用&lt;strong&gt;对应基类&lt;/strong&gt;的&lt;strong&gt;其他子类&lt;/strong&gt;中的内容&lt;/li&gt;
+&lt;li&gt;子类可以使用&lt;code&gt;base&lt;/code&gt;关键字访问基类中的方法，即使它们被覆盖了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承中的&#34;&gt;&lt;a href=&#34;#继承中的&#34; class=&#34;headerlink&#34; title=&#34;继承中的&#34;&gt;&lt;/a&gt;继承中的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;构造函数&#34;&gt;构造函数&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果基类中有带参数的构造函数，则在子类中也必须调用其中一个&lt;/li&gt;
+&lt;li&gt;但是，子类的构造函数与基类的构造函数可以有不同参数&lt;/li&gt;
+&lt;li&gt;构造函数执行时，会从基类开始，沿着类图下行依次执行（这和&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;覆盖的执行顺序&#34;&gt;覆盖的执行顺序&lt;/a&gt;正好相反）&lt;/li&gt;
+&lt;li&gt;举例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyBase&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyBase&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number1&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Console.WriteLine(number1);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MySub&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MySub&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number1,&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number2&lt;/span&gt;):&lt;span class=&#34;title&#34;&gt;base&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;number1&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Console.WriteLine(number2);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//output: number1 number2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;知识拓展&#34;&gt;&lt;a href=&#34;#知识拓展&#34; class=&#34;headerlink&#34; title=&#34;知识拓展&#34;&gt;&lt;/a&gt;知识拓展&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;让类尽可能减少重叠，这是一个重要的设计原则，称作关注点分离&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;String.IsNullOrEmpty()&lt;/code&gt;可以检测一个字符串是否为空（即&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;）或&lt;code&gt;null&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-24T12:45:39.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/</id>
+        <title>Csharp读书笔记（三）-封装</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/"/>
+        <content type="html">&lt;h2 id=&#34;封装&#34;&gt;&lt;a href=&#34;#封装&#34; class=&#34;headerlink&#34; title=&#34;封装&#34;&gt;&lt;/a&gt;封装&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;封装保证类中一些数据是私有的&lt;/li&gt;
+&lt;li&gt;私有字段、方法只能在类内部访问，使用关键字&lt;code&gt;private&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;封装可以避免不必要的错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;属性&#34;&gt;&lt;a href=&#34;#属性&#34; class=&#34;headerlink&#34; title=&#34;属性&#34;&gt;&lt;/a&gt;属性&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;属性对于其他对象来说就是&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;可以通过属性获取或设置一个后备字段&lt;/li&gt;
+&lt;li&gt;属性首字母大写，后备字段应小写&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;属性的好处：在获取或设置时可以执行一些语句（比如设置一些有关的字段），防止直接更改字段导致逻辑计算错误&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;获取&lt;code&gt;get&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置&lt;code&gt;set&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每个&lt;code&gt;set&lt;/code&gt;都有一个名为&lt;code&gt;value&lt;/code&gt;的参数，获取的是设置的值&lt;/li&gt;
+&lt;li&gt;可以只设置&lt;code&gt;get&lt;/code&gt;或&lt;code&gt;set&lt;/code&gt;中的一个&lt;/li&gt;
+&lt;li&gt;举例：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; numberOfComputers;&lt;span class=&#34;comment&#34;&gt;//这是一个后备字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; displays;&lt;span class=&#34;comment&#34;&gt;//这是另一个字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; NumberOfComputers&lt;span class=&#34;comment&#34;&gt;//这是一个属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;get&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; numberOfComputers;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  numberOfComputers = &lt;span class=&#34;keyword&#34;&gt;value&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//设置后备字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  displays = &lt;span class=&#34;keyword&#34;&gt;value&lt;/span&gt;*&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;comment&#34;&gt;/*举例，每台电脑需要2个显示器，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *这样封装可以防止直接从外部&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *修改displays，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *而外部代码可能发生错误导致dispalys不是2倍&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *这就避免了不必要的错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在窗体应用执行&lt;code&gt;Console.WriteLine()&lt;/code&gt;时，输出显示在&lt;code&gt;output&lt;/code&gt;窗口&lt;/li&gt;
+&lt;li&gt;输入&lt;code&gt;prop&lt;/code&gt;，再按下tab，会向代码中添加一个自动属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;构造函数&#34;&gt;&lt;a href=&#34;#构造函数&#34; class=&#34;headerlink&#34; title=&#34;构造函数&#34;&gt;&lt;/a&gt;构造函数&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;构造函数会在类创建时执行&lt;/li&gt;
+&lt;li&gt;构造函数没有返回值&lt;/li&gt;
+&lt;li&gt;添加构造函数时，需要添加一个与类同名的方法，但是没有返回值&lt;/li&gt;
+&lt;li&gt;构造函数可以用来在创建&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;实例&#34;&gt;实例&lt;/a&gt;时为私有变量指定值&lt;/li&gt;
+&lt;li&gt;当然也可以做更多事情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识拓展&#34;&gt;&lt;a href=&#34;#知识拓展&#34; class=&#34;headerlink&#34; title=&#34;知识拓展&#34;&gt;&lt;/a&gt;知识拓展&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;方法的第一行包含存取修饰符、返回值、名字和参数，这些称之为签名&lt;/li&gt;
+&lt;li&gt;属性也有签名&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-23T12:45:22.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/</id>
+        <title>Csharp读书笔记（二）-数组</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/"/>
+        <content type="html">&lt;h2 id=&#34;数组&#34;&gt;&lt;a href=&#34;#数组&#34; class=&#34;headerlink&#34; title=&#34;数组&#34;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;数组是一组变量，可以存储和修改多个数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建数组时，需要指定类型、名称和元素数量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可以为&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;创建数组，但是创建时只会创建引用变量，不会创建实例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;必须分别为每一个对象创建实例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数组的索引是从0开始的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;比如，创建一个元素数量为6的int数组，&lt;code&gt;int[] numbers=new int[6]&lt;/code&gt;，此时访问&lt;code&gt;numbers[5]&lt;/code&gt;，这时获取的元素为第6个&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Random&lt;/code&gt;类可以随机生成数字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用时，先创建实例，再使用&lt;code&gt;Next()&lt;/code&gt;方法，举例：调用&lt;code&gt;GetRandom()&lt;/code&gt;时，以下代码会返回一个9到100间的随机整数&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; Random Randomizer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;GetRandom&lt;/span&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt;(Randomizer.Next(&lt;span class=&#34;number&#34;&gt;9&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对价格使用decimal类型时，要在值后面加上M&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-22T12:45:08.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/</id>
+        <title>Csharp读书笔记（一）-对象与引用</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/"/>
+        <content type="html">&lt;p&gt;这个系列是head first csharp书籍的读书笔记，总结提炼了一些C#的核心内容，以及自己的个人理解。&lt;/p&gt;
+&lt;h2 id=&#34;程序从哪里来&#34;&gt;&lt;a href=&#34;#程序从哪里来&#34; class=&#34;headerlink&#34; title=&#34;程序从哪里来&#34;&gt;&lt;/a&gt;程序从哪里来&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;IDE是一种方便的文件编辑器&lt;/li&gt;
+&lt;li&gt;.NET提供很多工具来帮助你完成任务&lt;/li&gt;
+&lt;li&gt;程序在CLR中运行&lt;/li&gt;
+&lt;li&gt;using语句让你可以使用其他命名空间中的类&lt;/li&gt;
+&lt;li&gt;命名空间包含类，类包含方法，方法由语句组成&lt;/li&gt;
+&lt;li&gt;方法前的类型指出了这个方法的返回值，方法后的括号中包含参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;对象&#34;&gt;&lt;a href=&#34;#对象&#34; class=&#34;headerlink&#34; title=&#34;对象&#34;&gt;&lt;/a&gt;对象&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;由一个类创建新对象时，称为这个类的一个实例 ^be690f&lt;/li&gt;
+&lt;li&gt;使用new关键字创建实例&lt;/li&gt;
+&lt;li&gt;静态类不用创建实例，但其他类需要创建实例才能使用&lt;/li&gt;
+&lt;li&gt;可以在类中包含静态方法，使用它们时不用创建实例&lt;/li&gt;
+&lt;li&gt;实例使用字段来跟踪其状态 ^52e61c&lt;/li&gt;
+&lt;li&gt;每个实例都会有自己的变量副本&lt;/li&gt;
+&lt;li&gt;创建对象时，会放在内存中的一个部分，称作堆&lt;/li&gt;
+&lt;li&gt;类图可以帮助你组织类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;创建类图&#34;&gt;&lt;a href=&#34;#创建类图&#34; class=&#34;headerlink&#34; title=&#34;创建类图&#34;&gt;&lt;/a&gt;创建类图&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;画一个矩形方框&lt;/li&gt;
+&lt;li&gt;在顶部写出字段&lt;/li&gt;
+&lt;li&gt;画一条横线&lt;/li&gt;
+&lt;li&gt;在下方写出方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;引用&#34;&gt;&lt;a href=&#34;#引用&#34; class=&#34;headerlink&#34; title=&#34;引用&#34;&gt;&lt;/a&gt;引用&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对象的一个引用叫做引用变量&lt;/li&gt;
+&lt;li&gt;引用像标签，可以通过标签找到对象&lt;/li&gt;
+&lt;li&gt;一个对象可以有多个引用，就像你可以给一个瓶子贴多个标签&lt;/li&gt;
+&lt;li&gt;引用可以移动&lt;/li&gt;
+&lt;li&gt;一个没有引用的对象会被垃圾回收&lt;/li&gt;
+&lt;li&gt;移动引用：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;myclass class1=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; myclass();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;myclass class2=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; myclass();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;class1=class2;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+&lt;p&gt;这样做把class2指向的myclass实例“赋值”给class1这个引用，&lt;br&gt;相当于把class2指向的myclass实例贴上了class1的标签，&lt;br&gt;也就是把class1的引用移动到class2上面，&lt;br&gt;这样原来class1指向的对象会被垃圾回收！  &lt;/p&gt;
+&lt;hr&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-21T12:44:44.000Z</updated>
+    </entry>
+</feed>

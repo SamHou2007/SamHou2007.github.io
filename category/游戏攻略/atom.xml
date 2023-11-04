@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.samhou.top</id>
+    <title>SamHou&#39;s blog • Posts by &#34;游戏攻略&#34; category</title>
+    <link href="https://blog.samhou.top" />
+    <updated>2023-08-08T11:09:18.000Z</updated>
+    <category term="winform" />
+    <category term="AI" />
+    <category term="csharp" />
+    <category term="csharp图解教程" />
+    <category term="hfc" />
+    <category term="窗口控制" />
+    <category term="焦点" />
+    <category term="obsidian" />
+    <category term="hexo" />
+    <category term="qnap" />
+    <category term="rss" />
+    <category term="Steam" />
+    <category term="手机游戏" />
+    <category term="电脑游戏" />
+    <category term="单机游戏" />
+    <category term="网络游戏" />
+    <category term="windows" />
+    <category term="UAC" />
+    <category term="小说" />
+    <category term="蔚蓝档案" />
+    <category term="科幻" />
+    <category term="任务计划程序" />
+    <category term="拖延症" />
+    <category term="学习方法" />
+    <category term="Bing" />
+    <entry>
+        <id>https://blog.samhou.top/%E3%80%8A%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%BB%8E%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%B8%B8%E7%8E%A9%E3%80%8B%E2%80%94%E2%80%94%E6%89%8B%E6%9C%BA%E5%9B%BD%E9%99%85%E6%9C%8D&amp;Steam%E7%AB%AF%E6%B8%B8%E5%AE%8C%E5%85%A8%E5%85%8D%E9%AD%94%E6%B3%95%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%94%BB%E7%95%A5/</id>
+        <title>《游戏：从下载到游玩》——手机国际服&amp;Steam端游完全免魔法攻略</title>
+        <link rel="alternate" href="https://blog.samhou.top/%E3%80%8A%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%BB%8E%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%B8%B8%E7%8E%A9%E3%80%8B%E2%80%94%E2%80%94%E6%89%8B%E6%9C%BA%E5%9B%BD%E9%99%85%E6%9C%8D&amp;Steam%E7%AB%AF%E6%B8%B8%E5%AE%8C%E5%85%A8%E5%85%8D%E9%AD%94%E6%B3%95%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%94%BB%E7%95%A5/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于很多人似乎对游玩Steam和手机国际服游戏存在障碍，因此笔者写了这篇文章，来帮助想要玩各种游戏的读者。此篇文章将包含以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Steam的下载&amp;#x2F;游玩攻略&amp;#x2F;常见问题&lt;/li&gt;
+&lt;li&gt;手机国际服如何下载&amp;#x2F;正常游玩&lt;/li&gt;
+&lt;li&gt;如何挑选一款性价比高的、合规有效的加速器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;观前提示（必看）&#34;&gt;&lt;a href=&#34;#观前提示（必看）&#34; class=&#34;headerlink&#34; title=&#34;观前提示（必看）&#34;&gt;&lt;/a&gt;观前提示（必看）&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;软件下载请认准&lt;strong&gt;官网&lt;/strong&gt;，建议使用的搜索引擎是必应(cn.bing.com)，注意搜索引擎前几条可能是广告！&lt;/li&gt;
+&lt;li&gt;本文&lt;strong&gt;没有任何广告&lt;/strong&gt;，推荐的软件&amp;#x2F;服务均为笔者自己使用，仅做参考，可自行寻找替代品&lt;/li&gt;
+&lt;li&gt;请关注评论区，若文章有误&amp;#x2F;更新会在评论中发布，也欢迎提问&amp;#x2F;质疑，但&lt;strong&gt;请先进行网络搜索&amp;#x2F;认真阅读后&lt;/strong&gt;再提问&lt;/li&gt;
+&lt;li&gt;以下使用缩写：STW(Search the web)表示搜索互联网自己找答案&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;如果有问题，优先STW，再向他人求助&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;选择一款合适的加速器&#34;&gt;&lt;a href=&#34;#选择一款合适的加速器&#34; class=&#34;headerlink&#34; title=&#34;选择一款合适的加速器&#34;&gt;&lt;/a&gt;选择一款合适的加速器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;加速器有什么用？顾名思义，它可以加速你与游戏服务器之间的网络连接速度&lt;/li&gt;
+&lt;li&gt;什么情况下需要加速器？Steam必备，国际服手游大部分必备，具体STW&lt;/li&gt;
+&lt;li&gt;在使用之前，先在b站内搜索评测视频（笔者没有评测过，链接也不放了，反正搜一下就有）&lt;/li&gt;
+&lt;li&gt;想玩手机游戏的，请选择一款多端通用加速器&lt;/li&gt;
+&lt;li&gt;大部分加速器对于Steam都是&lt;strong&gt;免费&lt;/strong&gt;的，可白嫖，比如笔者目前用的雷神、UU（限时）等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Steam&#34;&gt;&lt;a href=&#34;#Steam&#34; class=&#34;headerlink&#34; title=&#34;Steam&#34;&gt;&lt;/a&gt;Steam&lt;/h2&gt;&lt;h3 id=&#34;如何下载Steam？&#34;&gt;&lt;a href=&#34;#如何下载Steam？&#34; class=&#34;headerlink&#34; title=&#34;如何下载Steam？&#34;&gt;&lt;/a&gt;如何下载Steam？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先开加速器&lt;/li&gt;
+&lt;li&gt;打开网址：&lt;a href=&#34;https://store.steampowered.com/&#34;&gt;https://store.steampowered.com/&lt;/a&gt;,点击安装Steam&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！切勿在搜索引擎上自行搜索后随便点击错误的网址，否则你下载的Steam可能不是正版！请认准上面的官网&lt;/strong&gt;&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pPZPSpQ&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; alt=&#34;Steam商店&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上方的这才是Steam的图标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！存在问题的Steam可能导致盗号，尽量在自己的计算机上安装使用！安装前确认无病毒和间谍、流氓软件！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;接下来就是注册并使用了，傻瓜式的，不用多说，注意使用时全程需要加速器打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;怎么买游戏&#34;&gt;&lt;a href=&#34;#怎么买游戏&#34; class=&#34;headerlink&#34; title=&#34;怎么买游戏&#34;&gt;&lt;/a&gt;怎么买游戏&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;打开Steam的商店，直接搜游戏名称或者随便逛逛，然后买就行了&lt;/li&gt;
+&lt;li&gt;支付问题：支付宝付款时可能无法正常加载支付宝页面，此时可关闭加速器重试。（使用网页端购买，能够有刷新界面的选项，相比于客户端更优）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！不要相信低价商家提供的破解入库程序！曾经有Up主揭秘，有些号称正版激活码的，看似让你填写激活码，实际可能向你提供破解程序，假装成”激活助手“，然后注入Steam客户端，使用家庭共享来达到入库效果，这样非常容易封号！只有三种正规获取游戏方式：直接购买，激活码激活，朋友赠送&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;买游戏之前，先到steamdb上查一下历史价格，如果现在不打折可以等等，具体攻略STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;买游戏避坑&#34;&gt;&lt;a href=&#34;#买游戏避坑&#34; class=&#34;headerlink&#34; title=&#34;买游戏避坑&#34;&gt;&lt;/a&gt;买游戏避坑&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先看看评论，有些游戏可能单机模式也需要连接服务器，且需要加速器&lt;/li&gt;
+&lt;li&gt;评论是能很好反映游戏质量的，记得仔细看看&lt;/li&gt;
+&lt;li&gt;买之前先看看语言支持情况和硬件需求&lt;/li&gt;
+&lt;li&gt;如果能阅读英文，建议在设置里设置第二语言为英文，这样评论会多一些，并且游戏推荐也会更多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;手机-平板端国际服&#34;&gt;&lt;a href=&#34;#手机-平板端国际服&#34; class=&#34;headerlink&#34; title=&#34;手机&amp;#x2F;平板端国际服&#34;&gt;&lt;/a&gt;手机&amp;#x2F;平板端国际服&lt;/h2&gt;&lt;h3 id=&#34;安卓&#34;&gt;&lt;a href=&#34;#安卓&#34; class=&#34;headerlink&#34; title=&#34;安卓&#34;&gt;&lt;/a&gt;安卓&lt;/h3&gt;&lt;h4 id=&#34;谷歌三件套&#34;&gt;&lt;a href=&#34;#谷歌三件套&#34; class=&#34;headerlink&#34; title=&#34;谷歌三件套&#34;&gt;&lt;/a&gt;谷歌三件套&lt;/h4&gt;&lt;p&gt;在开始之前，你的手机&amp;#x2F;平板必须已经安装谷歌三件套，如果你不知道这是什么，请STW&lt;/p&gt;
+&lt;h4 id=&#34;游戏安装包获取（国际服无需Google-Play）&#34;&gt;&lt;a href=&#34;#游戏安装包获取（国际服无需Google-Play）&#34; class=&#34;headerlink&#34; title=&#34;游戏安装包获取（国际服无需Google Play）&#34;&gt;&lt;/a&gt;游戏安装包获取（国际服无需Google Play）&lt;/h4&gt;&lt;p&gt;请先STW，关键词“安卓手机端游戏应用商店”，下载一个合适的海外应用商店，目前笔者在用的是Qooapp，具体STW此处略去&lt;/p&gt;
+&lt;h4 id=&#34;怎么安装-遇到问题怎么办&#34;&gt;&lt;a href=&#34;#怎么安装-遇到问题怎么办&#34; class=&#34;headerlink&#34; title=&#34;怎么安装&amp;#x2F;遇到问题怎么办&#34;&gt;&lt;/a&gt;怎么安装&amp;#x2F;遇到问题怎么办&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;警告！安装外部来源安装包时，建议关闭含有“安全守护”，“增强纯净模式”等字眼的常见增强拦截功能以减少操作步骤（前提是你对安装包有信心），手机厂商可能会对某些安装包拦截&amp;#x2F;报毒，此时请检查安装包来源是否可信，一般大的应用商店不太会包含后门&amp;#x2F;病毒，可以放心忽略&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;无法登录怎么办？如果需要加速器，请打开对应加速功能，若还是不行，请查看加速器的答疑界面或联系客服，也可以STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;苹果&#34;&gt;&lt;a href=&#34;#苹果&#34; class=&#34;headerlink&#34; title=&#34;苹果&#34;&gt;&lt;/a&gt;苹果&lt;/h3&gt;&lt;p&gt;笔者个人不喜欢苹果，因此也没有苹果设备，笔者只知道苹果可以通过注册不同区域的Apple ID来下载游戏，此处攻略建议STW，常用关键词”&amp;lt;游戏名&amp;gt;+苹果国际服游玩教程“&lt;/p&gt;
+&lt;h2 id=&#34;作者的话&#34;&gt;&lt;a href=&#34;#作者的话&#34; class=&#34;headerlink&#34; title=&#34;作者的话&#34;&gt;&lt;/a&gt;作者的话&lt;/h2&gt;&lt;p&gt;其实没有一篇教程&amp;#x2F;攻略是完美的，这一篇也不例外。重要的是搜索与解决问题的能力，因此笔者在这里多次提到要STW，鼓励大家借助互联网的海量知识，而不是不思考、不探究就去发问。希望大家在读完这篇文章后，都能顺利地玩上自己喜欢的游戏~&lt;/p&gt;
+</content>
+        <category term="Steam" />
+        <category term="手机游戏" />
+        <category term="电脑游戏" />
+        <category term="单机游戏" />
+        <category term="网络游戏" />
+        <updated>2023-08-08T11:09:18.000Z</updated>
+    </entry>
+</feed>
