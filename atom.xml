@@ -509,4 +509,728 @@
         <category term="科幻" />
         <updated>2023-09-16T14:10:27.000Z</updated>
     </entry>
+    <entry>
+        <id>https://blog.samhou.top/%E3%80%8A%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%BB%8E%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%B8%B8%E7%8E%A9%E3%80%8B%E2%80%94%E2%80%94%E6%89%8B%E6%9C%BA%E5%9B%BD%E9%99%85%E6%9C%8D&amp;Steam%E7%AB%AF%E6%B8%B8%E5%AE%8C%E5%85%A8%E5%85%8D%E9%AD%94%E6%B3%95%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%94%BB%E7%95%A5/</id>
+        <title>《游戏：从下载到游玩》——手机国际服&amp;Steam端游完全免魔法攻略</title>
+        <link rel="alternate" href="https://blog.samhou.top/%E3%80%8A%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%BB%8E%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%B8%B8%E7%8E%A9%E3%80%8B%E2%80%94%E2%80%94%E6%89%8B%E6%9C%BA%E5%9B%BD%E9%99%85%E6%9C%8D&amp;Steam%E7%AB%AF%E6%B8%B8%E5%AE%8C%E5%85%A8%E5%85%8D%E9%AD%94%E6%B3%95%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%94%BB%E7%95%A5/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于很多人似乎对游玩Steam和手机国际服游戏存在障碍，因此笔者写了这篇文章，来帮助想要玩各种游戏的读者。此篇文章将包含以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Steam的下载&amp;#x2F;游玩攻略&amp;#x2F;常见问题&lt;/li&gt;
+&lt;li&gt;手机国际服如何下载&amp;#x2F;正常游玩&lt;/li&gt;
+&lt;li&gt;如何挑选一款性价比高的、合规有效的加速器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;观前提示（必看）&#34;&gt;&lt;a href=&#34;#观前提示（必看）&#34; class=&#34;headerlink&#34; title=&#34;观前提示（必看）&#34;&gt;&lt;/a&gt;观前提示（必看）&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;软件下载请认准&lt;strong&gt;官网&lt;/strong&gt;，建议使用的搜索引擎是必应(cn.bing.com)，注意搜索引擎前几条可能是广告！&lt;/li&gt;
+&lt;li&gt;本文&lt;strong&gt;没有任何广告&lt;/strong&gt;，推荐的软件&amp;#x2F;服务均为笔者自己使用，仅做参考，可自行寻找替代品&lt;/li&gt;
+&lt;li&gt;请关注评论区，若文章有误&amp;#x2F;更新会在评论中发布，也欢迎提问&amp;#x2F;质疑，但&lt;strong&gt;请先进行网络搜索&amp;#x2F;认真阅读后&lt;/strong&gt;再提问&lt;/li&gt;
+&lt;li&gt;以下使用缩写：STW(Search the web)表示搜索互联网自己找答案&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;如果有问题，优先STW，再向他人求助&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;选择一款合适的加速器&#34;&gt;&lt;a href=&#34;#选择一款合适的加速器&#34; class=&#34;headerlink&#34; title=&#34;选择一款合适的加速器&#34;&gt;&lt;/a&gt;选择一款合适的加速器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;加速器有什么用？顾名思义，它可以加速你与游戏服务器之间的网络连接速度&lt;/li&gt;
+&lt;li&gt;什么情况下需要加速器？Steam必备，国际服手游大部分必备，具体STW&lt;/li&gt;
+&lt;li&gt;在使用之前，先在b站内搜索评测视频（笔者没有评测过，链接也不放了，反正搜一下就有）&lt;/li&gt;
+&lt;li&gt;想玩手机游戏的，请选择一款多端通用加速器&lt;/li&gt;
+&lt;li&gt;大部分加速器对于Steam都是&lt;strong&gt;免费&lt;/strong&gt;的，可白嫖，比如笔者目前用的雷神、UU（限时）等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Steam&#34;&gt;&lt;a href=&#34;#Steam&#34; class=&#34;headerlink&#34; title=&#34;Steam&#34;&gt;&lt;/a&gt;Steam&lt;/h2&gt;&lt;h3 id=&#34;如何下载Steam？&#34;&gt;&lt;a href=&#34;#如何下载Steam？&#34; class=&#34;headerlink&#34; title=&#34;如何下载Steam？&#34;&gt;&lt;/a&gt;如何下载Steam？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先开加速器&lt;/li&gt;
+&lt;li&gt;打开网址：&lt;a href=&#34;https://store.steampowered.com/&#34;&gt;https://store.steampowered.com/&lt;/a&gt;,点击安装Steam&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！切勿在搜索引擎上自行搜索后随便点击错误的网址，否则你下载的Steam可能不是正版！请认准上面的官网&lt;/strong&gt;&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pPZPSpQ&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; alt=&#34;Steam商店&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上方的这才是Steam的图标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！存在问题的Steam可能导致盗号，尽量在自己的计算机上安装使用！安装前确认无病毒和间谍、流氓软件！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;接下来就是注册并使用了，傻瓜式的，不用多说，注意使用时全程需要加速器打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;怎么买游戏&#34;&gt;&lt;a href=&#34;#怎么买游戏&#34; class=&#34;headerlink&#34; title=&#34;怎么买游戏&#34;&gt;&lt;/a&gt;怎么买游戏&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;打开Steam的商店，直接搜游戏名称或者随便逛逛，然后买就行了&lt;/li&gt;
+&lt;li&gt;支付问题：支付宝付款时可能无法正常加载支付宝页面，此时可关闭加速器重试。（使用网页端购买，能够有刷新界面的选项，相比于客户端更优）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！不要相信低价商家提供的破解入库程序！曾经有Up主揭秘，有些号称正版激活码的，看似让你填写激活码，实际可能向你提供破解程序，假装成”激活助手“，然后注入Steam客户端，使用家庭共享来达到入库效果，这样非常容易封号！只有三种正规获取游戏方式：直接购买，激活码激活，朋友赠送&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;买游戏之前，先到steamdb上查一下历史价格，如果现在不打折可以等等，具体攻略STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;买游戏避坑&#34;&gt;&lt;a href=&#34;#买游戏避坑&#34; class=&#34;headerlink&#34; title=&#34;买游戏避坑&#34;&gt;&lt;/a&gt;买游戏避坑&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先看看评论，有些游戏可能单机模式也需要连接服务器，且需要加速器&lt;/li&gt;
+&lt;li&gt;评论是能很好反映游戏质量的，记得仔细看看&lt;/li&gt;
+&lt;li&gt;买之前先看看语言支持情况和硬件需求&lt;/li&gt;
+&lt;li&gt;如果能阅读英文，建议在设置里设置第二语言为英文，这样评论会多一些，并且游戏推荐也会更多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;手机-平板端国际服&#34;&gt;&lt;a href=&#34;#手机-平板端国际服&#34; class=&#34;headerlink&#34; title=&#34;手机&amp;#x2F;平板端国际服&#34;&gt;&lt;/a&gt;手机&amp;#x2F;平板端国际服&lt;/h2&gt;&lt;h3 id=&#34;安卓&#34;&gt;&lt;a href=&#34;#安卓&#34; class=&#34;headerlink&#34; title=&#34;安卓&#34;&gt;&lt;/a&gt;安卓&lt;/h3&gt;&lt;h4 id=&#34;谷歌三件套&#34;&gt;&lt;a href=&#34;#谷歌三件套&#34; class=&#34;headerlink&#34; title=&#34;谷歌三件套&#34;&gt;&lt;/a&gt;谷歌三件套&lt;/h4&gt;&lt;p&gt;在开始之前，你的手机&amp;#x2F;平板必须已经安装谷歌三件套，如果你不知道这是什么，请STW&lt;/p&gt;
+&lt;h4 id=&#34;游戏安装包获取（国际服无需Google-Play）&#34;&gt;&lt;a href=&#34;#游戏安装包获取（国际服无需Google-Play）&#34; class=&#34;headerlink&#34; title=&#34;游戏安装包获取（国际服无需Google Play）&#34;&gt;&lt;/a&gt;游戏安装包获取（国际服无需Google Play）&lt;/h4&gt;&lt;p&gt;请先STW，关键词“安卓手机端游戏应用商店”，下载一个合适的海外应用商店，目前笔者在用的是Qooapp，具体STW此处略去&lt;/p&gt;
+&lt;h4 id=&#34;怎么安装-遇到问题怎么办&#34;&gt;&lt;a href=&#34;#怎么安装-遇到问题怎么办&#34; class=&#34;headerlink&#34; title=&#34;怎么安装&amp;#x2F;遇到问题怎么办&#34;&gt;&lt;/a&gt;怎么安装&amp;#x2F;遇到问题怎么办&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;警告！安装外部来源安装包时，建议关闭含有“安全守护”，“增强纯净模式”等字眼的常见增强拦截功能以减少操作步骤（前提是你对安装包有信心），手机厂商可能会对某些安装包拦截&amp;#x2F;报毒，此时请检查安装包来源是否可信，一般大的应用商店不太会包含后门&amp;#x2F;病毒，可以放心忽略&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;无法登录怎么办？如果需要加速器，请打开对应加速功能，若还是不行，请查看加速器的答疑界面或联系客服，也可以STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;苹果&#34;&gt;&lt;a href=&#34;#苹果&#34; class=&#34;headerlink&#34; title=&#34;苹果&#34;&gt;&lt;/a&gt;苹果&lt;/h3&gt;&lt;p&gt;笔者个人不喜欢苹果，因此也没有苹果设备，笔者只知道苹果可以通过注册不同区域的Apple ID来下载游戏，此处攻略建议STW，常用关键词”&amp;lt;游戏名&amp;gt;+苹果国际服游玩教程“&lt;/p&gt;
+&lt;h2 id=&#34;作者的话&#34;&gt;&lt;a href=&#34;#作者的话&#34; class=&#34;headerlink&#34; title=&#34;作者的话&#34;&gt;&lt;/a&gt;作者的话&lt;/h2&gt;&lt;p&gt;其实没有一篇教程&amp;#x2F;攻略是完美的，这一篇也不例外。重要的是搜索与解决问题的能力，因此笔者在这里多次提到要STW，鼓励大家借助互联网的海量知识，而不是不思考、不探究就去发问。希望大家在读完这篇文章后，都能顺利地玩上自己喜欢的游戏~&lt;/p&gt;
+</content>
+        <category term="Steam" />
+        <category term="手机游戏" />
+        <category term="电脑游戏" />
+        <category term="单机游戏" />
+        <category term="网络游戏" />
+        <updated>2023-08-08T11:09:18.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/%E8%87%AA%E8%A1%8C%E6%90%AD%E5%BB%BABing%20AI%E9%95%9C%E5%83%8F%E5%85%8D%E9%AD%94%E6%B3%95%E8%AE%BF%E9%97%AEBing/</id>
+        <title>自行搭建Bing AI镜像免魔法访问Bing</title>
+        <link rel="alternate" href="https://blog.samhou.top/%E8%87%AA%E8%A1%8C%E6%90%AD%E5%BB%BABing%20AI%E9%95%9C%E5%83%8F%E5%85%8D%E9%AD%94%E6%B3%95%E8%AE%BF%E9%97%AEBing/"/>
+        <content type="html">&lt;p&gt;偶然发现了一个神奇的开源项目&lt;a href=&#34;https://github.com/adams549659584/go-proxy-bingai&#34;&gt;go-proxy-bingai&lt;/a&gt;，可以搭建直接可用的Bing AI镜像。&lt;/p&gt;
+&lt;h3 id=&#34;准备工作&#34;&gt;&lt;a href=&#34;#准备工作&#34; class=&#34;headerlink&#34; title=&#34;准备工作&#34;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Github账号+邮箱一个&lt;/li&gt;
+&lt;li&gt;一个自己的域名（可选）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;镜像&#34;&gt;&lt;a href=&#34;#镜像&#34; class=&#34;headerlink&#34; title=&#34;镜像&#34;&gt;&lt;/a&gt;镜像&lt;/h3&gt;&lt;p&gt;首先打开上面的开源项目的地址（GitHub打不开自行搜索镜像），项目作者已经搭建好了几个网站，如果不会搭建可以直接用。&lt;/p&gt;
+&lt;h3 id=&#34;开始自行搭建&#34;&gt;&lt;a href=&#34;#开始自行搭建&#34; class=&#34;headerlink&#34; title=&#34;开始自行搭建&#34;&gt;&lt;/a&gt;开始自行搭建&lt;/h3&gt;&lt;h4 id=&#34;网页端&#34;&gt;&lt;a href=&#34;#网页端&#34; class=&#34;headerlink&#34; title=&#34;网页端&#34;&gt;&lt;/a&gt;网页端&lt;/h4&gt;&lt;p&gt;作者提供了3种方式，Railway&amp;#x2F;Vercel&amp;#x2F;Render，各有优劣。&lt;/p&gt;
+&lt;p&gt;Railway有每月运行时间限制200小时，到了就停机，且速度较慢。&lt;/p&gt;
+&lt;p&gt;Vercel无法使用其自带域名在国内直接访问，需要绑定自己的域名，但速度较快。&lt;/p&gt;
+&lt;p&gt;Render也无法访问，速度慢。综合建议用Vercel，没域名的就用Railway吧。&lt;/p&gt;
+&lt;p&gt;这部分的部署攻略作者已经做了图片提示，就不写教程了，各位自己看就行了。&lt;/p&gt;
+&lt;h3 id=&#34;搭建聊天服务器&#34;&gt;&lt;a href=&#34;#搭建聊天服务器&#34; class=&#34;headerlink&#34; title=&#34;搭建聊天服务器&#34;&gt;&lt;/a&gt;搭建聊天服务器&lt;/h3&gt;&lt;p&gt;目前作者提供了Cloudflare Workers方式进行部署，但CF worker国内也无法直接访问，所以还是需要自己的域名。&lt;/p&gt;
+&lt;p&gt;首先，绑定域名到Cloudflare，你只需要在买域名的地方把dns改成Cloudflare提供的就行了。&lt;/p&gt;
+&lt;p&gt;然后选择Workers 和 Pages，创建应用程序，把下面链接里代码复制贴进去&lt;a href=&#34;https://github.com/adams549659584/go-proxy-bingai/blob/master/cloudflare/worker.js&#34;&gt;Worker.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;保存部署，然后再自定义域名那里添加域名，直接写一个子域名就行了，注意别和前面网页端重复（比如wbing.xxxx.xxx），然后网页端服务选择里自定义填上就行&lt;/p&gt;
+&lt;p&gt;如果你想让你的网页端直接用上聊天服务器，那么你需要添加workers路由。&lt;/p&gt;
+&lt;p&gt;先选择网站-你的域名，选择Workers路由，按照下面这样填写：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/06/07/pCFLyR0.png&#34; alt=&#34;图片&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s1.ax1x.com/2023/06/07/pCFLyR0.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后再进网站，你会发现服务选择里的主站亮了，能用了。&lt;/p&gt;
+&lt;p&gt;如果搭建失败，直接用项目原作者内置也不是不可以（&lt;/p&gt;
+</content>
+        <category term="AI" />
+        <category term="Bing" />
+        <updated>2023-06-07T13:06:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/AI%E7%BB%98%E7%94%BBWebUI%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</id>
+        <title>AI绘画WebUI使用详解</title>
+        <link rel="alternate" href="https://blog.samhou.top/AI%E7%BB%98%E7%94%BBWebUI%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;AI绘画目前主要使用的是在Github上的Stable-Diffusion-WebUI这个项目，链接：&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;WebUI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在整个安装、部署和学习的过程中踩了不少坑，所以写这么一篇文章来记录一下。&lt;/p&gt;
+&lt;p&gt;要想对该项目进行实践，必须满足以下必要条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电脑显存至少2GB，内存至少16GB&lt;/li&gt;
+&lt;li&gt;可以访问Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装与部署&#34;&gt;&lt;a href=&#34;#安装与部署&#34; class=&#34;headerlink&#34; title=&#34;安装与部署&#34;&gt;&lt;/a&gt;安装与部署&lt;/h2&gt;&lt;p&gt;这里已经有了一篇完整的指南，这里不再赘述：&lt;a href=&#34;https://rentry.org/voldy&#34;&gt;Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;要注意的是AI绘画可以用很多不同的模型，热门的NovelAI在这篇指南的第二节&lt;/p&gt;
+&lt;p&gt;这里有两点提醒：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;启动的是webui-user.bat，不要点错了&lt;/li&gt;
+&lt;li&gt;如果你需要编辑webui-user.bat里的COMMANDLINE_ARGS，等号后面加的东西不需要任何引号！&lt;/li&gt;
+&lt;li&gt;除非想要关闭面板，否则不要关闭打开的命令行黑窗口&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;运行AI绘画&#34;&gt;&lt;a href=&#34;#运行AI绘画&#34; class=&#34;headerlink&#34; title=&#34;运行AI绘画&#34;&gt;&lt;/a&gt;运行AI绘画&lt;/h2&gt;&lt;p&gt;根据上面的指南内容，应该已经打开了一个WebUI窗口（在浏览器里），现在你已经可以使用这个面板了，下面对部分内容进行翻译：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;txt2img，字符转图片&lt;/li&gt;
+&lt;li&gt;img2img，图片转图片&lt;br&gt;（将鼠标悬停在每一项上面，有详细的描述）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由于这个教程是零基础的，所以这里只讲解txt2img这种简单方式，img2img不作提及。&lt;/p&gt;
+&lt;p&gt;左上角的CheckPoint，就是当前选择的模型。在Prompt中，你可以用自然语言描述图片内容，Negative Prompt就是负面内容（画面中不应该出现），Sampling steps是采样步骤（可以理解为AI尝试修改的次数），Batch count一次生成的照片数量，Batch size同时生成的照片数量（就是几张图一起生成，加快速度，不过对性能要求也更高），CFG Scale是AI对你的内容的“遵守度”，数值越小，AI的自由发挥空间越大。&lt;/p&gt;
+&lt;p&gt;关于调参、绘画等内容，由于本教程针对的是技术问题，此处略过，仅放链接：&lt;a href=&#34;https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k&#34;&gt;入门魔法书&lt;/a&gt;，&lt;a href=&#34;https://aitag.top/&#34;&gt;Prompt词典&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;加载模型&#34;&gt;&lt;a href=&#34;#加载模型&#34; class=&#34;headerlink&#34; title=&#34;加载模型&#34;&gt;&lt;/a&gt;加载模型&lt;/h2&gt;&lt;p&gt;你可能已经在上面的Guide中看到了一个网站，civitai，这是一个模型分享网站，可以下载到训练好的自定义的模型。&lt;/p&gt;
+&lt;p&gt;这里有一个大坑：CheckPoint和其他类型是不一样的！！！模型会标注其类型，要放到WebUI的对应文件夹里！不是CheckPoint的模型放到Checkpoint里会产生奇怪的错误！我的理解是CheckPoint模型是基础，在基础上叠加其他类型来达到自定义的效果。模型怎么使用，一定要看看文档（在civitai模型类型旁边有个小问号，点进去就可以看到了）&lt;/p&gt;
+&lt;h2 id=&#34;错误排除&#34;&gt;&lt;a href=&#34;#错误排除&#34; class=&#34;headerlink&#34; title=&#34;错误排除&#34;&gt;&lt;/a&gt;错误排除&lt;/h2&gt;&lt;p&gt;如果你遇到错误，先照着错误消息做，如果还是不行，最简单的方式就是问搜索引擎，把错误消息贴进去。也可以去Github Issues搜索，或者去读一读文档。&lt;/p&gt;
+&lt;h2 id=&#34;结语&#34;&gt;&lt;a href=&#34;#结语&#34; class=&#34;headerlink&#34; title=&#34;结语&#34;&gt;&lt;/a&gt;结语&lt;/h2&gt;&lt;p&gt;本文讲了AI绘画的运行、部署之间的大坑，希望能够节约更多人的时间，避开坑，快速生成理想的作品&lt;/p&gt;
+</content>
+        <category term="AI" />
+        <updated>2023-03-17T13:03:41.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/%E5%AF%B9%E6%8B%96%E5%BB%B6%E7%9A%84%E6%8E%A2%E7%B4%A2/</id>
+        <title>对拖延的探索</title>
+        <link rel="alternate" href="https://blog.samhou.top/%E5%AF%B9%E6%8B%96%E5%BB%B6%E7%9A%84%E6%8E%A2%E7%B4%A2/"/>
+        <content type="html">&lt;p&gt;首先说一下，如果你在看这篇文章时正在拖延，请立即关闭并去做正事。&lt;/p&gt;
+&lt;p&gt;拖延症应该是非常普遍的现象了，作为高中生，拖延症一直是个头疼的问题，下面是我个人的经验，更是对拖延症的解决的探索过程，如果有错误或更好的方法请指出。先来说说拖延的表现，绝对真实（因为这是真实经历😂）。&lt;/p&gt;
+&lt;h2 id=&#34;拖延的症状&#34;&gt;&lt;a href=&#34;#拖延的症状&#34; class=&#34;headerlink&#34; title=&#34;拖延的症状&#34;&gt;&lt;/a&gt;拖延的症状&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;做正事时玩手机&lt;/li&gt;
+&lt;li&gt;视频网课暂停着去用浏览器看网页，或者打开其他软件瞎折腾&lt;/li&gt;
+&lt;li&gt;作业做到一半打开电脑乱捣鼓设置&lt;/li&gt;
+&lt;li&gt;刚看2分钟书就打开b站刷一下&lt;/li&gt;
+&lt;li&gt;学习90分钟后决定休息30分钟打游戏，结果直接玩了1小时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;不是拖延的症状&#34;&gt;&lt;a href=&#34;#不是拖延的症状&#34; class=&#34;headerlink&#34; title=&#34;不是拖延的症状&#34;&gt;&lt;/a&gt;&lt;em&gt;不是&lt;/em&gt;拖延的症状&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;直播课摸鱼（这是注意力不集中）&lt;/li&gt;
+&lt;li&gt;自己的兴趣爱好占用了非常多的时间，导致时间不够用（这是没有合理安排时间）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;探索阶段1：5分钟工作法&#34;&gt;&lt;a href=&#34;#探索阶段1：5分钟工作法&#34; class=&#34;headerlink&#34; title=&#34;探索阶段1：5分钟工作法&#34;&gt;&lt;/a&gt;探索阶段1：5分钟工作法&lt;/h2&gt;&lt;p&gt;一直看到各种学习方法论讲这个方法，具体就是一件事情如果你拖延不想干，就给自己定目标——做它5分钟，然后就会发现人会自然而然地继续做下去。实测，这方法&lt;strong&gt;对我一点用都没有&lt;/strong&gt;。当你拖延时，根本&lt;strong&gt;想不到要去做5分钟&lt;/strong&gt;，大脑只想再拖延一会。如果有人知道这方法到底怎么用，欢迎留言交流😂&lt;/p&gt;
+&lt;h2 id=&#34;探索阶段2：整段时间法&#34;&gt;&lt;a href=&#34;#探索阶段2：整段时间法&#34; class=&#34;headerlink&#34; title=&#34;探索阶段2：整段时间法&#34;&gt;&lt;/a&gt;探索阶段2：整段时间法&lt;/h2&gt;&lt;p&gt;曾经有篇文章提到一个方法，就是把一整段时间拿出来去做一件事，比如要写作业，那就拿出一个下午（不知道够不够😂），只写作业，不干其他事情，在其它时间再干别的。实测，该方法&lt;strong&gt;有一定效果&lt;/strong&gt;，但如果&lt;strong&gt;注意力无法长时间集中&lt;/strong&gt;，这方法一点用没有。而且你还需要有&lt;strong&gt;拿出一整段时间的决心&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;探索阶段3：90-30工作法&#34;&gt;&lt;a href=&#34;#探索阶段3：90-30工作法&#34; class=&#34;headerlink&#34; title=&#34;探索阶段3：90-30工作法&#34;&gt;&lt;/a&gt;探索阶段3：90-30工作法&lt;/h2&gt;&lt;p&gt;这方法很简单，做事90分钟，休息30分钟。实测，这方法有2个问题，第一，没有决心开始90分钟做事，或90分钟开始几分钟后就开始拖延；第二，休息拖延超时。&lt;/p&gt;
+&lt;p&gt;至此，上述精神疗法宣告失败，是时候来点&lt;strong&gt;强制措施&lt;/strong&gt;了！&lt;/p&gt;
+&lt;h2 id=&#34;工具方法1：专注手机App&#34;&gt;&lt;a href=&#34;#工具方法1：专注手机App&#34; class=&#34;headerlink&#34; title=&#34;工具方法1：专注手机App&#34;&gt;&lt;/a&gt;工具方法1：专注手机App&lt;/h2&gt;&lt;p&gt;专注的App一搜一大堆（安卓相比苹果体验更好，毕竟有悬浮窗可以造白名单，还可以搞各种高级权限），目前我用过以下几款&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不做手机控&lt;/li&gt;
+&lt;li&gt;Costudy&lt;/li&gt;
+&lt;li&gt;Forest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一个，极为严格，直接锁手机（甚至能变砖），手机成瘾必备，不过太严格可能会在紧急时刻锁手机，设置需谨慎；第二个，线上自习室，主打陪伴，会沉迷交网友的谨慎使用；第三个，种树，限制不是很严，而且需付费，不喜欢种树的不推荐。&lt;/p&gt;
+&lt;p&gt;目前我是第一和第二个一起用，效果还行，不过前提是&lt;strong&gt;需要有摆脱拖延的勇气才行&lt;/strong&gt;，否则什么软件都救不了。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;我绝对不会告诉你安卓端可以用adb干掉一切专注软件&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;工具方法2：电脑端专注软件&#34;&gt;&lt;a href=&#34;#工具方法2：电脑端专注软件&#34; class=&#34;headerlink&#34; title=&#34;工具方法2：电脑端专注软件&#34;&gt;&lt;/a&gt;工具方法2：电脑端专注软件&lt;/h2&gt;&lt;p&gt;好了，现在不玩手机了，改玩电脑了😂&lt;/p&gt;
+&lt;p&gt;这块软件很少，毕竟电脑难控制，可能开发者们懒得做，或者估计没啥需求。&lt;/p&gt;
+&lt;p&gt;找了不知道多久，终于是给找到了一款，叫番茄盒子，现在改名叫&lt;a href=&#34;https://jinkebox.selfma.com/&#34;&gt;进客盒子&lt;/a&gt;，不过这软件得付费，而且价格不便宜，设置较为复杂，买了一年就不用了。&lt;/p&gt;
+&lt;p&gt;既然没有理想中的软件，那我自己来整一个。于是用自学的C#做了这么一个东西，代码全开源在github（代码很烂，但会持续更新）：&lt;a href=&#34;https://github.com/SamHou0/ComputerTimeControl&#34;&gt;TimeControl时控&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;其实任何软件都可以进PE&amp;#x2F;安全模式删掉，这点几乎无解，所以我写这程序也开摆了，只要重启，虚拟桌面屏保就没了，不过你可以用深度专注，电脑进了系统自动关机，虽然还是防不了PE&amp;#x2F;安全模式&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;结论&#34;&gt;&lt;a href=&#34;#结论&#34; class=&#34;headerlink&#34; title=&#34;结论&#34;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;整了那么多，我只能说，所有方法只能&lt;strong&gt;缓解拖延&lt;/strong&gt;，不可能&lt;strong&gt;根治拖延&lt;/strong&gt;。之前看过一个TED Talk[1]，把拖延比作一只控制你大脑的猴子，而DDL就是能够吓走猴子的怪兽。所以说，&lt;del&gt;有时候拖延症就是离DDL太远&lt;/del&gt;要合理安排时间，合理运用各种方法（包括上面的方法，不试一试怎么知道适不适合自己）来缓解拖延，最终目的就是&lt;del&gt;完成任务&lt;/del&gt;学到自己需要的知识，提高考试分数。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;各种方法论到处都是，看到太多遍，此处不一一列举&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://www.bilibili.com/video/BV1MB4y1j78Z&#34;&gt;https://www.bilibili.com/video/BV1MB4y1j78Z&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="拖延症" />
+        <category term="学习方法" />
+        <updated>2023-01-29T14:02:31.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/</id>
+        <title>Csharp强制设置系统焦点(前台窗口)</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E5%BC%BA%E5%88%B6%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E7%84%A6%E7%82%B9(%E5%89%8D%E5%8F%B0%E7%AA%97%E5%8F%A3)/"/>
+        <content type="html">&lt;h2 id=&#34;系统焦点&#34;&gt;&lt;a href=&#34;#系统焦点&#34; class=&#34;headerlink&#34; title=&#34;系统焦点&#34;&gt;&lt;/a&gt;系统焦点&lt;/h2&gt;&lt;p&gt;在Windows中，系统的焦点就是当前处于前台的窗口。通过设置焦点，可以控制用户正在使用的应用程序。这里以winform应用为例。&lt;/p&gt;
+&lt;h2 id=&#34;Api调用&#34;&gt;&lt;a href=&#34;#Api调用&#34; class=&#34;headerlink&#34; title=&#34;Api调用&#34;&gt;&lt;/a&gt;Api调用&lt;/h2&gt;&lt;p&gt;C#需要调用Win32 Api才可以控制焦点，这里用到的是user32.dll中的SetForegroundWindow()函数&lt;/p&gt;
+&lt;p&gt;在微软提供的文档中[1]，可以看到C++里的用法：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;BOOL &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;  [in] HWND hWnd&lt;span class=&#34;comment&#34;&gt;//窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;C#里没有HWND类型，与之对应的是IntPtr类型，所以可以这样导入Api[2]&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; System.Runtime.InteropServices;&lt;span class=&#34;comment&#34;&gt;//这是调用所必须的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//调用dll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;IntPtr handle&lt;/span&gt;)&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//这个函数签名必须和文档一模一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面来调用导入的内容（以设置edge浏览器为例子）&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//查找edge浏览器进程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;span class=&#34;comment&#34;&gt;//获取主窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是，文档上指出这样设置需要满足几个条件中的任意一个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此过程是前台进程。&amp;#x2F;进程由前台进程启动。&amp;#x2F;进程收到了最后一个输入事件。&amp;#x2F;没有前台进程。&amp;#x2F;正在调试该过程。&amp;#x2F;前台进程不是新式应用程序或“开始”屏幕。&amp;#x2F;前台未锁定， (请参阅 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-locksetforegroundwindow&#34;&gt;LockSetForegroundWindow&lt;/a&gt;) 。&amp;#x2F;前台锁定超时已过期， (在 &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa&#34;&gt;SystemParametersInfo&lt;/a&gt;) 中看到&lt;strong&gt;SPI_GETFOREGROUNDLOCKTIMEOUT&lt;/strong&gt;。&amp;#x2F;没有活动菜单。&amp;#x2F;当用户使用另一个窗口时，应用程序无法强制将窗口强制到前台。 相反，Windows 会闪烁窗口的任务栏按钮以通知用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。&lt;/p&gt;
+&lt;h2 id=&#34;强制设置&#34;&gt;&lt;a href=&#34;#强制设置&#34; class=&#34;headerlink&#34; title=&#34;强制设置&#34;&gt;&lt;/a&gt;强制设置&lt;/h2&gt;&lt;p&gt;Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。&lt;/p&gt;
+&lt;p&gt;这里还用到了另一个Api &lt;code&gt;GetForegroundWindow()&lt;/code&gt;用于获取当前焦点[3]，调用方式同上，此处不再解释。&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; IntPtr &lt;span class=&#34;title&#34;&gt;GetForegroundWindow&lt;/span&gt;()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (handle!=GetForegroundWindow())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Process.Start(Application.ExecutablePath);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Environment.Exit(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意，该方法仅30%成功率，若连续10次重启仍未获得焦点，建议放弃(&lt;/p&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;&lt;a href=&#34;#参考文献&#34; class=&#34;headerlink&#34; title=&#34;参考文献&#34;&gt;&lt;/a&gt;参考文献&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;https://www.cnblogs.com/code1992/p/5965997.html&#34;&gt;https://www.cnblogs.com/code1992/p/5965997.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getforegroundwindow&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="csharp" />
+        <category term="窗口控制" />
+        <category term="焦点" />
+        <updated>2023-01-27T01:01:20.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E6%8E%A5%E5%8F%A3%E8%BF%9B%E9%98%B6/</id>
+        <title>Csharp接口进阶</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E6%8E%A5%E5%8F%A3%E8%BF%9B%E9%98%B6/"/>
+        <content type="html">&lt;p&gt;在&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;这篇文章&#34;&gt;这篇文章&lt;/a&gt;里，曾经讲解过C#接口的基本概念。掌握这些基本概念后，本文将补充一个进阶内容。&lt;/p&gt;
+&lt;h2 id=&#34;显式接口成员实现&#34;&gt;&lt;a href=&#34;#显式接口成员实现&#34; class=&#34;headerlink&#34; title=&#34;显式接口成员实现&#34;&gt;&lt;/a&gt;显式接口成员实现&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;该功能用于为同一个类中实现的不同接口创建不同的方法（方法名称相同）&lt;/li&gt;
+&lt;li&gt;语法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I1&lt;/span&gt;&amp;#123;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Method&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s&lt;/span&gt;)&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I2&lt;/span&gt;&amp;#123;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Method&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s&lt;/span&gt;)&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyClass&lt;/span&gt;:&lt;span class=&#34;title&#34;&gt;I1&lt;/span&gt;,&lt;span class=&#34;title&#34;&gt;I2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;I1.Method&lt;/span&gt;(&lt;span class=&#34;title&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;s&lt;/span&gt;)&amp;#123;...&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; I2.Method(&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt; s)&amp;#123;...&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当以上面的方式来创建类中的方法时，仅能通过接口引用访问该方法，无法通过类的引用来访问，即使是同一个类中的方法也不行&lt;/li&gt;
+&lt;li&gt;针对以上问题，可以通过强制转换来进行，举个例子：&lt;code&gt;((I1)MyClass1).Method&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="csharp图解教程" />
+        <updated>2022-12-30T13:12:24.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp-winform%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8%E8%AF%A6%E8%A7%A3/</id>
+        <title>Csharp-winform窗口拖动详解</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp-winform%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8%E8%AF%A6%E8%A7%A3/"/>
+        <content type="html">&lt;h2 id=&#34;代码实现&#34;&gt;&lt;a href=&#34;#代码实现&#34; class=&#34;headerlink&#34; title=&#34;代码实现&#34;&gt;&lt;/a&gt;代码实现&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;首先，在设计器里双击增加以下三个方法，然后填入以下代码&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; Point mouseLocation;&lt;span class=&#34;comment&#34;&gt;//表示鼠标对于窗口左上角的坐标的负数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; isDragging;&lt;span class=&#34;comment&#34;&gt;//标识鼠标是否按下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseDown&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (e.Button == MouseButtons.Left)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              mouseLocation = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Point(-e.X, -e.Y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//表示鼠标当前位置相对于窗口左上角的坐标，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//并取负数,这里的e是参数，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//可以获取鼠标位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              isDragging = &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//标识鼠标已经按下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseMove&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (isDragging)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              Point newMouseLocation = MousePosition;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//获取鼠标当前位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              newMouseLocation.Offset(mouseLocation.X, mouseLocation.Y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//用鼠标当前位置加上鼠标相较于窗体左上角的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;comment&#34;&gt;//坐标的负数，也就获取到了新的窗体左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              Location = newMouseLocation;&lt;span class=&#34;comment&#34;&gt;//设置新的窗体左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MainWindow_MouseUp&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt; sender, MouseEventArgs e&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (isDragging)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              isDragging = &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//鼠标已抬起，标识为false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;详解&#34;&gt;&lt;a href=&#34;#详解&#34; class=&#34;headerlink&#34; title=&#34;详解&#34;&gt;&lt;/a&gt;详解&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;鼠标在窗体上按下时，窗体跟随鼠标，鼠标抬起时，窗体停止移动&lt;/li&gt;
+&lt;li&gt;窗体的Location属性为&lt;strong&gt;左上角&lt;/strong&gt;的坐标&lt;/li&gt;
+&lt;li&gt;为了实现拖动，需要获取2个坐标：鼠标相较于窗体左上角的位置，以及鼠标现在的坐标&lt;/li&gt;
+&lt;li&gt;举个例子：按下鼠标时，鼠标位置(300,400)，获取鼠标相较于窗体左上角位置为(150,100)，那么此时窗体位置是(150,300)，鼠标移动到(300,401)，那么此时窗体位置应该是(150,301)。也就是说，新的窗体位置就是新的鼠标位置减去一开始鼠标相较于窗体左上角位置&lt;/li&gt;
+&lt;li&gt;调用.OffSet()，就是把前面的坐标加上括号里的坐标，比如上面的例子，newMouseLocation是(300,401)，mouseLocation把鼠标相较于窗体左上角位置作为负数存储，mouseLocation是(-150,-100)，那么新的newMouseLocation就是(150,301)了~&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="winform" />
+        <updated>2022-05-29T08:05:02.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/</id>
+        <title>Csharp读书笔记（六）-枚举与集合</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/"/>
+        <content type="html">&lt;h2 id=&#34;枚举&#34;&gt;&lt;a href=&#34;#枚举&#34; class=&#34;headerlink&#34; title=&#34;枚举&#34;&gt;&lt;/a&gt;枚举&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;枚举只允许几个特定的值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enum&lt;/code&gt;数据类型只允许某个数据取某些特定的值&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;enum&lt;/span&gt; Computers&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer1=&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;comment&#34;&gt;//不仅可以指定名称，还可以指定值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer2=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Computer3=&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;comment&#34;&gt;//这个逗号可以省略&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enum&lt;/code&gt;也是一种类型，每一项都可以当作参数传递，如&lt;code&gt;Computers.Computer1&lt;/code&gt;这样传递&lt;/li&gt;
+&lt;li&gt;枚举中的每一项都必须有名称，但不一定需要指定一个值&lt;/li&gt;
+&lt;li&gt;可以使用&lt;code&gt;.ToString()&lt;/code&gt;方法来获得任意一项的名称，使用强制转换获得其值&lt;/li&gt;
+&lt;li&gt;比如：&lt;code&gt;Computers.Computer1.ToString()&lt;/code&gt;得到string&lt;code&gt;Computer1&lt;/code&gt;,&lt;code&gt;(int)Computers.Computer1&lt;/code&gt;得到int&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也可以把int转换回去，例如&lt;code&gt;Computers computer0=(Computers)3;&lt;/code&gt;该代码会创建一个指向&lt;code&gt;Computer3&lt;/code&gt;的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;&lt;code&gt;computer0&lt;/code&gt;（因为等号右边的数字是3，回到&lt;code&gt;Computers&lt;/code&gt;中寻找值3，所对应的项为&lt;code&gt;Computer3&lt;/code&gt;)，于是&lt;code&gt;computer0.ToString()&lt;/code&gt;获得的就是string&lt;code&gt;Computer3&lt;/code&gt;了&lt;/li&gt;
+&lt;li&gt;如果没有为项指定值，那么C#会自动按照顺序赋值，第一项为0，以此类推&lt;/li&gt;
+&lt;li&gt;可以用&lt;code&gt;:&lt;/code&gt;指定所需要的类型，例如&lt;code&gt;enum Computers:long&lt;/code&gt;这样就可以为其中的项指定非常大的值了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;集合&#34;&gt;&lt;a href=&#34;#集合&#34; class=&#34;headerlink&#34; title=&#34;集合&#34;&gt;&lt;/a&gt;集合&lt;/h2&gt;&lt;h3 id=&#34;列表与数组&#34;&gt;&lt;a href=&#34;#列表与数组&#34; class=&#34;headerlink&#34; title=&#34;列表与数组&#34;&gt;&lt;/a&gt;列表与数组&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/&#34; title=&#34;数组&#34;&gt;数组&lt;/a&gt;都有一个长度，它是固定的，需要手动调整长度&lt;/li&gt;
+&lt;li&gt;不能直接移动数组的元素&lt;/li&gt;
+&lt;li&gt;可以使用集合来存储数据，就可以避免以上两个问题&lt;/li&gt;
+&lt;li&gt;常用的集合是&lt;code&gt;List&amp;lt;T&amp;gt;&lt;/code&gt;，&lt;code&gt;&amp;lt;T&amp;gt;&lt;/code&gt;表示类型，把类型放在尖括号中间&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;.Add()&lt;/code&gt;可以添加集合中的项目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;没有大小限制，它会动态调整大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;有&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;多态&#34;&gt;多态&lt;/a&gt;性，也就是可以添加接口、抽象类、基类等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;List的使用&#34;&gt;&lt;a href=&#34;#List的使用&#34; class=&#34;headerlink&#34; title=&#34;List的使用&#34;&gt;&lt;/a&gt;List的使用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Contains()&lt;/code&gt;可以检查是否有特定元素，括号内写上需要查找的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.IndexOf()&lt;/code&gt;可以获取特定元素的索引，括号内写上需要查找的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Remove()&lt;/code&gt;可以删除元素，括号内写上需要删除的元素&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.RemoveAt()&lt;/code&gt;可以删除元素，括号内写上需要删除元素的索引号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;本身也是一个对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;foreach循环&#34;&gt;&lt;a href=&#34;#foreach循环&#34; class=&#34;headerlink&#34; title=&#34;foreach循环&#34;&gt;&lt;/a&gt;&lt;code&gt;foreach&lt;/code&gt;循环&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;foreach&lt;/code&gt;可以对list中每个对象执行语句，&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/&#34; title=&#34;数组&#34;&gt;数组&lt;/a&gt;也可以这么用&lt;/li&gt;
+&lt;li&gt;注意，使用&lt;code&gt;foreach&lt;/code&gt;时不能修改这个集合，也就是不能使用该list对应的&lt;code&gt;.Remove()&lt;/code&gt;等方法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.ToList()&lt;/code&gt;可以创建副本并赋值给新的变量&lt;/li&gt;
+&lt;li&gt;使用foreach就是在使用&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;以下代码实现的效果完全相同&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; (Duck duck &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; ducks)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Console.WriteLine(duck);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//上下两种方式实现的效果完全相同&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IEnumerator&amp;lt;Duck&amp;gt; enumerator = ducks.GetEnumerator();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; (enumerator.MoveNext())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	Console.WriteLine(enumerator.Current);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IDisposable disposable = enumerator &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; IDisposable;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (disposable != &lt;span class=&#34;literal&#34;&gt;null&lt;/span&gt;) disposable.Dispose();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;集合初始化方法&#34;&gt;&lt;a href=&#34;#集合初始化方法&#34; class=&#34;headerlink&#34; title=&#34;集合初始化方法&#34;&gt;&lt;/a&gt;集合初始化方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;可以用集合初始化方法来提供初始数据项列表&lt;/li&gt;
+&lt;li&gt;直接在创建列表后面添加大括号，各个初始项中使用逗号隔开&lt;/li&gt;
+&lt;li&gt;可以包含new创建的对象，还可以包含变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;集合的排序&#34;&gt;&lt;a href=&#34;#集合的排序&#34; class=&#34;headerlink&#34; title=&#34;集合的排序&#34;&gt;&lt;/a&gt;集合的排序&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Sort()&lt;/code&gt;可以使列表中的所有项重新有序排列，它已经知道如何重排大部分类型&lt;/li&gt;
+&lt;li&gt;有两种排序方法，分别是&lt;code&gt;CompareTo()&lt;/code&gt;和实现&lt;code&gt;IComparer&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;排序1：使用CompareTo-方法&#34;&gt;&lt;a href=&#34;#排序1：使用CompareTo-方法&#34; class=&#34;headerlink&#34; title=&#34;排序1：使用CompareTo()方法&#34;&gt;&lt;/a&gt;排序1：使用&lt;code&gt;CompareTo()&lt;/code&gt;方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Sort()&lt;/code&gt;知道如何对实现了&lt;code&gt;IComparable&amp;lt;T&amp;gt;&lt;/code&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;接口&#34;&gt;接口&lt;/a&gt;的类排序&lt;/li&gt;
+&lt;li&gt;该接口只有一个成员，是&lt;code&gt;CompareTo()&lt;/code&gt;方法，传入一个要比较的对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CompareTo()&lt;/code&gt;方法会返回一个int值，该方法传入一个要比较的对象x，它把传入的对象与当前对象y（也就是该方法所在的对象）比较，如果x应排在y后面（也就是x&amp;gt;y）则返回正数，反之则返回负数。如果比较相同，则返回0。（如果你实现了正向排列，想要倒序排列，只需在调换正负数的位置即可）&lt;/li&gt;
+&lt;li&gt;实现接口后，直接使用&lt;code&gt;.Sort()&lt;/code&gt;即可排序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;排序2：新建一个实现了IComparable的类&#34;&gt;&lt;a href=&#34;#排序2：新建一个实现了IComparable的类&#34; class=&#34;headerlink&#34; title=&#34;排序2：新建一个实现了IComparable&amp;lt;T&amp;gt;的类&#34;&gt;&lt;/a&gt;排序2：新建一个实现了&lt;code&gt;IComparable&amp;lt;T&amp;gt;&lt;/code&gt;的类&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以向&lt;code&gt;.Sort()&lt;/code&gt;传入一个实现了&lt;code&gt;IComparer&amp;lt;T&amp;gt;&lt;/code&gt;接口的实例&lt;/li&gt;
+&lt;li&gt;该接口有一个&lt;code&gt;Compare()&lt;/code&gt;方法，传入两个要比较的对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compare()&lt;/code&gt;方法会返回一个int值，该方法传入两个要比较的对象（假设它们是x,y），它把传入的两个对象比较，如果x应排在y后面（x&amp;gt;y），则返回正数，反之则返回负数。如果比较相同，则返回0。（如果你实现了正向排列，想要倒序排列，只需在调换正负数的位置即可）&lt;/li&gt;
+&lt;li&gt;实现接口后，先实例化这个新比较类，然后调用list对象的&lt;code&gt;.Sort()&lt;/code&gt;，把新的实例填到括号内，即可比较&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;多种排序方式&#34;&gt;&lt;a href=&#34;#多种排序方式&#34; class=&#34;headerlink&#34; title=&#34;多种排序方式&#34;&gt;&lt;/a&gt;多种排序方式&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以用第二种方式写不同的比较类，只要填入不同排序类，就可以以不同的方式排序&lt;/li&gt;
+&lt;li&gt;注意，以上两种方法可以共存。共存时，&lt;code&gt;.Sort()&lt;/code&gt;括号内可以不写，也可以填入比较类，此时会执行比较类中的方法（不会执行CompareTo）&lt;/li&gt;
+&lt;li&gt;也就是说，第二种方式有更大的灵活性！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ToString-方法&#34;&gt;&lt;a href=&#34;#ToString-方法&#34; class=&#34;headerlink&#34; title=&#34;ToString()方法&#34;&gt;&lt;/a&gt;ToString()方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每一个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;对象&#34;&gt;对象&lt;/a&gt;都有一个ToString()方法，把对象转换为一个字符串&lt;/li&gt;
+&lt;li&gt;使用+操作符会自动调用该方法，调试工具中的监视也用到了这个方法&lt;/li&gt;
+&lt;li&gt;它默认返回类名，但是我们可以覆盖它，让它返回不同的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;列表的向上强制转换&#34;&gt;&lt;a href=&#34;#列表的向上强制转换&#34; class=&#34;headerlink&#34; title=&#34;列表的向上强制转换&#34;&gt;&lt;/a&gt;列表的向上强制转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;列表的向上强制转换称作协变&lt;/li&gt;
+&lt;li&gt;实现了&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;接口的类才可以向上强制转换&lt;/li&gt;
+&lt;li&gt;使用该接口引用即可转换&lt;code&gt;IEnumerable&amp;lt;BaseClass&amp;gt; upcastBaseClasses = subclasses&lt;/code&gt;，这里subclasses即子类的列表，这个子类实现了IEnumerable&lt;/li&gt;
+&lt;li&gt;强制转换后，可以用&lt;code&gt;AddRange&lt;/code&gt;把内容添加到另一个列表中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;重载&#34;&gt;&lt;a href=&#34;#重载&#34; class=&#34;headerlink&#34; title=&#34;重载&#34;&gt;&lt;/a&gt;重载&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;重载即有多个参数不同的同名方法&lt;/li&gt;
+&lt;li&gt;直接写两个同名方法，即可使用重载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;IEnumerable&#34;&gt;&lt;a href=&#34;#IEnumerable&#34; class=&#34;headerlink&#34; title=&#34;IEnumerable&#34;&gt;&lt;/a&gt;IEnumerable&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;这个接口表示实现了任何集合，不止是List或数组&lt;/li&gt;
+&lt;li&gt;用于&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;强制转换&#34;&gt;强制转换&lt;/a&gt;、&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;foreach循环&#34;&gt;foreach循环&lt;/a&gt;等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;字典&#34;&gt;&lt;a href=&#34;#字典&#34; class=&#34;headerlink&#34; title=&#34;字典&#34;&gt;&lt;/a&gt;字典&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;字典可以将两个东西关联起来，形成一组&lt;/li&gt;
+&lt;li&gt;前一个叫键，后一个叫值&lt;/li&gt;
+&lt;li&gt;任何类型都可以！&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Add(key,value)&lt;/code&gt;可以添加一个项目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.ContainKey(key)&lt;/code&gt;可以返回是否有这个键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dict[key]&lt;/code&gt;可以获得键对应的值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Remove(key)&lt;/code&gt;可以移除一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;foreach(string key in myDict.Keys)&lt;/code&gt;可以遍历键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Count()&lt;/code&gt;可以获得项目数量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;更多集合类型——按顺序处理&#34;&gt;&lt;a href=&#34;#更多集合类型——按顺序处理&#34; class=&#34;headerlink&#34; title=&#34;更多集合类型——按顺序处理&#34;&gt;&lt;/a&gt;更多集合类型——按顺序处理&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常用的按照顺序处理的集合是queue和stack&lt;/li&gt;
+&lt;li&gt;queue类型表示先处理早提交的对象&lt;/li&gt;
+&lt;li&gt;stack则相反，先处理最后提交的对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;queue&#34;&gt;&lt;a href=&#34;#queue&#34; class=&#34;headerlink&#34; title=&#34;queue&#34;&gt;&lt;/a&gt;queue&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.Enqueue()&lt;/code&gt;向queue中添加一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Peek()&lt;/code&gt;允许查看第一项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Dequeue()&lt;/code&gt;允许取出第一项，将后面的对象上移到空出来的位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Count&lt;/code&gt;,&lt;code&gt;.Clear()&lt;/code&gt;与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88/&#34; title=&#34;list&#34;&gt;list&lt;/a&gt;类似&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;stack&#34;&gt;&lt;a href=&#34;#stack&#34; class=&#34;headerlink&#34; title=&#34;stack&#34;&gt;&lt;/a&gt;stack&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可以推入、弹出对象&lt;/li&gt;
+&lt;li&gt;添加时用&lt;code&gt;.Push()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;取出时用&lt;code&gt;.Pop()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.Peek()&lt;/code&gt;类似queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;互相转换&#34;&gt;&lt;a href=&#34;#互相转换&#34; class=&#34;headerlink&#34; title=&#34;互相转换&#34;&gt;&lt;/a&gt;互相转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;list,queue,stack可以相互转换&lt;/li&gt;
+&lt;li&gt;比如下面这样做&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Queue&amp;lt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt;&amp;gt; myQueue=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Queue&amp;lt;&lt;span class=&#34;built_in&#34;&gt;string&lt;/span&gt;&amp;gt;(mystack);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-02-11T04:02:27.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/</id>
+        <title>Csharp读书笔记（五）-接口与抽象类</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+        <content type="html">&lt;h2 id=&#34;接口&#34;&gt;&lt;a href=&#34;#接口&#34; class=&#34;headerlink&#34; title=&#34;接口&#34;&gt;&lt;/a&gt;接口&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口告诉类&lt;strong&gt;必须&lt;/strong&gt;实现某些方法和&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;属性&#34;&gt;属性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果没有实现，编译器会报错&lt;/li&gt;
+&lt;li&gt;接口可以定义一个类中必须有的方法，这样一个类只要实现接口，就可以做特定的事情&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;interface&lt;/code&gt;关键字定义接口&lt;/li&gt;
+&lt;li&gt;接口不能添加任何&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;，因为它不存储数据（但是可以包含&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;属性&#34;&gt;属性&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;命名规范：接口名称以&lt;code&gt;I&lt;/code&gt;开头&lt;/li&gt;
+&lt;li&gt;只需要在接口中添加方法名和参数，因为接口不做任何事情&lt;/li&gt;
+&lt;li&gt;接口中的所有方法都是抽象方法，不能有方法体 ^bbfa07&lt;/li&gt;
+&lt;li&gt;一个类只能继承一个类，但可以实现多个接口 ^018e94&lt;/li&gt;
+&lt;li&gt;不可以实例化接口，不过可以引用接口&lt;/li&gt;
+&lt;li&gt;接口就像清单，指出一个类可以做些什么事情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;为什么使用接口？&#34;&gt;&lt;a href=&#34;#为什么使用接口？&#34; class=&#34;headerlink&#34; title=&#34;为什么使用接口？&#34;&gt;&lt;/a&gt;&lt;em&gt;为什么使用接口？&lt;/em&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口并不是为了避免重复代码，&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;继承&#34;&gt;继承&lt;/a&gt;才是&lt;/li&gt;
+&lt;li&gt;如果有&lt;strong&gt;一件事&lt;/strong&gt;，&lt;strong&gt;多个类&lt;/strong&gt;都能实现，你需要这样一个类作为&lt;strong&gt;参数&lt;/strong&gt;，但&lt;strong&gt;不希望继承&lt;/strong&gt;时（比如你觉得根本用不到那些东西，&lt;strong&gt;不想让子类继承基类的方法和属性&lt;/strong&gt;），这时你无法用继承中的基类来作为参数，那么使用接口，就可以知道：&lt;strong&gt;只要类实现了这个接口，它就能做这件事，可以作为参数使用，而不必知道它到底是什么类型&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果有&lt;strong&gt;多件事&lt;/strong&gt;，&lt;strong&gt;一个类&lt;/strong&gt;能实现它们，这时&lt;strong&gt;无法使用&lt;/strong&gt;继承（&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;只能继承一个类&#34;&gt;只能继承一个类&lt;/a&gt;），就需要使用接口&lt;/li&gt;
+&lt;li&gt;继承只是给类“&lt;strong&gt;分层&lt;/strong&gt;”（减少重复），接口则可以给类“&lt;strong&gt;分类&lt;/strong&gt;”（可以&lt;strong&gt;规定这个类可以干什么&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;也就是说，当继承给你的类增加太多“负担”时，就应该考虑使用接口&lt;/li&gt;
+&lt;li&gt;举个例子，假设你有一个电器类，很多类都继承了它，比如电脑、电视、冰箱……但是现在你想要用一个可以处理食物的类作为参数（比如面包机、烤箱、微波炉……），这时无法使用继承（因为你只能继承一个类），就需要编写一个可处理食物的接口，把要用到的方法属性放进去，在可处理食物的类中实现这个接口，把参数改成这样一个接口引用，就可以解决这个问题&lt;/li&gt;
+&lt;li&gt;C#&lt;strong&gt;拒绝继承多个类&lt;/strong&gt;，并通过接口提供&lt;strong&gt;保护&lt;/strong&gt;，这是为了&lt;strong&gt;避免二义性&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;二义性：当两个类&lt;strong&gt;分别继承一个基类&lt;/strong&gt;，并且重写了基类中的同一个方法，这时如果允许继承多个类（这称为多重继承），那么&lt;strong&gt;继承这两个类的子类&lt;/strong&gt;调用该方法（假设子类没有重写）时应该调用哪个方法？这就会出现问题：子类&lt;strong&gt;不知道应该调用哪个方法&lt;/strong&gt;，因为继承了&lt;strong&gt;两个同名的不同方法&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;这也被称作“致命的死亡菱形”（如果[[Csharp&amp;#x2F;Csharp读书笔记&amp;#x2F;Csharp读书笔记（一）-对象与引用#创建类图|画出类图]]，会发现这像一个菱形）&lt;/li&gt;
+&lt;li&gt;所以C#&lt;strong&gt;通过接口提供保护&lt;/strong&gt;，接口并没有方法体（它不做任何事情），因为它没有方法体，所以一个类可以实现多个接口，即使接口中有同名方法，这个类也&lt;strong&gt;只能实现这一个方法&lt;/strong&gt;，避免了二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;接口引用&#34;&gt;&lt;a href=&#34;#接口引用&#34; class=&#34;headerlink&#34; title=&#34;接口引用&#34;&gt;&lt;/a&gt;接口引用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口引用与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;对象引用&#34;&gt;对象引用&lt;/a&gt;类似，可以保持一个类不被垃圾回收&lt;/li&gt;
+&lt;li&gt;可以移动接口引用，就像移动标签一样&lt;/li&gt;
+&lt;li&gt;一个类需要实现这个接口，才能添加该接口引用&lt;/li&gt;
+&lt;li&gt;使用接口引用访问类时，&lt;strong&gt;只能&lt;/strong&gt;访问该接口引用所&lt;strong&gt;对应的方法和属性&lt;/strong&gt; ^46c854&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;类与接口的强制转换&#34;&gt;&lt;a href=&#34;#类与接口的强制转换&#34; class=&#34;headerlink&#34; title=&#34;类与接口的强制转换&#34;&gt;&lt;/a&gt;类与接口的强制转换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;可以使用&lt;code&gt;is&lt;/code&gt;关键字来查看一个类是否实现了这个接口&lt;/li&gt;
+&lt;li&gt;可以用&lt;code&gt;as&lt;/code&gt;关键字来把一个类看成实现了这个接口（前提是使用&lt;code&gt;is&lt;/code&gt;找出这个类确实实现了）&lt;/li&gt;
+&lt;li&gt;为什么使用as：有时候，C#并不知道一个类实现了一个接口（&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;使用了其他接口引用&#34;&gt;使用了其他接口引用&lt;/a&gt;），所以使用is之后还要让C#认为它确实实现了&lt;/li&gt;
+&lt;li&gt;举例： ^537c57&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//这里仅给出核心代码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IComputer[] computers=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; IComputer[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;];&lt;span class=&#34;comment&#34;&gt;//假设有一个叫做IComputer的接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Windows();&lt;span class=&#34;comment&#34;&gt;//假设Windows,Mac,Linux类实现了IComputer接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Mac();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;computers[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;]=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; Linux();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;i&amp;lt;computers.Length;i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(computers[i] &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; IServer)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; IServer myserver;&lt;span class=&#34;comment&#34;&gt;//IServer是一个假设的新接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; myserver=computers[i] &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; IServer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;//使用as，就能够让C#把这个对象看成实现了IServer,就可以使用IServer中的方法和属性了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; myserver.Run();&lt;span class=&#34;comment&#34;&gt;//假设IServer中有一个Run()方法，只有使用了as才能够使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在上面的例子中，C#知道computers数组中的类都实现了IComputer（因为这是个IComputer接口的数组），所以&lt;strong&gt;只能调用这些类中IComputer接口中包含的方法和属性&lt;/strong&gt;（可以把接口看作一个清单，这里&lt;strong&gt;只能调用清单中的内容&lt;/strong&gt;），而当使用&lt;code&gt;is&lt;/code&gt;关键字找出这个类确实实现了IServer接口时，C#&lt;strong&gt;仍然不认为&lt;/strong&gt;它实现了IServer（因为你根本没有告诉它这么认为，只是让他&lt;strong&gt;检查&lt;/strong&gt;了这个“清单”是否与类匹配，这是&lt;code&gt;is&lt;/code&gt;关键字所做的），所以你需要使用&lt;code&gt;as&lt;/code&gt;关键字，这样C#就会认为&lt;strong&gt;它确实实现了IServer&lt;/strong&gt;，就&lt;strong&gt;可以（且只能）调用IServer中的方法、属性了&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;由子类代替基类时，这称为向上强制转换&lt;/li&gt;
+&lt;li&gt;由基类代替子类时，这叫做向下强制转换&lt;/li&gt;
+&lt;li&gt;接口也可以这么做（上面的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;举例&#34;&gt;举例&lt;/a&gt;就是一个接口向下强制转换的例子）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;接口的继承&#34;&gt;&lt;a href=&#34;#接口的继承&#34; class=&#34;headerlink&#34; title=&#34;接口的继承&#34;&gt;&lt;/a&gt;接口的继承&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;接口可以继承其他接口&lt;/li&gt;
+&lt;li&gt;实现继承其他接口的接口时，&lt;strong&gt;必须&lt;/strong&gt;实现&lt;strong&gt;所有&lt;/strong&gt;继承的接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;访问修饰符&#34;&gt;&lt;a href=&#34;#访问修饰符&#34; class=&#34;headerlink&#34; title=&#34;访问修饰符&#34;&gt;&lt;/a&gt;访问修饰符&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;public表示任何其他类都可以访问&lt;/li&gt;
+&lt;li&gt;private表示只有该类中的成员及该类的&lt;strong&gt;其他实例&lt;/strong&gt;可以访问&lt;/li&gt;
+&lt;li&gt;protected表示对于该类的其他成员来说相当于private，而对于子类来说是public，也就是说子类成员可以访问子类成员及任何基类成员（注意：基类声明为protected后，无需使用base也可以访问基类中的公共类型）&lt;/li&gt;
+&lt;li&gt;internal表示只能从程序集或子类访问&lt;/li&gt;
+&lt;li&gt;sealed表示不能继承该类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;抽象类&#34;&gt;&lt;a href=&#34;#抽象类&#34; class=&#34;headerlink&#34; title=&#34;抽象类&#34;&gt;&lt;/a&gt;抽象类&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;抽象类不能实例化&lt;/li&gt;
+&lt;li&gt;有时候，你想在一个类中完成一部分代码，在子类中再完成其余部分，于是基类根本不应该被实例化（它并不能工作——因为你没有完成它），这时应该使用抽象类，防止你不小心创建了本不应该创建的实例&lt;/li&gt;
+&lt;li&gt;比如说，一个方法需要一个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;来计算，但是在基类中不想设置它的值，想在子类中设置，这时基类是不完整的，它无法计算，所以设置为抽象类，防止误实例化&lt;/li&gt;
+&lt;li&gt;可以在抽象类中添加抽象方法，也可以有具体方法，这与&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;接口&#34;&gt;接口&lt;/a&gt;不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;面向对象的设计原则&#34;&gt;&lt;a href=&#34;#面向对象的设计原则&#34; class=&#34;headerlink&#34; title=&#34;面向对象的设计原则&#34;&gt;&lt;/a&gt;面向对象的设计原则&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;继承&#34;&gt;继承&lt;/a&gt;：一个类或一个接口继承另一个&lt;/li&gt;
+&lt;li&gt;抽象：建立一个类模型，首先时比较一般的类，然后继承的是更特殊的类，也就是由一般（基类）到特殊（子类）的过程&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;封装&#34;&gt;封装&lt;/a&gt;：创建一个对象，使用私有字段在内部记录其状态，通过公共属性、方法使其他类只能使用需要的数据以防止错误&lt;/li&gt;
+&lt;li&gt;多态：将一个对象用于需要其他对象的方法或语句，比如&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/&#34; title=&#34;类与接口的强制转换&#34;&gt;类与接口的强制转换&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-26T12:45:53.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/</id>
+        <title>Csharp读书笔记（四）-继承</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/"/>
+        <content type="html">&lt;h2 id=&#34;继承&#34;&gt;&lt;a href=&#34;#继承&#34; class=&#34;headerlink&#34; title=&#34;继承&#34;&gt;&lt;/a&gt;继承&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;继承可以构建彼此关联且有共同行为的类&lt;/li&gt;
+&lt;li&gt;被继承的叫做基类&lt;/li&gt;
+&lt;li&gt;继承别人的叫做子类&lt;/li&gt;
+&lt;li&gt;类图中，箭头由子类指向基类&lt;/li&gt;
+&lt;li&gt;沿着类图上行，可以发现类的相同特征越少&lt;/li&gt;
+&lt;li&gt;沿着类图下行，可以发现类的相同特征越多&lt;/li&gt;
+&lt;li&gt;这就好像生物的分类——界门科目纲属种&lt;/li&gt;
+&lt;li&gt;使用冒号可以继承一个基类&lt;/li&gt;
+&lt;li&gt;一个类只允许继承一个类，这是一种保护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;合并两个类&#34;&gt;&lt;a href=&#34;#合并两个类&#34; class=&#34;headerlink&#34; title=&#34;合并两个类&#34;&gt;&lt;/a&gt;合并两个类&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;首先&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;创建类图&#34;&gt;创建类图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;找出两个类相同的字段与方法&lt;/li&gt;
+&lt;li&gt;把相同的放到一个基类中去&lt;/li&gt;
+&lt;li&gt;把不同的放在子类，要[[#覆盖]]的也需要写入&lt;/li&gt;
+&lt;li&gt;画上子类指向基类的箭头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;覆盖&#34;&gt;&lt;a href=&#34;#覆盖&#34; class=&#34;headerlink&#34; title=&#34;覆盖&#34;&gt;&lt;/a&gt;覆盖&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;在子类中，可以覆盖基类的方法&lt;/li&gt;
+&lt;li&gt;举例，狗和猫都是动物，但是叫声不同，创建这样的类时，可以把Animal作为基类，Dog&amp;#x2F;Cat作为子类，在子类中覆盖Animal类的发出叫声的方法&lt;/li&gt;
+&lt;li&gt;执行顺序：对于C#，执行方法时总是先从基类中寻找，如果在该子类中找不到，会沿着类图上行，一个个寻找，直到找到对应的方法 ^7e9264&lt;/li&gt;
+&lt;li&gt;被覆盖的方法添加&lt;code&gt;virtual&lt;/code&gt;关键字&lt;/li&gt;
+&lt;li&gt;要覆盖别人的方法添加&lt;code&gt;override&lt;/code&gt;关键字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;隐藏的方法&#34;&gt;&lt;a href=&#34;#隐藏的方法&#34; class=&#34;headerlink&#34; title=&#34;隐藏的方法&#34;&gt;&lt;/a&gt;隐藏的方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果不添加这些关键字，则不会覆盖方法，而是隐藏了基类中的方法&lt;/li&gt;
+&lt;li&gt;隐藏会导致产生两个同名的方法 ^b0994f&lt;/li&gt;
+&lt;li&gt;在隐藏方法时，需要为子类中的方法添加&lt;code&gt;new&lt;/code&gt;关键字&lt;/li&gt;
+&lt;li&gt;如果隐藏了方法，调用时会根据&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;来执行，也就是调用对应引用类型的方法&lt;/li&gt;
+&lt;li&gt;如果调用了一个&lt;strong&gt;子类引用&lt;/strong&gt;中该子类&lt;strong&gt;对应基类&lt;/strong&gt;中的方法，且&lt;strong&gt;该方法&lt;/strong&gt;中调用了另一个&lt;strong&gt;隐藏的方法&lt;/strong&gt;（有两个&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;同名方法&#34;&gt;同名方法&lt;/a&gt;），则会执行&lt;strong&gt;对应基类&lt;/strong&gt;中的隐藏方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承的用法&#34;&gt;&lt;a href=&#34;#继承的用法&#34; class=&#34;headerlink&#34; title=&#34;继承的用法&#34;&gt;&lt;/a&gt;继承的用法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;对于传递一个类的参数，如果该参数需要一个基类，则不仅可以传递该基类，还可以传递它的子类（任何一个都可以）&lt;/li&gt;
+&lt;li&gt;传递后，只能使用对应传递的类中的内容&lt;/li&gt;
+&lt;li&gt;比如传递一个基类，就不能使用它的子类的内容&lt;/li&gt;
+&lt;li&gt;传递一个子类，也&lt;strong&gt;不能&lt;/strong&gt;使用&lt;strong&gt;对应基类&lt;/strong&gt;的&lt;strong&gt;其他子类&lt;/strong&gt;中的内容&lt;/li&gt;
+&lt;li&gt;子类可以使用&lt;code&gt;base&lt;/code&gt;关键字访问基类中的方法，即使它们被覆盖了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承中的&#34;&gt;&lt;a href=&#34;#继承中的&#34; class=&#34;headerlink&#34; title=&#34;继承中的&#34;&gt;&lt;/a&gt;继承中的&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/&#34; title=&#34;构造函数&#34;&gt;构造函数&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果基类中有带参数的构造函数，则在子类中也必须调用其中一个&lt;/li&gt;
+&lt;li&gt;但是，子类的构造函数与基类的构造函数可以有不同参数&lt;/li&gt;
+&lt;li&gt;构造函数执行时，会从基类开始，沿着类图下行依次执行（这和&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%BB%A7%E6%89%BF/&#34; title=&#34;覆盖的执行顺序&#34;&gt;覆盖的执行顺序&lt;/a&gt;正好相反）&lt;/li&gt;
+&lt;li&gt;举例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyBase&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MyBase&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number1&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Console.WriteLine(number1);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MySub&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;MySub&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number1,&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; number2&lt;/span&gt;):&lt;span class=&#34;title&#34;&gt;base&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;number1&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Console.WriteLine(number2);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//output: number1 number2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;知识拓展&#34;&gt;&lt;a href=&#34;#知识拓展&#34; class=&#34;headerlink&#34; title=&#34;知识拓展&#34;&gt;&lt;/a&gt;知识拓展&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;让类尽可能减少重叠，这是一个重要的设计原则，称作关注点分离&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;String.IsNullOrEmpty()&lt;/code&gt;可以检测一个字符串是否为空（即&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;）或&lt;code&gt;null&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-24T12:45:39.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/</id>
+        <title>Csharp读书笔记（三）-封装</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E5%B0%81%E8%A3%85/"/>
+        <content type="html">&lt;h2 id=&#34;封装&#34;&gt;&lt;a href=&#34;#封装&#34; class=&#34;headerlink&#34; title=&#34;封装&#34;&gt;&lt;/a&gt;封装&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;封装保证类中一些数据是私有的&lt;/li&gt;
+&lt;li&gt;私有字段、方法只能在类内部访问，使用关键字&lt;code&gt;private&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;封装可以避免不必要的错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;属性&#34;&gt;&lt;a href=&#34;#属性&#34; class=&#34;headerlink&#34; title=&#34;属性&#34;&gt;&lt;/a&gt;属性&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;属性对于其他对象来说就是&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;字段&#34;&gt;字段&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;可以通过属性获取或设置一个后备字段&lt;/li&gt;
+&lt;li&gt;属性首字母大写，后备字段应小写&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;属性的好处：在获取或设置时可以执行一些语句（比如设置一些有关的字段），防止直接更改字段导致逻辑计算错误&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;获取&lt;code&gt;get&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置&lt;code&gt;set&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每个&lt;code&gt;set&lt;/code&gt;都有一个名为&lt;code&gt;value&lt;/code&gt;的参数，获取的是设置的值&lt;/li&gt;
+&lt;li&gt;可以只设置&lt;code&gt;get&lt;/code&gt;或&lt;code&gt;set&lt;/code&gt;中的一个&lt;/li&gt;
+&lt;li&gt;举例：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; numberOfComputers;&lt;span class=&#34;comment&#34;&gt;//这是一个后备字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; displays;&lt;span class=&#34;comment&#34;&gt;//这是另一个字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; NumberOfComputers&lt;span class=&#34;comment&#34;&gt;//这是一个属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;get&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; numberOfComputers;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  numberOfComputers = &lt;span class=&#34;keyword&#34;&gt;value&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//设置后备字段&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  displays = &lt;span class=&#34;keyword&#34;&gt;value&lt;/span&gt;*&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;comment&#34;&gt;/*举例，每台电脑需要2个显示器，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *这样封装可以防止直接从外部&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *修改displays，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *而外部代码可能发生错误导致dispalys不是2倍&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  *这就避免了不必要的错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;  */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在窗体应用执行&lt;code&gt;Console.WriteLine()&lt;/code&gt;时，输出显示在&lt;code&gt;output&lt;/code&gt;窗口&lt;/li&gt;
+&lt;li&gt;输入&lt;code&gt;prop&lt;/code&gt;，再按下tab，会向代码中添加一个自动属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;构造函数&#34;&gt;&lt;a href=&#34;#构造函数&#34; class=&#34;headerlink&#34; title=&#34;构造函数&#34;&gt;&lt;/a&gt;构造函数&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;构造函数会在类创建时执行&lt;/li&gt;
+&lt;li&gt;构造函数没有返回值&lt;/li&gt;
+&lt;li&gt;添加构造函数时，需要添加一个与类同名的方法，但是没有返回值&lt;/li&gt;
+&lt;li&gt;构造函数可以用来在创建&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;实例&#34;&gt;实例&lt;/a&gt;时为私有变量指定值&lt;/li&gt;
+&lt;li&gt;当然也可以做更多事情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识拓展&#34;&gt;&lt;a href=&#34;#知识拓展&#34; class=&#34;headerlink&#34; title=&#34;知识拓展&#34;&gt;&lt;/a&gt;知识拓展&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;方法的第一行包含存取修饰符、返回值、名字和参数，这些称之为签名&lt;/li&gt;
+&lt;li&gt;属性也有签名&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-23T12:45:22.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/obsidian%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0hexo%E6%94%BB%E7%95%A5/</id>
+        <title>obsidian文章发布到hexo攻略</title>
+        <link rel="alternate" href="https://blog.samhou.top/obsidian%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0hexo%E6%94%BB%E7%95%A5/"/>
+        <content type="html">&lt;h2 id=&#34;目标&#34;&gt;&lt;a href=&#34;#目标&#34; class=&#34;headerlink&#34; title=&#34;目标&#34;&gt;&lt;/a&gt;目标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;将obsidian中带有反向链接的markdown文章在hexo中正常显示&lt;/li&gt;
+&lt;li&gt;快速添加文章头部的标题、时间、标签等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用的软件-项目&#34;&gt;&lt;a href=&#34;#使用的软件-项目&#34; class=&#34;headerlink&#34; title=&#34;使用的软件&amp;#x2F;项目&#34;&gt;&lt;/a&gt;使用的软件&amp;#x2F;项目&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;obsidian&lt;/li&gt;
+&lt;li&gt;vscode&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint&#34;&gt;markdownlint插件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Cyrusky/hexo-backlink&#34;&gt;Cyrusky&amp;#x2F;hexo-backlink&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;迁移项目文件&#34;&gt;&lt;a href=&#34;#迁移项目文件&#34; class=&#34;headerlink&#34; title=&#34;迁移项目文件&#34;&gt;&lt;/a&gt;迁移项目文件&lt;/h2&gt;&lt;p&gt;首先，复制要发布的文档到_post文件夹。然后在vscode中打开hexo文件夹。&lt;/p&gt;
+&lt;h2 id=&#34;规范markdown格式&#34;&gt;&lt;a href=&#34;#规范markdown格式&#34; class=&#34;headerlink&#34; title=&#34;规范markdown格式&#34;&gt;&lt;/a&gt;规范markdown格式&lt;/h2&gt;&lt;p&gt;vscode中安装markdownlint插件，启用后打开要发布的文章，打开问题面板。&lt;br&gt;这时可能会检测出几个问题，右键选择一个问题，点击&lt;img src=&#34;https://s4.ax1x.com/2022/01/23/74K5CV.png&#34; alt=&#34;pic&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s4.ax1x.com/2022/01/23/74K5CV.png&#34; class=&#34;lozad post-image&#34;&gt;即可一键规范格式。&lt;/p&gt;
+&lt;h2 id=&#34;使用用户片段&#34;&gt;&lt;a href=&#34;#使用用户片段&#34; class=&#34;headerlink&#34; title=&#34;使用用户片段&#34;&gt;&lt;/a&gt;使用用户片段&lt;/h2&gt;&lt;p&gt;在vscode中选择文件-设置-用户片段，选择新建“xxx”文件夹的代码片段文件，随便取个名字然后回车。然后把下面的代码黏贴到大括号里面&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;xxx&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;scope&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;prefix&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;xxx&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;---&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;title: $TM_FILENAME_BASE&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;date:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;tags:&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;- $1&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;categories: $2&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;---&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;xxx&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;把第一个xxx随便取个名字，第二个输入一个随便的单词，第三个随便写个描述，然后保存。&lt;br&gt;接下来按ctrl+shift+p打开命令面板，输入json，选择首选项：打开工作区设置，会打开一个json文件，然后把里面的内容替换为下面的代码&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;[markdown]&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;attr&#34;&gt;&amp;quot;editor.quickSuggestions&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;现在你已经开启可输入建议，可以使用代码片段了。打开你的文章，在首行输入你设定的第二个xxx中的单词，按下tab，就会自动生成一段片段，完成添加。&lt;/p&gt;
+&lt;h2 id=&#34;正常显示反向链接&#34;&gt;&lt;a href=&#34;#正常显示反向链接&#34; class=&#34;headerlink&#34; title=&#34;正常显示反向链接&#34;&gt;&lt;/a&gt;正常显示反向链接&lt;/h2&gt;&lt;p&gt;打开终端，输入&lt;code&gt;npm install hexo-backlink&lt;/code&gt;等待安装完成（&lt;a href=&#34;https://github.com/Cyrusky/hexo-backlink&#34;&gt;项目文档&lt;/a&gt;），该插件会在生成时自动转换反向链接。&lt;/p&gt;
+&lt;h2 id=&#34;示例&#34;&gt;&lt;a href=&#34;#示例&#34; class=&#34;headerlink&#34; title=&#34;示例&#34;&gt;&lt;/a&gt;示例&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.samhou.top/categories/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/&#34;&gt;利用github发布的博客&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="obsidian" />
+        <category term="hexo" />
+        <updated>2022-01-23T04:03:41.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/</id>
+        <title>Csharp读书笔记（二）-数组</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E6%95%B0%E7%BB%84/"/>
+        <content type="html">&lt;h2 id=&#34;数组&#34;&gt;&lt;a href=&#34;#数组&#34; class=&#34;headerlink&#34; title=&#34;数组&#34;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;数组是一组变量，可以存储和修改多个数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建数组时，需要指定类型、名称和元素数量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可以为&lt;a href=&#34;/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/&#34; title=&#34;引用&#34;&gt;引用&lt;/a&gt;创建数组，但是创建时只会创建引用变量，不会创建实例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;必须分别为每一个对象创建实例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数组的索引是从0开始的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;比如，创建一个元素数量为6的int数组，&lt;code&gt;int[] numbers=new int[6]&lt;/code&gt;，此时访问&lt;code&gt;numbers[5]&lt;/code&gt;，这时获取的元素为第6个&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Random&lt;/code&gt;类可以随机生成数字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用时，先创建实例，再使用&lt;code&gt;Next()&lt;/code&gt;方法，举例：调用&lt;code&gt;GetRandom()&lt;/code&gt;时，以下代码会返回一个9到100间的随机整数&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; Random Randomizer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;GetRandom&lt;/span&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt;(Randomizer.Next(&lt;span class=&#34;number&#34;&gt;9&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对价格使用decimal类型时，要在值后面加上M&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-22T12:45:08.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/</id>
+        <title>Csharp读书笔记（一）-对象与引用</title>
+        <link rel="alternate" href="https://blog.samhou.top/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%BC%95%E7%94%A8/"/>
+        <content type="html">&lt;p&gt;这个系列是head first csharp书籍的读书笔记，总结提炼了一些C#的核心内容，以及自己的个人理解。&lt;/p&gt;
+&lt;h2 id=&#34;程序从哪里来&#34;&gt;&lt;a href=&#34;#程序从哪里来&#34; class=&#34;headerlink&#34; title=&#34;程序从哪里来&#34;&gt;&lt;/a&gt;程序从哪里来&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;IDE是一种方便的文件编辑器&lt;/li&gt;
+&lt;li&gt;.NET提供很多工具来帮助你完成任务&lt;/li&gt;
+&lt;li&gt;程序在CLR中运行&lt;/li&gt;
+&lt;li&gt;using语句让你可以使用其他命名空间中的类&lt;/li&gt;
+&lt;li&gt;命名空间包含类，类包含方法，方法由语句组成&lt;/li&gt;
+&lt;li&gt;方法前的类型指出了这个方法的返回值，方法后的括号中包含参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;对象&#34;&gt;&lt;a href=&#34;#对象&#34; class=&#34;headerlink&#34; title=&#34;对象&#34;&gt;&lt;/a&gt;对象&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;由一个类创建新对象时，称为这个类的一个实例 ^be690f&lt;/li&gt;
+&lt;li&gt;使用new关键字创建实例&lt;/li&gt;
+&lt;li&gt;静态类不用创建实例，但其他类需要创建实例才能使用&lt;/li&gt;
+&lt;li&gt;可以在类中包含静态方法，使用它们时不用创建实例&lt;/li&gt;
+&lt;li&gt;实例使用字段来跟踪其状态 ^52e61c&lt;/li&gt;
+&lt;li&gt;每个实例都会有自己的变量副本&lt;/li&gt;
+&lt;li&gt;创建对象时，会放在内存中的一个部分，称作堆&lt;/li&gt;
+&lt;li&gt;类图可以帮助你组织类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;创建类图&#34;&gt;&lt;a href=&#34;#创建类图&#34; class=&#34;headerlink&#34; title=&#34;创建类图&#34;&gt;&lt;/a&gt;创建类图&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;画一个矩形方框&lt;/li&gt;
+&lt;li&gt;在顶部写出字段&lt;/li&gt;
+&lt;li&gt;画一条横线&lt;/li&gt;
+&lt;li&gt;在下方写出方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;引用&#34;&gt;&lt;a href=&#34;#引用&#34; class=&#34;headerlink&#34; title=&#34;引用&#34;&gt;&lt;/a&gt;引用&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对象的一个引用叫做引用变量&lt;/li&gt;
+&lt;li&gt;引用像标签，可以通过标签找到对象&lt;/li&gt;
+&lt;li&gt;一个对象可以有多个引用，就像你可以给一个瓶子贴多个标签&lt;/li&gt;
+&lt;li&gt;引用可以移动&lt;/li&gt;
+&lt;li&gt;一个没有引用的对象会被垃圾回收&lt;/li&gt;
+&lt;li&gt;移动引用：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;myclass class1=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; myclass();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;myclass class2=&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; myclass();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;class1=class2;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+&lt;p&gt;这样做把class2指向的myclass实例“赋值”给class1这个引用，&lt;br&gt;相当于把class2指向的myclass实例贴上了class1的标签，&lt;br&gt;也就是把class1的引用移动到class2上面，&lt;br&gt;这样原来class1指向的对象会被垃圾回收！  &lt;/p&gt;
+&lt;hr&gt;
+</content>
+        <category term="csharp" />
+        <category term="hfc" />
+        <updated>2022-01-21T12:44:44.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/</id>
+        <title>qnap搭建rss全攻略</title>
+        <link rel="alternate" href="https://blog.samhou.top/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/"/>
+        <content type="html">&lt;h1 id=&#34;目标&#34;&gt;&lt;a href=&#34;#目标&#34; class=&#34;headerlink&#34; title=&#34;目标&#34;&gt;&lt;/a&gt;目标&lt;/h1&gt;&lt;p&gt;在qnap nas上搭建ttrss、rsshub，并通过fluent reader连接到所搭建的服务，实现多端同步。过程中踩了很多坑，所以这篇文章将列出所有遇到的坑，完整详细地讲解如何搭建一个可以正常使用的rss系统。&lt;/p&gt;
+&lt;h1 id=&#34;nas搭建教程&#34;&gt;&lt;a href=&#34;#nas搭建教程&#34; class=&#34;headerlink&#34; title=&#34;nas搭建教程&#34;&gt;&lt;/a&gt;nas搭建教程&lt;/h1&gt;&lt;h2 id=&#34;awesome-ttrss-（文档）&#34;&gt;&lt;a href=&#34;#awesome-ttrss-（文档）&#34; class=&#34;headerlink&#34; title=&#34;awesome ttrss （文档）&#34;&gt;&lt;/a&gt;awesome ttrss （&lt;a href=&#34;http://ttrss.henry.wang/zh&#34;&gt;文档&lt;/a&gt;）&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;一个一站式rss客户端解决方案，可以多端同步浏览记录。其中的fever插件允许应用程序接入。&lt;/p&gt;
+&lt;h3 id=&#34;创建数据库文件夹&#34;&gt;&lt;a href=&#34;#创建数据库文件夹&#34; class=&#34;headerlink&#34; title=&#34;创建数据库文件夹&#34;&gt;&lt;/a&gt;创建数据库文件夹&lt;/h3&gt;&lt;p&gt;ttrss需要数据库来保存文件。在File station中Container共享文件夹中右键创建文件夹，右键新建的文件夹选择属性，记下文件路径。&lt;/p&gt;
+&lt;p&gt;注意：显示的文件路径不全，需要在前面补上&lt;code&gt;/share&lt;/code&gt;，在后面补上&lt;code&gt;/文件夹名称&lt;/code&gt;，最终路径应该像这样：&lt;code&gt;/share/.../文件夹名称&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用docker安装&#34;&gt;&lt;a href=&#34;#使用docker安装&#34; class=&#34;headerlink&#34; title=&#34;使用docker安装&#34;&gt;&lt;/a&gt;使用docker安装&lt;/h3&gt;&lt;p&gt;qnap提供container station，可以运行docker容器。首先在app center里安装container station（这里已经装好）:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/17/5tlA7n.png&#34; alt=&#34;container station&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/17/5tlA7n.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开之后选择创建(create)，右上角选择create application:&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/17/5tlyNt.png&#34; alt=&#34;创建&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/17/5tlyNt.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;弹出一个窗口，随便取个名字，然后把下面的代码粘贴到YAML一栏（这段代码在官方文档里有）：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;version: &amp;quot;3&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;services:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  service.rss:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    image: wangqiru/ttrss:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    container_name: ttrss&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ports:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - 181:80&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - SELF_URL_PATH=http://ip:181/ # please change to your own domain&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - DB_PASS=ttrss # use the same password defined in `database.postgres`&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - PUID=1000&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - PGID=1000&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - ALLOW_PORTS=1200&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - feed-icons:/var/www/feed-icons/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - public_access&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - database_only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    stdin_open: true&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    tty: true&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  service.mercury: # set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    image: wangqiru/mercury-parser-api:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    container_name: mercury&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - public_access&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  service.opencc: # set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    image: wangqiru/opencc-api-server:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    container_name: opencc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - NODE_ENV=production&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  database.postgres:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    image: postgres:13-alpine&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    container_name: postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - POSTGRES_PASSWORD=ttrss # feel free to change the password&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - 数据库路径:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      - database_only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  # utility.watchtower:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #   container_name: watchtower&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #   image: containrrr/watchtower:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #   volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #     - /var/run/docker.sock:/var/run/docker.sock&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #   environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #     - WATCHTOWER_CLEANUP=true&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #     - WATCHTOWER_POLL_INTERVAL=86400&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #   restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  feed-icons:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  public_access: # Provide the access for ttrss UI&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  service_only: # Provide the communication network between services only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    internal: true&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  database_only: # Provide the communication between ttrss and database only&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    internal: true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;粘贴后，修改ip、数据库路径。ip即nas的ip地址，数据库路径即在第一步中创建的文件夹路径。&lt;/p&gt;
+&lt;p&gt;注意：其中allow_ports为除80,443端口外ttrss可以访问的端口号，这里设置为1200是为了rsshub能够正常订阅。&lt;/p&gt;
+&lt;p&gt;设置完成后，点确定就可以创建ttrss了。等待一段时间，装好后访问&lt;code&gt;http://ip:181/&lt;/code&gt;就可以访问到ttrss界面了。&lt;/p&gt;
+&lt;h3 id=&#34;设置ttrss&#34;&gt;&lt;a href=&#34;#设置ttrss&#34; class=&#34;headerlink&#34; title=&#34;设置ttrss&#34;&gt;&lt;/a&gt;设置ttrss&lt;/h3&gt;&lt;p&gt;打开ttrss后，默认账号&lt;code&gt;admin&lt;/code&gt;，密码&lt;code&gt;password&lt;/code&gt;。在右上角偏好设置-用户里可以改。&lt;/p&gt;
+&lt;h3 id=&#34;启用fever插件&#34;&gt;&lt;a href=&#34;#启用fever插件&#34; class=&#34;headerlink&#34; title=&#34;启用fever插件&#34;&gt;&lt;/a&gt;启用fever插件&lt;/h3&gt;&lt;p&gt;为了让客户端可以访问ttrss，必须借助fever插件。&lt;br&gt;偏好设置-偏好设置-Fever Emulation里设个密码：&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/17/5t8ZtI.png&#34; alt=&#34;fever&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/17/5t8ZtI.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;连接fever（以开源的fluent-reader为例，支持windows-ios-android等平台）&#34;&gt;&lt;a href=&#34;#连接fever（以开源的fluent-reader为例，支持windows-ios-android等平台）&#34; class=&#34;headerlink&#34; title=&#34;连接fever（以开源的fluent reader为例，支持windows,ios,android等平台）&#34;&gt;&lt;/a&gt;连接fever（以开源的&lt;a href=&#34;https://github.com/yang991178/fluent-reader&#34;&gt;fluent reader&lt;/a&gt;为例，支持windows,ios,android等平台）&lt;/h3&gt;&lt;p&gt;打开设置，选择服务，fever api。在“端点”中填入&lt;code&gt;http://ip:181/plugins/fever/&lt;/code&gt;。用户名为ttrss用户名，&lt;strong&gt;密码是fever插件中设置的密码，不是ttrss的密码！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;到此，ttrss设置完毕，可以正常订阅、阅读rss内容了。下面配置rsshub。&lt;/p&gt;
+&lt;h2 id=&#34;rsshub（文档）&#34;&gt;&lt;a href=&#34;#rsshub（文档）&#34; class=&#34;headerlink&#34; title=&#34;rsshub（文档）&#34;&gt;&lt;/a&gt;rsshub（&lt;a href=&#34;https://docs.rsshub.app/&#34;&gt;文档&lt;/a&gt;）&lt;/h2&gt;&lt;h3 id=&#34;简介-1&#34;&gt;&lt;a href=&#34;#简介-1&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;一个可以为不提供rss站点生成rss的项目。&lt;/p&gt;
+&lt;h3 id=&#34;docker搭建&#34;&gt;&lt;a href=&#34;#docker搭建&#34; class=&#34;headerlink&#34; title=&#34;docker搭建&#34;&gt;&lt;/a&gt;docker搭建&lt;/h3&gt;&lt;p&gt;因为这次不需要多个容器（ttrss需要有数据库和本体），所以不需要输入代码，所有操作都可以在图形界面进行，首先安装rsshub容器（从左到右按照图示操作）：&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/17/5t4xL8.png&#34; alt=&#34;安装rsshub&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/17/5t4xL8.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;版本选latest，到最后选择&lt;code&gt;advanced settings&amp;gt;&amp;gt;&lt;/code&gt;，选择network一栏，把network mode调成bridge，选择use static IP，把ip address改成不同于nas的（一般改最后一位即可）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：请根据实际网络情况配置该项。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;为什么要这么做？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;实际测试无法自己访问自己，所以将容器独立出来，为它在局域网内分配一个单独ip，即可正常访问。&lt;/p&gt;
+&lt;p&gt;接下来建立容器，等待一段时间后访问&lt;code&gt;ip:1200&lt;/code&gt;，若出现welcome to rsshub即建立成功。&lt;/p&gt;
+&lt;p&gt;到此，所有配置全部完成，应该可以正常使用了。&lt;/p&gt;
+</content>
+        <category term="qnap" />
+        <category term="rss" />
+        <updated>2021-10-16T09:31:01.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/</id>
+        <title>windows UAC跳过教程</title>
+        <link rel="alternate" href="https://blog.samhou.top/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/"/>
+        <content type="html">&lt;h1 id=&#34;什么是UAC&#34;&gt;&lt;a href=&#34;#什么是UAC&#34; class=&#34;headerlink&#34; title=&#34;什么是UAC&#34;&gt;&lt;/a&gt;什么是UAC&lt;/h1&gt;&lt;p&gt;安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3kxf.png&#34; alt=&#34;管理员运行记事本&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5p3kxf.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;有时候，运行一些程序可能需要管理员权限，比如某些电脑清理软件。&lt;/p&gt;
+&lt;h1 id=&#34;第一种方法：直接关闭UAC&#34;&gt;&lt;a href=&#34;#第一种方法：直接关闭UAC&#34; class=&#34;headerlink&#34; title=&#34;第一种方法：直接关闭UAC&#34;&gt;&lt;/a&gt;第一种方法：直接关闭UAC&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;打开控制面板-系统和安全-安全和维护&lt;/li&gt;
+&lt;li&gt;在用户账户控制那里点击更改设置&lt;/li&gt;
+&lt;li&gt;下拉到“从不通知”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;第二种方法：使用任务计划程序&#34;&gt;&lt;a href=&#34;#第二种方法：使用任务计划程序&#34; class=&#34;headerlink&#34; title=&#34;第二种方法：使用任务计划程序&#34;&gt;&lt;/a&gt;第二种方法：使用任务计划程序&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;右键windows图标&lt;/li&gt;
+&lt;li&gt;选择计算机管理&lt;/li&gt;
+&lt;li&gt;选择左侧的任务计划程序-任务计划程序库&lt;/li&gt;
+&lt;li&gt;点击右侧“创建任务…”&lt;/li&gt;
+&lt;li&gt;名称随便填，勾选&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3iGt.png&#34; alt=&#34;最高权限运行&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5p3iGt.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;操作一栏中选择新建，弹出这么个窗口：&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5pIiY4.png&#34; alt=&#34;新建操作&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5pIiY4.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;这里就选择启动程序，点浏览，选择要跳过UAC的程序，确定保存&lt;/li&gt;
+&lt;li&gt;根据需要设定剩下的条件、设置、触发器&lt;/li&gt;
+&lt;li&gt;如果需要开机启动，请选择&lt;strong&gt;登录时&lt;/strong&gt;，不要选择&lt;del&gt;启动时&lt;/del&gt;（因为要登陆再启动程序）&lt;/li&gt;
+&lt;li&gt;设置完成，现在添加一个对于新建的任务的快捷方式：在电脑桌面上右键新建-快捷方式，位置一栏输入&lt;code&gt;SCHTASKS /RUN /TN 任务名称&lt;/code&gt;，把任务名称改为在第5步中创建的名称&lt;/li&gt;
+&lt;li&gt;现在建立了快捷方式，双击桌面上的图标即可跳过UAC运行软件~&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="windows" />
+        <category term="UAC" />
+        <updated>2021-10-04T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.samhou.top/%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/</id>
+        <title>使用windows计划任务实现插入移动硬盘自动运行程序</title>
+        <link rel="alternate" href="https://blog.samhou.top/%E4%BD%BF%E7%94%A8windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F/"/>
+        <content type="html">&lt;h2 id=&#34;思路&#34;&gt;&lt;a href=&#34;#思路&#34; class=&#34;headerlink&#34; title=&#34;思路&#34;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;在系统计划任务中，有一个“发生事件时”的触发器。这让插入移动硬盘自动运行程序成为了可能。所以只要找到插入硬盘时触发的系统事件，即可实现。在事件查看器中，通过筛选，我发现插入硬盘时，触发了来源为DistributedCOM的警告事件，ID为10016。&lt;/p&gt;
+&lt;h2 id=&#34;实现方法&#34;&gt;&lt;a href=&#34;#实现方法&#34; class=&#34;headerlink&#34; title=&#34;实现方法&#34;&gt;&lt;/a&gt;实现方法&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;插入移动硬盘&lt;/li&gt;
+&lt;li&gt;右键开始菜单图标，选择计算机管理，选择系统工具-事件查看器-windows日志-系统，找到刚刚插入硬盘发生的DistributedCOM事件，如下图&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3FRP.png&#34; alt=&#34;DistributedCOM&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5p3FRP.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;右键这个警告事件，选择将“任务附加到此事件”，通过这个向导即可创建一个自动任务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;用途&#34;&gt;&lt;a href=&#34;#用途&#34; class=&#34;headerlink&#34; title=&#34;用途&#34;&gt;&lt;/a&gt;用途&lt;/h2&gt;&lt;p&gt;这个功能用途很多，比如插入后自动运行备份程序，关键看需求。&lt;/p&gt;
+</content>
+        <category term="windows" />
+        <category term="任务计划程序" />
+        <updated>2021-09-04T16:00:00.000Z</updated>
+    </entry>
 </feed>
