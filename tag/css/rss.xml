@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>SamHou&#39;s blog • Posts by &#34;css&#34; tag</title>
+        <link>https://blog.samhou.top</link>
+        <description>A blog</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 24 Feb 2024 12:02:35 +0800</pubDate>
+        <lastBuildDate>Sat, 24 Feb 2024 12:02:35 +0800</lastBuildDate>
+        <category>winform</category>
+        <category>AI</category>
+        <category>csharp</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>窗口控制</category>
+        <category>焦点</category>
+        <category>obsidian</category>
+        <category>hexo</category>
+        <category>qnap</category>
+        <category>rss</category>
+        <category>Steam</category>
+        <category>手机游戏</category>
+        <category>电脑游戏</category>
+        <category>单机游戏</category>
+        <category>网络游戏</category>
+        <category>windows</category>
+        <category>UAC</category>
+        <category>小说</category>
+        <category>蔚蓝档案</category>
+        <category>科幻</category>
+        <category>任务计划程序</category>
+        <category>拖延症</category>
+        <category>学习方法</category>
+        <category>Bing</category>
+        <category>English</category>
+        <category>象征</category>
+        <category>规则</category>
+        <category>css</category>
+        <category>flexbox</category>
+        <category>web</category>
+        <item>
+            <guid isPermalink="true">https://blog.samhou.top/%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/</guid>
+            <title>通俗理解css弹性盒子</title>
+            <link>https://blog.samhou.top/%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/</link>
+            <category>css</category>
+            <category>flexbox</category>
+            <category>web</category>
+            <pubDate>Sat, 24 Feb 2024 12:02:35 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;先决条件&#34;&gt;&lt;a href=&#34;#先决条件&#34; class=&#34;headerlink&#34; title=&#34;先决条件&#34;&gt;&lt;/a&gt;先决条件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;熟悉html，css的基本语法&lt;/li&gt;
+&lt;li&gt;高中英语水平&lt;/li&gt;
+&lt;li&gt;准备一些不同大小的照片&lt;/li&gt;
+&lt;li&gt;好奇心和探索精神&lt;br&gt;其实，这是个笔记。这个笔记来源于以下课程：&lt;a href=&#34;https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/#learn-css-flexbox-by-building-a-photo-gallery&#34;&gt;freecodecamp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;什么是css弹性盒子FlexBox&#34;&gt;&lt;a href=&#34;#什么是css弹性盒子FlexBox&#34; class=&#34;headerlink&#34; title=&#34;什么是css弹性盒子FlexBox&#34;&gt;&lt;/a&gt;什么是css弹性盒子FlexBox&lt;/h2&gt;&lt;p&gt;通俗的讲起来，FlexBox就是一种让元素自动布局的方法。在不同的设备&amp;#x2F;网页大小下，你的元素能够根据你自己的设置自动调节布局。具体的我们在代码中讲解。&lt;/p&gt;
+&lt;h2 id=&#34;开始使用弹性盒子&#34;&gt;&lt;a href=&#34;#开始使用弹性盒子&#34; class=&#34;headerlink&#34; title=&#34;开始使用弹性盒子&#34;&gt;&lt;/a&gt;开始使用弹性盒子&lt;/h2&gt;&lt;p&gt;先从最初的一段代码开始：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;e1是你创建的类，display: flex;表示使用弹性盒子。&lt;/p&gt;
+&lt;p&gt;光看不练没什么效果，现在请先创建一个基础的html网页，添加div元素，在其中加上多个img元素，放上你自己准备好的照片。&lt;/p&gt;
+&lt;h2 id=&#34;主轴和交叉轴&#34;&gt;&lt;a href=&#34;#主轴和交叉轴&#34; class=&#34;headerlink&#34; title=&#34;主轴和交叉轴&#34;&gt;&lt;/a&gt;主轴和交叉轴&lt;/h2&gt;&lt;p&gt;Flexbox中的主轴决定了元素的排列方向。有4个值，看看下面的4段不同的代码：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: column;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: column-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;利用你的英语想一想，应该很快就能明白了。row&amp;#x2F;column表示横着排和竖着排，-reverse表示反转排列方向。为了让你的照片不要溢出屏幕，你可以用竖着排的方式。不过这样一行只有一张，所以我们先选择横着排，然后用下面的方式换行：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-wrap&lt;/span&gt;: wrap;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;默认值是nowarp，这里设置为wrap表示允许换行。尝试改变你的浏览器大小，可以看到照片随着你的网页大小换行了。&lt;/p&gt;
+&lt;p&gt;那么什么是交叉轴呢？交叉轴是垂直与主轴的轴，知道这一点就够了。&lt;/p&gt;
+&lt;h2 id=&#34;对齐&#34;&gt;&lt;a href=&#34;#对齐&#34; class=&#34;headerlink&#34; title=&#34;对齐&#34;&gt;&lt;/a&gt;对齐&lt;/h2&gt;&lt;p&gt;你的容器现在默认左对齐。用下列代码可以修改为居中：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-wrap&lt;/span&gt;: wrap;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;justify-content&lt;/span&gt;: center;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;justify-content控制整个Flexbox容器的&lt;strong&gt;主轴&lt;/strong&gt;对齐方式，这里表示居中。此外，要保证每一项在&lt;strong&gt;交叉轴&lt;/strong&gt;居中，你需要利用align-items: &lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;flex-wrap&lt;/span&gt;: wrap;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;justify-content&lt;/span&gt;: center;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;align-items&lt;/span&gt;: center;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;所以这两个到底有什么区别？？？为了更好理解，有一个网页可以自己尝试更改。&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container&#34;&gt;MDN Web Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1个元素可能无法很好地观察到区别，因此试试把下面代码里地这两个属性改成center：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;box&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;flex-direction&lt;/span&gt;: row;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;flex-wrap&lt;/span&gt;: wrap;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;justify-content&lt;/span&gt;: normal;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;align-items&lt;/span&gt;: normal;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;height&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;600px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.box&lt;/span&gt; &lt;span class=&#34;selector-tag&#34;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;width&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;height&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;background-color&lt;/span&gt;: red;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attribute&#34;&gt;margin&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;10px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;调节图像&#34;&gt;&lt;a href=&#34;#调节图像&#34; class=&#34;headerlink&#34; title=&#34;调节图像&#34;&gt;&lt;/a&gt;调节图像&lt;/h2&gt;&lt;p&gt;利用以下代码，可以保持图像纵横比，来自动调节到适合的大小（会&lt;strong&gt;裁剪&lt;/strong&gt;）&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt; &lt;span class=&#34;selector-tag&#34;&gt;img&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;object-fit&lt;/span&gt;: cover;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里指定了所有e1类的img元素，将其调节到合适的大小。&lt;/p&gt;
+&lt;p&gt;给图片添加间距？用gap属性：&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;gap&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;10px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;伪元素&#34;&gt;&lt;a href=&#34;#伪元素&#34; class=&#34;headerlink&#34; title=&#34;伪元素&#34;&gt;&lt;/a&gt;伪元素&lt;/h2&gt;&lt;p&gt;如果最后一行缺少图片，那么最后一张图会自动居中。为此，添加一个虚拟的元素是必要的。&lt;/p&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;selector-class&#34;&gt;.e1&lt;/span&gt;&lt;span class=&#34;selector-pseudo&#34;&gt;::after&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;content&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;attribute&#34;&gt;width&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+
+&lt;p&gt;你可以自行调节，来让最后一行多出一个元素。目前它不会显示任何内容，你可以用css指定它的颜色等属性。&lt;/p&gt;
+&lt;h2 id=&#34;小测试&#34;&gt;&lt;a href=&#34;#小测试&#34; class=&#34;headerlink&#34; title=&#34;小测试&#34;&gt;&lt;/a&gt;小测试&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;什么是Flexbox？如何使用它？&lt;/li&gt;
+&lt;li&gt;主轴、交叉轴分别是什么？如何设定它们？&lt;/li&gt;
+&lt;li&gt;如何设置自动换行？&lt;/li&gt;
+&lt;li&gt;如何设置居中？2种居中方式的区别是？&lt;/li&gt;
+&lt;li&gt;如何添加伪元素？有什么用？&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
