@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="A blog">
+  <link 
+    rel="icon" 
+    href="/img/blog.svg">
+  <title>苍 After Story Part1</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="苍 After Story Part1">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://blog.samhou.top/%E8%8B%8D%20After%20Story%20Part1/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/SamHou.png">
+    
+    
+      <meta 
+        property="og:img" 
+        content="A blog">
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2024-06-30">
+      <meta 
+        property="og:article:modified_time" 
+        content="2024-06-30">
+      <meta 
+        property="og:article:author" 
+        content="SamHou">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="单机游戏">
+        
+          <meta 
+            property="og:article:tag" 
+            content="Gal">
+        
+          <meta 
+            property="og:article:tag" 
+            content="同人">
+        
+          <meta 
+            property="og:article:tag" 
+            content="夏日口袋">
+        
+      
+    
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  <link rel="preload" href="/css/main.css" as="style" >
+  
+    
+      <link rel="preload" href="//unpkg.com/@waline/client@v2/dist/waline.css" as="style" >
+      <link rel="preload" href="//unpkg.com/@waline/client@v2/dist/waline.js" as="script">
+    
+  
+  <link rel="modulepreload" href="//instant.page/5.1.0">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+  
+    <link rel="stylesheet" href="//unpkg.com/@waline/client@v2/dist/waline.css">
+  
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//unpkg.com/@waline/client@v2/dist/waline.js" as="script">
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <a class="navbar-logo-main" href="/">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="/img/blog.svg" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">SamHou's blog</span>
+      </a>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/about" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          友链
+        
+      </a>
+    
+    <button 
+      class="navbar-menu-item darknavbar navbar-menu-btn" 
+      aria-label="Toggle dark mode"
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </button>
+    <button 
+      class="navbar-menu-item searchnavbar navbar-menu-btn" 
+      aria-label="Toggle search"
+      id="search">
+      <!-- <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i> -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+        class="iconify iconify--ion" width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M256 80a176 176 0 1 0 176 176A176 176 0 0 0 256 80Z"></path>
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M232 160a72 72 0 1 0 72 72a72 72 0 0 0-72-72Z"></path>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28"
+          d="M283.64 283.64L336 336"></path>
+      </svg>
+    </button>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/SamHou.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">SamHou</p>
+<p class="author-description">Created by SamHou</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>32</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>10</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>34</span>
+    <span>标签</span>
+  </a>
+</div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/Csharp/">
+        <div class="categories-list-item">
+          Csharp
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/AI/">
+        <div class="categories-list-item">
+          AI
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Csharp%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          Csharp读书笔记
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+      <a href="/categories/hexo%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          hexo教程
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/qnap%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          qnap教程
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/">
+        <div class="categories-list-item">
+          游戏攻略
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/windows%E6%95%99%E7%A8%8B/">
+        <div class="categories-list-item">
+          windows教程
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%B0%8F%E8%AF%B4/">
+        <div class="categories-list-item">
+          小说
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">
+        <div class="categories-list-item">
+          学习方法
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/Web%E5%BC%80%E5%8F%91/">
+        <div class="categories-list-item">
+          Web开发
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E5%B0%8F%E8%AF%B4/" 
+        title="小说">
+        <div class="tags-list-item">小说</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F/" 
+        title="网络游戏">
+        <div class="tags-list-item">网络游戏</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%A7%91%E5%B9%BB/" 
+        title="科幻">
+        <div class="tags-list-item">科幻</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%94%9A%E8%93%9D%E6%A1%A3%E6%A1%88/" 
+        title="蔚蓝档案">
+        <div class="tags-list-item">蔚蓝档案</div>
+      </a>
+    
+      <a 
+        href="/tags/csharp/" 
+        title="csharp">
+        <div class="tags-list-item">csharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%89%8B%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
+        title="手机游戏">
+        <div class="tags-list-item">手机游戏</div>
+      </a>
+    
+      <a 
+        href="/tags/hfc/" 
+        title="hfc">
+        <div class="tags-list-item">hfc</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" 
+        title="学习方法">
+        <div class="tags-list-item">学习方法</div>
+      </a>
+    
+      <a 
+        href="/tags/windows/" 
+        title="windows">
+        <div class="tags-list-item">windows</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
+        title="单机游戏">
+        <div class="tags-list-item">单机游戏</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6/" 
+        title="窗口控制">
+        <div class="tags-list-item">窗口控制</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/winform/" 
+        title="winform">
+        <div class="tags-list-item">winform</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8B/" 
+        title="夏日口袋">
+        <div class="tags-list-item">夏日口袋</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%90%8C%E4%BA%BA/" 
+        title="同人">
+        <div class="tags-list-item">同人</div>
+      </a>
+    
+      <a 
+        href="/tags/Gal/" 
+        title="Gal">
+        <div class="tags-list-item">Gal</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <main class="main-column">
+              
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      苍 After Story Part1
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2024-06-30T04:06:53.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2024-06-30</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E5%B0%8F%E8%AF%B4/" 
+          class="post-meta-link">
+          小说
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>4.9k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" 
+            class="post-meta-link">
+            单机游戏
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/Gal/" 
+            class="post-meta-link">
+            Gal
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E5%90%8C%E4%BA%BA/" 
+            class="post-meta-link">
+            同人
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E5%A4%8F%E6%97%A5%E5%8F%A3%E8%A2%8B/" 
+            class="post-meta-link">
+            夏日口袋
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <p>鸟白岛上，有一种独特的祭祀，山之祭祀。</p>
+<p>祭祀的主持者需要手持灯笼，在山中漫步。</p>
+<p>当然，那些东西只是一种习惯罢了，是古代科学尚未发展时人们的幻想。</p>
+<p>毕竟在这个科学主导的世界上，怎么可能存在什么超自然现象呢？</p>
+<p>……开玩笑的。</p>
+<p>这个夏天，我和一个名叫苍的少女相识，相爱，共同度过了一段无可替代的时光。</p>
+<p>我也明白了，风俗什么的，只是一个用以转移注意力的借口罢了。</p>
+<p>山之祭祀绝不仅仅是那种老祖宗留下来的传说而已。</p>
+<p>那些发光的神秘蝴蝶，叫七影蝶，是这个小岛上人们魂魄的化身，拥有能够通过接触传递记忆的强大力量。</p>
+<p>而山之祭祀，则是将迷失的愿望引导回它们所应该回到的地方去。</p>
+<p>稻荷 “嘣！”</p>
+<p>蓝色小狐狸的叫声将我拉回了现实。</p>
+<p>这个名叫稻荷的生物，似乎能够听懂人们的对话。</p>
+<p>我背上的这个叫苍的少女，正安心地睡着。</p>
+<p>然而，我却不仅要忍受背上的重量，还要和困意做斗争。</p>
+<p>由于刚刚摸过苍的七影蝶，大脑需要休息来整理刚刚传来的信息。</p>
+<p>意识，逐渐模糊了……</p>
+<p>羽依里 “不可以啊……嗯……”</p>
+<p>下一秒，我就进入了梦乡。</p>
+<p>是这个夏天发生的事情。</p>
+<p>我为了整理祖母的遗物，来到了这座叫做鸟白岛的岛上，和苍相遇了。</p>
+<p>在某次睡觉前，山上的一点亮光吸引了我的注意力。</p>
+<p>怀着好奇心来到山上，发现穿着巫女服的苍正在触碰发光蝴蝶。</p>
+<p>通过仓库里的古书，我明白了这些蝴蝶叫七影碟，是人死后魂魄化身的蝴蝶，向活着的人传递着思念之情。</p>
+<p>由于想要见苍，意外之下，我自己也在夜晚的山中触摸了这种蝴蝶。</p>
+<p>……却被其中传来的记忆所控制，在不自知的情况下缓缓移动到了悬崖边。</p>
+<p>危急时刻，苍把我从悬崖边救了下来。</p>
+<p>而苍也没有隐瞒，告诉了我山之祭祀和七影蝶的真相。</p>
+<p>这个小岛，是记忆回归的地方。</p>
+<p>具有强烈迷恋和后悔的人类的记忆，回到了岛上。</p>
+<p>山之祭，就是将不能留在世上的七影碟引导回应该归去的地方的一种祭祀。</p>
+<p>而之所以她打破禁忌，不断触摸蝴蝶，是为了找到一个重要的记忆。</p>
+<p>那是她的姐姐，蓝的记忆。</p>
+<p>为了拯救摔下悬崖而沉睡的姐姐，她必须检查所有七影蝶的记忆，试图找回蓝的记忆，并送回蓝的体内。</p>
+<p>而我祖母的遗物中，就有一本书，记载着将七影蝶中蕴含的记忆送回体内的方法。</p>
+<p>在我的陪伴和苍的努力下，蓝找回了记忆，但触摸太多七影蝶的苍却随之陷入沉睡……</p>
+<p>最后，包含着记忆的七影蝶从她体内涌出，而她自己的那只七影蝶也飞向天空，近在咫尺，却又遥不可及。</p>
+<p>因此，我下定决心，要找回苍的记忆，正如苍找回蓝的记忆一样。</p>
+<p>……一阵疼痛传来。</p>
+<p>稻荷 “嘣！！！嘣！！！”</p>
+<p>狐狸牙齿带来的疼痛和焦急的叫声，让我的意识回到了现实。</p>
+<p>羽依里 “谢谢你，稻荷。”</p>
+<p>下山的路，只剩一点点了。</p>
+<p>再坚持一下吧。</p>
+<p>……</p>
+<p>我缓缓拉开了病房的房门。</p>
+<p>背上的苍仍然在熟睡着。我把她放到床上，盖好被子。</p>
+<p>羽依里 “……”</p>
+<p>蓝 “……”</p>
+<p>一阵沉默。</p>
+<p>我擦了擦脸上的泪痕。</p>
+<p>羽依里 “花……已经落完了。”</p>
+<p>一旁熟睡的苍正发出着均匀的呼吸声。</p>
+<p>苍 “唔唔，羽依里，不要走……想……在一起……嗯嗯……”</p>
+<p>羽依里 “知道了啦……”</p>
+<p>羽依里 “现在，只剩一种方法了。”</p>
+<p>蓝 “该不会是那个方法吧。”</p>
+<p>羽依里 “没错，就是那个。”</p>
+<p>我要追随苍的脚步，去完成属于我的使命。</p>
+<p>蓝 “……明年？”</p>
+<p>羽依里 “无论多少年，我也要找到。苍找到你的七影蝶花了10年……即使需要花20年，甚至一辈子，我会永远找下去。”</p>
+<p>唤醒苍，可是我的职责啊。</p>
+<p>在苍的七影蝶飞走之后，我已经下定了决心。</p>
+<p>蓝 “虽然我也想看到苍露出笑容的样子，但这可是10年啊……为了一个不是自己亲人的人，值得吗？”</p>
+<p>羽依里 “苍是我最重要的人。况且，苍已经算是我的亲人了。”</p>
+<p>蓝 “那我也去。不管10年，还是20年……”</p>
+<p>面前的蓝脸上充满了坚定。</p>
+<p>是想要报答苍吗？还是空门家的职责所在？又或者……是想要陪在我的身边？</p>
+<p>……对于一个妹控，和夺走自己妹妹的人整天呆在一起这种可能性根本不存在吧。</p>
+<p>羽依里 “你不是看不见七影蝶吗？”</p>
+<p>蓝 “不，我想陪你找……直到苍醒来的那一天。”</p>
+<p>羽依里 “？”</p>
+<p>或许这种可能性也是存在的？</p>
+<p>羽依里 “……连你也迷上我了？”</p>
+<p>蓝 “哈？我是想替她履行空门家的职责啊。不要随便曲解别人的话啊笨蛋。你是苍的……恋……恋人啊。”</p>
+<p>蓝 “你们不是……不是……连那种事情都做过了吗？”</p>
+<p>望着蓝涨红的脸，终于放下心来。</p>
+<p>果然那种可能性根本不存在。</p>
+<p>不过，有一件事情必须要解释下了。</p>
+<p>羽依里 “等等……那个真的只是……苍的梦话……而已。”</p>
+<p>看来，可能要瞒不住了。那天晚上，在亲吻之后，在山上的树林里……</p>
+<p>苍 “羽依里……请……温柔一点……嗯嗯……”</p>
+<p>这个梦话可真是不妙啊。现在轮到我解释，不，“掩饰”了吗？</p>
+<p>～选择～：A转移话题 B老实承认</p>
+<p>A：</p>
+<p>暂且找个其他话题吧？</p>
+<p>羽依里 “话说，如果我和苍结婚的话，就要叫空门羽依里了吧？还是叫鹰原苍好呢？果然还是把空门的姓氏传递下去好……”</p>
+<p>蓝 “……果然做过了呢。都想着结婚以后的事情了。”</p>
+<p>这根本不能叫转移话题吧！？</p>
+<p>羽依里！该好好锻炼一下转移话题的技术了！</p>
+<p>B：</p>
+<p>羽依里 “嗯……好吧，虽然有点说不出口，不过确……确实……做过了。”</p>
+<p>说这话时整个人都在颤抖。</p>
+<p>蓝 “你还挺诚实啊。是不是想很快生出小宝宝啊？”</p>
+<p>羽依里 “……”</p>
+<p>现在已经不止是我和苍间的秘密了。</p>
+<p>～选择结束～</p>
+<p>蓝露出了可怕的脸色。</p>
+<p>羽依里 “那个，不是，嗯，啊……对不起！今天已经很晚了我明天再来吧啊啊啊”</p>
+<p>我一溜烟跑出了蓝和苍的病房。</p>
+<p>鸟白岛熟悉的乡间小路。</p>
+<p>是什么时候变得如此熟悉的呢？</p>
+<p>回望这个夏天，和苍一起度过的时光。</p>
+<p>树下沉睡的少女，粗点心店的打工，海边的相遇……</p>
+<p>不知是不是触碰苍的七影蝶的效果，我的记忆格外清晰。</p>
+<p>羽依里 “苍，这个夏天我过得，真的很开心。”</p>
+<p>今天就是8月28日了啊。</p>
+<p>后天早上，我就必须离开鸟白岛了。</p>
+<p>在接近假期尾声的这个深夜里，要做点什么呢？</p>
+<p>～选择～A什么都不做 B去迷途橘看看</p>
+<p>A：</p>
+<p>还是睡觉吧。</p>
+<p>回到家里的时候，海己和镜子阿姨看起来都已经睡了。</p>
+<p>那么我也去睡觉吧。</p>
+<p>（获得结局1。）</p>
+<p>＊该选项影响故事走向，请继续阅读～选择结束～后的内容，直到出现结局1为止。</p>
+<p>B：</p>
+<p>夜晚的山路还是那么熟悉。</p>
+<p>在稻荷的带领下，一路上没有遇到七影蝶。</p>
+<p>迷途橘上盘旋的七影蝶早已不见，花自然也是凋谢的。</p>
+<p>挂在树边的灯笼，静静地等待着山之祭祀的到来。</p>
+<p>树下的人却只有一个。</p>
+<p>脑海中浮现出苍的笑容。</p>
+<p>我拿出包里的蝴蝶标本和古书的译本，埋在了树下。</p>
+<p>羽依里 “苍，等你醒来，我们再一起把它们挖出来，一起读完剩下的一半……”</p>
+<p>羽依里 “到时候，我还要请教你里面的故事真不真实呢……苍……我们不是还有一个约定吗……”</p>
+<p>泪水不知不觉滑下了脸颊。</p>
+<p>我仰望着天空，祈求奇迹的出现。</p>
+<p>那种事情当然不可能在现实中存在。</p>
+<p>……真的没办法吗？</p>
+<p>稻荷的叫声突然传来。</p>
+<p>我心里一紧，望向它所在的方向，盼望着能看到那只七影蝶。</p>
+<p>……它对着天空中的月亮叫起来。原来是提醒我快后半夜了啊。</p>
+<p>还是放弃那些不切实际的幻想吧。</p>
+<p>这个世界上的任何事情，都是脚踏实地地做事带来的结果。</p>
+<p>赶紧回去睡觉吧。明天还要继续陪苍呢。</p>
+<p>～选择结束～</p>
+<p>躺在床上，脑中的回忆不断显现。</p>
+<p>羽依里 “根本睡不着啊。”</p>
+<p>不过，注意力很快就被分散了。</p>
+<p>讨厌的蚊子突然出现，在我耳边嗡嗡叫着。</p>
+<p>羽依里 “可恶……还是打不到。”</p>
+<p>我放弃了挣扎。</p>
+<p>不知是太累的缘故，还是蚊子分散了注意力，这次我很快入睡了。</p>
+<p>这是在哪里呢……？</p>
+<p>面前的商店如此熟悉。</p>
+<p>是粗点心店啊。</p>
+<p>苍 “欢迎光临……是你啊。”</p>
+<p>羽依里 “苍？你不是……？”</p>
+<p>苍 “别管那么多了，跟我来吧。”</p>
+<p>羽依里 “嗯？去哪里？”</p>
+<p>苍自顾自地走了出去。</p>
+<p>我只好跟上。</p>
+<p>她带我来到了那棵她经常睡觉的树下。</p>
+<p>苍 “准备好了吗？”</p>
+<p>羽依里 “什么准备好了？”</p>
+<p>苍 “当然是……这个啊～”</p>
+<p>苍把我一把推倒。</p>
+<p>羽依里 “！？”</p>
+<p>苍 “上次在我睡觉的时候挠痒是吧？我今天也要让你来体验一下……”</p>
+<p>羽依里 “哈哈哈……快停下……”</p>
+<p>没想到苍的力气如此大，我根本无法动弹。</p>
+<p>不过，能够见到珍视的人，本身就已经很令人高兴了。</p>
+<p>我不再挣扎，感受着面前少女手心传来的温度。</p>
+<p>……</p>
+<p>梦醒了。</p>
+<p>醒来的时候，嘴上似乎带着一抹微笑。</p>
+<p>羽依里 “原来是梦。为什么那种感觉那么真实啊。”</p>
+<p>羽依里 “……不过这个梦的内容……”</p>
+<p>我知道苍不是这样的人。</p>
+<p>等等……刨冰那次，苍是不是为了报仇还往我身上扔刨冰来着……</p>
+<p>羽依里 “……”</p>
+<p>好吧，只能承认这个梦好像还挺符合逻辑的。</p>
+<p>……突然发现身上被蚊子咬了。</p>
+<p>从来没有在这里被咬过啊。海己牌人体蚊虫诱捕器失效了吗？</p>
+<p>我起身之后，才发现桌上放着一张小纸条。</p>
+<p>“我要走了哦～再见，羽依里同学。”</p>
+<p>是海己的留言。似乎昨天就在这里了。</p>
+<p>背面还有一行小字。</p>
+<p>“早饭在冰箱里了哟。”</p>
+<p>重新加热的炒饭果然没有平时好吃啊。突然发现自己竟然已经习惯了有海己的生活。</p>
+<p>好了，今天要做什么呢？</p>
+<p>先去诊所吧，苍还等着我呢。</p>
+<p>羽依里 “早上好”</p>
+<p>蓝 “早上好啊，今天要和苍结婚吗？”</p>
+<p>蓝手中拿着苍的身体检查报告，其中“年龄”一栏上画了一个大大的红圈。显然这个数值是小于18的。</p>
+<p>羽依里 “这话和这个圈是怎么回事啊！”</p>
+<p>看来蓝的气还没消。</p>
+<p>羽依里 “我也没说要这么快结婚吧！？”</p>
+<p>蓝 “虽然我已经把苍许诺给你了，不过你可别想在她睡着的时候做什么坏事哦？”</p>
+<p>这家伙对苍还真的有一种很强的占有欲。</p>
+<p>羽依里 “……”</p>
+<p>还是和苍说说话吧。</p>
+<p>羽依里 “苍，灯笼我已经挂好了哦。”</p>
+<p>羽依里 “昨天我做了一个梦……”</p>
+<p>等等，这个还是不要说好了。</p>
+<p>毕竟蓝还在旁边。</p>
+<p>羽依里 “我梦见你醒过来了……”</p>
+<p>我省去了挠痒痒的部分。</p>
+<p>这样就好了。虽然不完整，但毕竟不是错误的记忆。</p>
+<p>羽依里 “话说，我好像暑假作业还没写完。”</p>
+<p>蓝 “你这话题转换得是否有点太快了？”</p>
+<p>羽依里 “是因为想到了苍昨天晚上的事情嘛。”</p>
+<p>蓝 “昨晚发生了什么？”</p>
+<p>我把昨天晚上苍在迷途橘下释放出七影蝶，并且被蝴蝶包裹告诉了蓝。</p>
+<p>蓝 “你的意思是，苍通过七影蝶获得的知识，已经不复存在了？”</p>
+<p>羽依里 “没错。”</p>
+<p>蓝 “苍之前说过，是靠自己触碰七影蝶才知道了很多知识……”</p>
+<p>蓝 “她在学校里经常睡觉啊。”</p>
+<p>羽依里 “也就是说，苍她现在的认知水平已经倒退了好几年？”</p>
+<p>蓝 “大概是这样吧。”</p>
+<p>我突然感觉责任重大。</p>
+<p>如果苍醒来的时候无法跟上同龄人，那么她这几年不就白过了吗？即使醒来，我们还能正常沟通吗？</p>
+<p>为了蓝，她付出了10年，现在即使醒过来也要落得这样的结局……</p>
+<p>不，我绝对不允许那种事情发生。</p>
+<p>我立即从包里掏出……暑假作业？</p>
+<p>……开始读上面的内容。</p>
+<p>蓝 “你这是在干什么呢？希望苍梦游帮你写作业？”</p>
+<p>羽依里 “你在说什么啊。当然是为了提升苍的认知能力啊。”</p>
+<p>蓝 “暑假作业也太不靠谱了点吧！好歹拿个课本啊！”</p>
+<p>羽依里 “没办法嘛～毕竟书全在家里。”</p>
+<p>羽依里 “我下次带过来吧。我不在的时候，就拜托蓝了。”</p>
+<p>蓝 “嗯。除此之外，我就把苍跟我说过的事情再复述一遍吧。”</p>
+<p>羽依里 “嗯，拜托你了。”</p>
+<p>离开医院之后已经是下午了。</p>
+<p>心里突然有点舍不得。</p>
+<p>这个暑假就要结束了啊。</p>
+<p>明明认识了那么多人，经历了那么多事情，为什么感觉有些空虚？</p>
+<p>七影蝶，迷途橘，空门家的职责……</p>
+<p>一个个名词和概念盘旋在脑海。</p>
+<p>还有什么没有做的事情吗？</p>
+<p>……想不出。</p>
+<p>既然明天早上就要离开了，那么先和大家道个别吧。</p>
+<p>我走向秘密基地。</p>
+<p>天善和良一正在打乒乓球。</p>
+<p>良一 “哟。是羽依里啊。要不要来两局？”</p>
+<p>羽依里 “……我是来道别的。我明天上午就要走了。”</p>
+<p>良一 “这样啊。那么，来开送别会吧！”</p>
+<p>良一突然脱下了衣服。</p>
+<p>羽依里 “不是，为什么你突然就脱衣服了啊？”</p>
+<p>良一 “既然羽依里要走了，那就开个脱衣派对来庆祝一下……”</p>
+<p>羽依里 “这两个半句话根本没有逻辑关联啊！”</p>
+<p>天善 “特训的对手又要少一个了呢。可以请你最后来打一局吗？”</p>
+<p>羽依里 “看看，天善的提议多正常。”</p>
+<p>我拿起了旁边的球拍。</p>
+<p>球呼啸而过。</p>
+<p>羽依里 “这是什么啊！？”</p>
+<p>天善 “因为是最后一局，当然要拿出最好的实力了！”</p>
+<p>结果被天善完全打败了。</p>
+<p>羽依里 “我收回之前那句话……”</p>
+<p>羽依里 “那么，再见了。周末和放假我会再回来的。”</p>
+<p>离开秘密基地，我又和小岛上的其他人道了别。</p>
+<p>回到家里，我收拾好了房间里的行李。</p>
+<p>羽依里 “最后一天了啊～真的有点舍不得呢。”</p>
+<p>躺在床上，我认真思考了一下这股不舍中夹杂的空虚。</p>
+<p>羽依里 “果然还是因为她不在啊。”</p>
+<p>不过，很快就释然了。</p>
+<p>因为，我还有必须要做的事情。</p>
+<p>也就是说，还有希望，不是吗？</p>
+<p>羽依里 “苍，等着我……”</p>
+<p>就这样进入了梦乡。</p>
+<p>～August 30th～</p>
+<p>八月三十日。</p>
+<p>返程的日子。</p>
+<p>和镜子阿姨道别后，我早早地来到了医院。</p>
+<p>蓝 “要走了吗？”</p>
+<p>羽依里 “嗯。我下周会回来的。”</p>
+<p>羽依里 “苍，我走了。一定要，等着我哦？绝对不可以自己，抛下我哦？”</p>
+<p>苍仍然熟睡着。</p>
+<p>蓝 “我有种直觉，苍可能短期内不会醒了。”</p>
+<p>羽依里 “换句话说，长期还是有希望的。”</p>
+<p>蓝 “但愿吧。我们也只能做我们该做的事情罢了。”</p>
+<p>羽依里 “该做的事情吗……”</p>
+<p>羽依里 “我明白了。那么，下次再见了！”</p>
+<p>离开医院，我走在了鸟白岛的小路上。</p>
+<p>还记得刚来的时候沿着这条路前行时的心情，夜晚迷路时的发现，山中的点点亮光。</p>
+<p>每一处都包含着这个暑假的记忆。</p>
+<p>羽依里 “感觉没怎么变呢。”</p>
+<p>只是，行走的方向指向港口。</p>
+<p>正如每个故事都会走向终结，暑假也是一段有限的时光。</p>
+<p>野美希 “羽依里！这里这里！”</p>
+<p>在港口等船的我转头望去，只见一批人正在那里。</p>
+<p>镜子阿姨，良一，天善，野美希……甚至还有被野美希拖着的白羽。</p>
+<p>众人 “羽依里！来合影吧！”</p>
+<p>野美希架好相机，顺利地拍了照片。</p>
+<p>羽依里 “谢谢你们……谢谢你们来为我送行。不过，我很快就会回来的。”</p>
+<p>广播 “请旅客们有序登船。”</p>
+<p>羽依里 “再见了！”</p>
+<p>在鸟白岛的港口，我们挥手告别。</p>
+<p>这个难忘的暑假结束了啊。</p>
+<p>现在，我终于明白如何面对暑假的终结。</p>
+<p>……留下“念想”，就不会难过。</p>
+<p>即使短暂，但只要留下目标，那么就永远不会失去方向。</p>
+<p>面对假期的消逝，就是如此。</p>
+<p>羽依里 “念念不忘，终有回响。”</p>
+<p>不知为何，脑中突然蹦出来一句话。</p>
+<p>“终有回响”……是吗……</p>
+<p>～September 1st～</p>
+<p>新的学期开始了。</p>
+<p>熟悉的校园，熟悉的朋友……</p>
+<p>鸟白岛的点滴逐渐被埋藏到心灵深处。</p>
+<p>只留下了，一丝不可分割，永不消逝的情感。</p>
+<p>好似有一条虚无缥缈，又坚固不断的线，连接着我，和那个熟悉的地方。</p>
+<p>……</p>
+<p>放学后，我来到了游泳社团。</p>
+<p>羽依里 “各位，我回来了。抱歉让你们担心了。”</p>
+<p>道歉之后，面对大家的挽留……</p>
+<p>羽依里 “很高兴能和大家度过那么一段游泳的时间，不过我已经决定退出了。”</p>
+<p>羽依里 “我已经有了新的努力方向了。”</p>
+<p>我已经，找到了人生中最重要的人和事……</p>
+<p>没错，只要完成那个目标，就能得到幸福了。</p>
+<p>离开社团之后，我便开始寻找一份合适的打工。</p>
+<p>便利店售货员？餐厅服务员？还是发传单呢？</p>
+<p>不过我都没有经验就是了，毕竟之前放学后都在参加社团活动。</p>
+<p>如果算的话，粗点心店打工算不算经验呢？</p>
+<p>希望在赚钱的同时，也留下点可以送给苍的回忆啊。</p>
+<p>走在路上，总感觉身旁有一股神秘又亲切的气息存在。</p>
+<p>是什么呢？</p>
+<p>感觉这种东西，有时准确，有时却令人疑惑。</p>
+<p>我回顾四周。</p>
+<p>除了几个陌生人，真的什么都没有。</p>
+<p>还是先专注于眼前的事物吧。</p>
+<p>前面，还有很长的路要走呢。</p>
+<p>我也要，努力才行。</p>
+<p>……</p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            SamHou
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://blog.samhou.top/%E8%8B%8D%20After%20Story%20Part1/">
+            https://blog.samhou.top/%E8%8B%8D%20After%20Story%20Part1/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有内容禁止转载，所有发布平台在about页列出。如引用博客内容，请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">通俗理解css弹性盒子 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+  <div 
+    class="card card-content comment-card" 
+    style="margin-top: 16px;">
+    <div class="comment-card-title">评论</div>
+    
+  <div id="wcomments"></div>
+  <script>
+      loadScript("//unpkg.com/@waline/client@v2/dist/waline.js");
+      var oldLoadVa = window.onload;
+      window.onload = function () {
+        oldLoadVa && oldLoadVa();
+        Waline.init({
+          el: '#wcomments',
+          serverURL: 'https://comment.samhou.top',
+          path: window.location.pathname,
+          lang: 'zh-CN',
+          placeholder: '',
+          meta: ["nick","mail","link"],
+          requiredMeta: [],
+          dark: 'html[data-user-color-scheme=&#34;dark&#34;]',
+          login: 'enable',
+
+          wordLimit: 0,
+          pageSize: 10,
+          
+          
+          
+            locale : {"placeholder":"Write Here"},
+          
+        });
+      };
+    </script>
+
+  </div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+
+</div>
+            </main>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-06-30</div>
+        <a href="/%E8%8B%8D%20After%20Story%20Part1/"><div class="recent-posts-item-content">苍 After Story Part1</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-02-24</div>
+        <a href="/%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/"><div class="recent-posts-item-content">通俗理解css弹性盒子</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-02-09</div>
+        <a href="/ProjeTom%20--%20A%20story%20to%20test%20new%20words/"><div class="recent-posts-item-content">ProjeTom -- A story to test new words</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-02-09</div>
+        <a href="/%E8%A7%84%E5%88%99/"><div class="recent-posts-item-content">规则</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2021
+          
+          
+                - 
+                2024
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          SamHou's blog
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer>
+ 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+    
+    <script src="//instant.page/5.1.0" type="module"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <script>
+        var googleAnalytics = function () {
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+          gtag('config', 'G-RQECZS079J')
+        }
+    </script>
+      <script>
+        loadScript(
+          'https://www.googletagmanager.com/gtag/js?id=' +
+            'G-RQECZS079J',
+          googleAnalytics
+        )
+      </script>
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
