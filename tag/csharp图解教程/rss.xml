@@ -41,6 +41,9 @@
         <category>web</category>
         <category>象征</category>
         <category>规则</category>
+        <category>Hyper-V</category>
+        <category>卸载</category>
+        <category>Windows</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/Csharp%E6%8E%A5%E5%8F%A3%E8%BF%9B%E9%98%B6/</guid>
             <title>Csharp接口进阶</title>
