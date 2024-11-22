@@ -1,7 +1,7 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "SamHou's blog • All posts by \"winform\" tag",
-    "description": "SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。",
+    "description": "SamHou 的一个博客，有技术文章，小说和生活学习方法分享。包含 C#、html、css、NAS、windows 的技术博客文章，以及大量二次创作小说和原创作品。",
     "home_page_url": "https://blog.samhou.top",
     "items": [
         {

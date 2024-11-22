@@ -3,41 +3,41 @@
     <channel>
         <title>SamHou&#39;s blog • Posts by &#34;steam&#34; tag</title>
         <link>https://blog.samhou.top</link>
-        <description>SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。</description>
+        <description>SamHou 的一个博客，有技术文章，小说和生活学习方法分享。包含 C#、html、css、NAS、windows 的技术博客文章，以及大量二次创作小说和原创作品。</description>
         <language>zh-CN</language>
         <pubDate>Tue, 08 Aug 2023 19:09:18 +0800</pubDate>
         <lastBuildDate>Tue, 08 Aug 2023 19:09:18 +0800</lastBuildDate>
-        <category>AI</category>
         <category>winform</category>
         <category>csharp</category>
         <category>窗口控制</category>
         <category>焦点</category>
-        <category>csharp图解教程</category>
         <category>hfc</category>
+        <category>csharp图解教程</category>
+        <category>AI</category>
         <category>小说</category>
         <category>English</category>
         <category>obsidian</category>
         <category>hexo</category>
         <category>windows</category>
         <category>UAC</category>
-        <category>qnap</category>
-        <category>rss</category>
-        <category>任务计划程序</category>
         <category>Steam</category>
         <category>手机游戏</category>
         <category>电脑游戏</category>
         <category>单机游戏</category>
         <category>网络游戏</category>
+        <category>qnap</category>
+        <category>rss</category>
+        <category>任务计划程序</category>
         <category>蔚蓝档案</category>
         <category>科幻</category>
+        <category>Bing</category>
         <category>拖延症</category>
         <category>学习方法</category>
-        <category>Bing</category>
+        <category>象征</category>
+        <category>规则</category>
         <category>Gal</category>
         <category>同人</category>
         <category>夏日口袋</category>
-        <category>象征</category>
-        <category>规则</category>
         <category>css</category>
         <category>flexbox</category>
         <category>web</category>
