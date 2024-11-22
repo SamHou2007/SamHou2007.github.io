@@ -4,47 +4,47 @@
     <title>SamHou&#39;s blog • Posts by &#34;窗口控制&#34; tag</title>
     <link href="https://blog.samhou.top" />
     <updated>2023-12-08T07:12:38.000Z</updated>
-    <category term="winform" />
     <category term="AI" />
+    <category term="winform" />
     <category term="csharp" />
-    <category term="csharp图解教程" />
-    <category term="hfc" />
     <category term="窗口控制" />
     <category term="焦点" />
+    <category term="csharp图解教程" />
+    <category term="hfc" />
+    <category term="小说" />
+    <category term="English" />
     <category term="obsidian" />
     <category term="hexo" />
+    <category term="windows" />
+    <category term="UAC" />
     <category term="qnap" />
     <category term="rss" />
+    <category term="任务计划程序" />
     <category term="Steam" />
     <category term="手机游戏" />
     <category term="电脑游戏" />
     <category term="单机游戏" />
     <category term="网络游戏" />
-    <category term="windows" />
-    <category term="UAC" />
-    <category term="小说" />
     <category term="蔚蓝档案" />
     <category term="科幻" />
-    <category term="任务计划程序" />
     <category term="拖延症" />
     <category term="学习方法" />
     <category term="Bing" />
-    <category term="English" />
+    <category term="Gal" />
+    <category term="同人" />
+    <category term="夏日口袋" />
     <category term="象征" />
     <category term="规则" />
     <category term="css" />
     <category term="flexbox" />
     <category term="web" />
-    <category term="Gal" />
-    <category term="同人" />
-    <category term="夏日口袋" />
     <entry>
         <id>https://blog.samhou.top/Winform%20Csharp%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6%E8%AF%A6%E8%A7%A3/</id>
         <title>Winform C#多显示器窗口控制详解</title>
         <link rel="alternate" href="https://blog.samhou.top/Winform%20Csharp%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6%E8%AF%A6%E8%A7%A3/"/>
         <content type="html">&lt;p&gt;写Winform程序的时候，有将一个窗口放置到特定的显示器，并且全屏的需求。于是借此机会，好好研究了一番这个Screen类[1]，总结了一些方法。&lt;/p&gt;
 &lt;h2 id=&#34;Windows的窗口逻辑&#34;&gt;&lt;a href=&#34;#Windows的窗口逻辑&#34; class=&#34;headerlink&#34; title=&#34;Windows的窗口逻辑&#34;&gt;&lt;/a&gt;Windows的窗口逻辑&lt;/h2&gt;&lt;p&gt;首先我们需要知道窗口定位的逻辑。以2个窗口为例，下面的图片展示了显示器和坐标的对应关系。注意，使用深色模式可能看不清，可以点击上方的切换按钮切换为浅色。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.samhou.top/1702026494796.png&#34; alt=&#34;显示器与坐标对应&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://img.samhou.top/1702026494796.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.samhou.top/1702026494796.png&#34; alt=&#34;显示器与坐标对应&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以看到，连接多个显示器后，每个显示器的每个点都有一个唯一的坐标。我们要做的，就是把Form的坐标设置到显示器上面去。&lt;/p&gt;
 &lt;h2 id=&#34;获取显示器列表&#34;&gt;&lt;a href=&#34;#获取显示器列表&#34; class=&#34;headerlink&#34; title=&#34;获取显示器列表&#34;&gt;&lt;/a&gt;获取显示器列表&lt;/h2&gt;&lt;p&gt;首先确保引用了&lt;code&gt;using System.Windows.Forms;&lt;/code&gt;，这样才有Screen类可以用。&lt;/p&gt;
 &lt;p&gt;文档指出，可以用&lt;code&gt;Screen.AllScreens&lt;/code&gt;获取所有显示器的数组。那么这个里面有什么呢？我们来看看文档是怎么说的：&lt;/p&gt;
@@ -52,14 +52,14 @@
 &lt;p&gt;Property Value&lt;br&gt;&lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.screen?view=windowsdesktop-8.0&#34;&gt;Screen&lt;/a&gt;[]&lt;br&gt;An array of type &lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.screen?view=windowsdesktop-8.0&#34;&gt;Screen&lt;/a&gt;, containing all displays on the system.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;也就是说，返回的数组是个Screen数组。数组里面每一个元素都是个Screen对象，分别对应用户的每个显示设备。因此，我们可以通过这些对象来访问每个显示器。比如：&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Screen scr1=Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] &lt;span class=&#34;comment&#34;&gt;//获取第1个显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Screen scr2=Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//第二个显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Screen scr1=Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] &lt;span class=&#34;comment&#34;&gt;//获取第1个显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Screen scr2=Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//第二个显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;设置窗口位置&#34;&gt;&lt;a href=&#34;#设置窗口位置&#34; class=&#34;headerlink&#34; title=&#34;设置窗口位置&#34;&gt;&lt;/a&gt;设置窗口位置&lt;/h2&gt;&lt;p&gt;为了设定窗口位置，我们需要知道一个显示器左上角对应的坐标，这样才可以把窗口放进去。&lt;/p&gt;
 &lt;p&gt;比如，以下代码可以设置Form位置为第2个显示器的左上角，然后设置窗口覆盖全屏幕（包括任务栏：&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Location = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Location;&lt;span class=&#34;comment&#34;&gt;//设定目标坐标，结合上面的图片，这里是（1920，28）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Width = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Width;&lt;span class=&#34;comment&#34;&gt;//设定窗口的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Height = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Height;&lt;span class=&#34;comment&#34;&gt;//设定窗口高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Location = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Location;&lt;span class=&#34;comment&#34;&gt;//设定目标坐标，结合上面的图片，这里是（1920，28）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Width = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Width;&lt;span class=&#34;comment&#34;&gt;//设定窗口的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Height = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].Bounds.Height;&lt;span class=&#34;comment&#34;&gt;//设定窗口高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;但大部分情况下，我们只需要覆盖任务栏之上的部分，因此稍作修改：&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Location = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Location;&lt;span class=&#34;comment&#34;&gt;//设定目标显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Width = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Width;&lt;span class=&#34;comment&#34;&gt;//设定窗口的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Height = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Height;&lt;span class=&#34;comment&#34;&gt;//设定窗口高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Location = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Location;&lt;span class=&#34;comment&#34;&gt;//设定目标显示器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Width = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Width;&lt;span class=&#34;comment&#34;&gt;//设定窗口的宽度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Height = Screen.AllScreens[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;].WorkingArea.Height;&lt;span class=&#34;comment&#34;&gt;//设定窗口高度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;注意到了吗？这里我们用的是&lt;code&gt;WorkingArea&lt;/code&gt;来获取长宽高，以及位置。&lt;code&gt;WorkingArea&lt;/code&gt;不包括任务栏，所以高度较少，这两种需要看情况使用。&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.screen&#34;&gt;System.Windows.Forms.Screen&lt;/a&gt;&lt;/p&gt;
@@ -76,13 +76,13 @@
         <content type="html">&lt;h2 id=&#34;系统焦点&#34;&gt;&lt;a href=&#34;#系统焦点&#34; class=&#34;headerlink&#34; title=&#34;系统焦点&#34;&gt;&lt;/a&gt;系统焦点&lt;/h2&gt;&lt;p&gt;在Windows中，系统的焦点就是当前处于前台的窗口。通过设置焦点，可以控制用户正在使用的应用程序。这里以winform应用为例。&lt;/p&gt;
 &lt;h2 id=&#34;Api调用&#34;&gt;&lt;a href=&#34;#Api调用&#34; class=&#34;headerlink&#34; title=&#34;Api调用&#34;&gt;&lt;/a&gt;Api调用&lt;/h2&gt;&lt;p&gt;C#需要调用Win32 Api才可以控制焦点，这里用到的是user32.dll中的SetForegroundWindow()函数&lt;/p&gt;
 &lt;p&gt;在微软提供的文档中[1]，可以看到C++里的用法：&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;BOOL &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;  [in] HWND hWnd&lt;span class=&#34;comment&#34;&gt;//窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;BOOL &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;  [in] HWND hWnd&lt;span class=&#34;comment&#34;&gt;//窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;&lt;span class=&#34;function&#34;&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;C#里没有HWND类型，与之对应的是IntPtr类型，所以可以这样导入Api[2]&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; System.Runtime.InteropServices;&lt;span class=&#34;comment&#34;&gt;//这是调用所必须的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//调用dll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;IntPtr handle&lt;/span&gt;)&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//这个函数签名必须和文档一模一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; System.Runtime.InteropServices;&lt;span class=&#34;comment&#34;&gt;//这是调用所必须的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;span class=&#34;comment&#34;&gt;//调用dll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;SetForegroundWindow&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;IntPtr handle&lt;/span&gt;)&lt;/span&gt;;&lt;span class=&#34;comment&#34;&gt;//这个函数签名必须和文档一模一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;下面来调用导入的内容（以设置edge浏览器为例子）&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//查找edge浏览器进程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;span class=&#34;comment&#34;&gt;//获取主窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//查找edge浏览器进程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;span class=&#34;comment&#34;&gt;//获取主窗口句柄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;但是，文档上指出这样设置需要满足几个条件中的任意一个：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -91,7 +91,7 @@
 &lt;p&gt;这样就不能说是强制设置了（注意，调试程序时系统允许强制设置，但只要离开调试器，就不行了），所以下面给出一个特别的方法。&lt;/p&gt;
 &lt;h2 id=&#34;强制设置&#34;&gt;&lt;a href=&#34;#强制设置&#34; class=&#34;headerlink&#34; title=&#34;强制设置&#34;&gt;&lt;/a&gt;强制设置&lt;/h2&gt;&lt;p&gt;Windows中，只要是新启动的窗口，总是能够获得系统的焦点。所以只要让程序重新启动，就能拿到焦点，变成前台进程，此时就可以设置焦点，达到强制的效果。&lt;/p&gt;
 &lt;p&gt;这里还用到了另一个Api &lt;code&gt;GetForegroundWindow()&lt;/code&gt;用于获取当前焦点[3]，调用方式同上，此处不再解释。&lt;/p&gt;
-&lt;pre class=&#34;highlight&#34;&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; IntPtr &lt;span class=&#34;title&#34;&gt;GetForegroundWindow&lt;/span&gt;()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (handle!=GetForegroundWindow())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Process.Start(Application.ExecutablePath);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Environment.Exit(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[&lt;span class=&#34;meta&#34;&gt;DllImport(&lt;span class=&#34;string&#34;&gt;&amp;quot;user32.dll&amp;quot;&lt;/span&gt;)&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;extern&lt;/span&gt; IntPtr &lt;span class=&#34;title&#34;&gt;GetForegroundWindow&lt;/span&gt;()&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Process[] processes = Process.GetProcessesByName(&lt;span class=&#34;string&#34;&gt;&amp;quot;msedge&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IntPtr handle = processes[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].MainWindowHandle;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SetForegroundWindow(handle);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (handle!=GetForegroundWindow())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Process.Start(Application.ExecutablePath);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     Environment.Exit(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;span class=&#34;comment&#34;&gt;//重启&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;注意，该方法仅30%成功率，若连续10次重启仍未获得焦点，建议放弃(&lt;/p&gt;
 &lt;h2 id=&#34;参考文献&#34;&gt;&lt;a href=&#34;#参考文献&#34; class=&#34;headerlink&#34; title=&#34;参考文献&#34;&gt;&lt;/a&gt;参考文献&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&#34;&gt;https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setforegroundwindow&lt;/a&gt;&lt;/p&gt;

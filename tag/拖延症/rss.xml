@@ -3,44 +3,44 @@
     <channel>
         <title>SamHou&#39;s blog • Posts by &#34;拖延症&#34; tag</title>
         <link>https://blog.samhou.top</link>
-        <description>A blog</description>
+        <description>SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。</description>
         <language>zh-CN</language>
         <pubDate>Sun, 29 Jan 2023 22:02:31 +0800</pubDate>
         <lastBuildDate>Sun, 29 Jan 2023 22:02:31 +0800</lastBuildDate>
-        <category>winform</category>
         <category>AI</category>
+        <category>winform</category>
         <category>csharp</category>
-        <category>csharp图解教程</category>
-        <category>hfc</category>
         <category>窗口控制</category>
         <category>焦点</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>小说</category>
+        <category>English</category>
         <category>obsidian</category>
         <category>hexo</category>
+        <category>windows</category>
+        <category>UAC</category>
         <category>qnap</category>
         <category>rss</category>
+        <category>任务计划程序</category>
         <category>Steam</category>
         <category>手机游戏</category>
         <category>电脑游戏</category>
         <category>单机游戏</category>
         <category>网络游戏</category>
-        <category>windows</category>
-        <category>UAC</category>
-        <category>小说</category>
         <category>蔚蓝档案</category>
         <category>科幻</category>
-        <category>任务计划程序</category>
         <category>拖延症</category>
         <category>学习方法</category>
         <category>Bing</category>
-        <category>English</category>
+        <category>Gal</category>
+        <category>同人</category>
+        <category>夏日口袋</category>
         <category>象征</category>
         <category>规则</category>
         <category>css</category>
         <category>flexbox</category>
         <category>web</category>
-        <category>Gal</category>
-        <category>同人</category>
-        <category>夏日口袋</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/%E5%AF%B9%E6%8B%96%E5%BB%B6%E7%9A%84%E6%8E%A2%E7%B4%A2/</guid>
             <title>对拖延的探索</title>

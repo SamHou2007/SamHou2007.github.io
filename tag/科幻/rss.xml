@@ -3,51 +3,51 @@
     <channel>
         <title>SamHou&#39;s blog • Posts by &#34;科幻&#34; tag</title>
         <link>https://blog.samhou.top</link>
-        <description>A blog</description>
+        <description>SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。</description>
         <language>zh-CN</language>
         <pubDate>Sat, 04 Nov 2023 09:11:29 +0800</pubDate>
         <lastBuildDate>Sat, 04 Nov 2023 09:11:29 +0800</lastBuildDate>
-        <category>winform</category>
         <category>AI</category>
+        <category>winform</category>
         <category>csharp</category>
-        <category>csharp图解教程</category>
-        <category>hfc</category>
         <category>窗口控制</category>
         <category>焦点</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>小说</category>
+        <category>English</category>
         <category>obsidian</category>
         <category>hexo</category>
+        <category>windows</category>
+        <category>UAC</category>
         <category>qnap</category>
         <category>rss</category>
+        <category>任务计划程序</category>
         <category>Steam</category>
         <category>手机游戏</category>
         <category>电脑游戏</category>
         <category>单机游戏</category>
         <category>网络游戏</category>
-        <category>windows</category>
-        <category>UAC</category>
-        <category>小说</category>
         <category>蔚蓝档案</category>
         <category>科幻</category>
-        <category>任务计划程序</category>
         <category>拖延症</category>
         <category>学习方法</category>
         <category>Bing</category>
-        <category>English</category>
+        <category>Gal</category>
+        <category>同人</category>
+        <category>夏日口袋</category>
         <category>象征</category>
         <category>规则</category>
         <category>css</category>
         <category>flexbox</category>
         <category>web</category>
-        <category>Gal</category>
-        <category>同人</category>
-        <category>夏日口袋</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%96%E7%95%8C/</guid>
             <title>链接的世界</title>
             <link>https://blog.samhou.top/%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%96%E7%95%8C/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Sat, 04 Nov 2023 09:11:29 +0800</pubDate>
@@ -145,9 +145,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%888%EF%BC%89/</guid>
             <title>委员长奇遇（8）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%888%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Sat, 30 Sep 2023 20:10:23 +0800</pubDate>
@@ -200,9 +200,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%887%EF%BC%89/</guid>
             <title>委员长奇遇（7）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%887%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Sat, 30 Sep 2023 20:09:23 +0800</pubDate>
@@ -238,9 +238,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%886%EF%BC%89/</guid>
             <title>委员长奇遇（6）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%886%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Sat, 30 Sep 2023 11:09:09 +0800</pubDate>
@@ -282,9 +282,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%885%EF%BC%89/</guid>
             <title>委员长奇遇（5）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%885%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Fri, 29 Sep 2023 10:10:13 +0800</pubDate>
@@ -332,9 +332,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%884%EF%BC%89/</guid>
             <title>委员长奇遇（4）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%884%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Thu, 28 Sep 2023 15:09:59 +0800</pubDate>
@@ -381,9 +381,9 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%883%EF%BC%89/</guid>
             <title>委员长奇遇（3）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%883%EF%BC%89/</link>
+            <category>小说</category>
             <category>手机游戏</category>
             <category>网络游戏</category>
-            <category>小说</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Wed, 27 Sep 2023 18:10:39 +0800</pubDate>
@@ -427,8 +427,8 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%882%EF%BC%89/</guid>
             <title>委员长奇遇（2）</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87%EF%BC%882%EF%BC%89/</link>
-            <category>网络游戏</category>
             <category>小说</category>
+            <category>网络游戏</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Fri, 22 Sep 2023 16:09:54 +0800</pubDate>
@@ -470,8 +470,8 @@
             <guid isPermalink="true">https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87/</guid>
             <title>委员长奇遇</title>
             <link>https://blog.samhou.top/%E5%A7%94%E5%91%98%E9%95%BF%E5%A5%87%E9%81%87/</link>
-            <category>网络游戏</category>
             <category>小说</category>
+            <category>网络游戏</category>
             <category>蔚蓝档案</category>
             <category>科幻</category>
             <pubDate>Sat, 16 Sep 2023 22:10:27 +0800</pubDate>

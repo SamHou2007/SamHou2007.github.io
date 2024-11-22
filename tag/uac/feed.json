@@ -1,7 +1,7 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "SamHou's blog • All posts by \"uac\" tag",
-    "description": "A blog",
+    "description": "SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。",
     "home_page_url": "https://blog.samhou.top",
     "items": [
         {
@@ -9,7 +9,7 @@
             "url": "https://blog.samhou.top/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/",
             "title": "windows UAC跳过教程",
             "date_published": "2021-10-04T16:00:00.000Z",
-            "content_html": "<h1 id=\"什么是UAC\"><a href=\"#什么是UAC\" class=\"headerlink\" title=\"什么是UAC\"></a>什么是UAC</h1><p>安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本<br><img src=\"https://z3.ax1x.com/2021/10/07/5p3kxf.png\" alt=\"管理员运行记事本\" srcset=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E\" data-src=\"https://z3.ax1x.com/2021/10/07/5p3kxf.png\" class=\"lozad post-image\"></p>\n<p>有时候，运行一些程序可能需要管理员权限，比如某些电脑清理软件。</p>\n<h1 id=\"第一种方法：直接关闭UAC\"><a href=\"#第一种方法：直接关闭UAC\" class=\"headerlink\" title=\"第一种方法：直接关闭UAC\"></a>第一种方法：直接关闭UAC</h1><ol>\n<li>打开控制面板-系统和安全-安全和维护</li>\n<li>在用户账户控制那里点击更改设置</li>\n<li>下拉到“从不通知”</li>\n</ol>\n<h1 id=\"第二种方法：使用任务计划程序\"><a href=\"#第二种方法：使用任务计划程序\" class=\"headerlink\" title=\"第二种方法：使用任务计划程序\"></a>第二种方法：使用任务计划程序</h1><ol>\n<li>右键windows图标</li>\n<li>选择计算机管理</li>\n<li>选择左侧的任务计划程序-任务计划程序库</li>\n<li>点击右侧“创建任务…”</li>\n<li>名称随便填，勾选<img src=\"https://z3.ax1x.com/2021/10/07/5p3iGt.png\" alt=\"最高权限运行\" srcset=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E\" data-src=\"https://z3.ax1x.com/2021/10/07/5p3iGt.png\" class=\"lozad post-image\"></li>\n<li>操作一栏中选择新建，弹出这么个窗口：<br><img src=\"https://z3.ax1x.com/2021/10/07/5pIiY4.png\" alt=\"新建操作\" srcset=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E\" data-src=\"https://z3.ax1x.com/2021/10/07/5pIiY4.png\" class=\"lozad post-image\"></li>\n<li>这里就选择启动程序，点浏览，选择要跳过UAC的程序，确定保存</li>\n<li>根据需要设定剩下的条件、设置、触发器</li>\n<li>如果需要开机启动，请选择<strong>登录时</strong>，不要选择<del>启动时</del>（因为要登陆再启动程序）</li>\n<li>设置完成，现在添加一个对于新建的任务的快捷方式：在电脑桌面上右键新建-快捷方式，位置一栏输入<code>SCHTASKS /RUN /TN 任务名称</code>，把任务名称改为在第5步中创建的名称</li>\n<li>现在建立了快捷方式，双击桌面上的图标即可跳过UAC运行软件~</li>\n</ol>\n",
+            "content_html": "<h1 id=\"什么是UAC\"><a href=\"#什么是UAC\" class=\"headerlink\" title=\"什么是UAC\"></a>什么是UAC</h1><p>安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本<br><img src=\"https://z3.ax1x.com/2021/10/07/5p3kxf.png\" alt=\"管理员运行记事本\"></p>\n<p>有时候，运行一些程序可能需要管理员权限，比如某些电脑清理软件。</p>\n<h1 id=\"第一种方法：直接关闭UAC\"><a href=\"#第一种方法：直接关闭UAC\" class=\"headerlink\" title=\"第一种方法：直接关闭UAC\"></a>第一种方法：直接关闭UAC</h1><ol>\n<li>打开控制面板-系统和安全-安全和维护</li>\n<li>在用户账户控制那里点击更改设置</li>\n<li>下拉到“从不通知”</li>\n</ol>\n<h1 id=\"第二种方法：使用任务计划程序\"><a href=\"#第二种方法：使用任务计划程序\" class=\"headerlink\" title=\"第二种方法：使用任务计划程序\"></a>第二种方法：使用任务计划程序</h1><ol>\n<li>右键windows图标</li>\n<li>选择计算机管理</li>\n<li>选择左侧的任务计划程序-任务计划程序库</li>\n<li>点击右侧“创建任务…”</li>\n<li>名称随便填，勾选<img src=\"https://z3.ax1x.com/2021/10/07/5p3iGt.png\" alt=\"最高权限运行\"></li>\n<li>操作一栏中选择新建，弹出这么个窗口：<br><img src=\"https://z3.ax1x.com/2021/10/07/5pIiY4.png\" alt=\"新建操作\"></li>\n<li>这里就选择启动程序，点浏览，选择要跳过UAC的程序，确定保存</li>\n<li>根据需要设定剩下的条件、设置、触发器</li>\n<li>如果需要开机启动，请选择<strong>登录时</strong>，不要选择<del>启动时</del>（因为要登陆再启动程序）</li>\n<li>设置完成，现在添加一个对于新建的任务的快捷方式：在电脑桌面上右键新建-快捷方式，位置一栏输入<code>SCHTASKS /RUN /TN 任务名称</code>，把任务名称改为在第5步中创建的名称</li>\n<li>现在建立了快捷方式，双击桌面上的图标即可跳过UAC运行软件~</li>\n</ol>\n",
             "tags": [
                 "windows",
                 "UAC"

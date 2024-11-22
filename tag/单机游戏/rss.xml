@@ -3,44 +3,44 @@
     <channel>
         <title>SamHou&#39;s blog • Posts by &#34;单机游戏&#34; tag</title>
         <link>https://blog.samhou.top</link>
-        <description>A blog</description>
+        <description>SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。</description>
         <language>zh-CN</language>
         <pubDate>Mon, 30 Sep 2024 21:09:32 +0800</pubDate>
         <lastBuildDate>Mon, 30 Sep 2024 21:09:32 +0800</lastBuildDate>
-        <category>winform</category>
         <category>AI</category>
+        <category>winform</category>
         <category>csharp</category>
-        <category>csharp图解教程</category>
-        <category>hfc</category>
         <category>窗口控制</category>
         <category>焦点</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>小说</category>
+        <category>English</category>
         <category>obsidian</category>
         <category>hexo</category>
+        <category>windows</category>
+        <category>UAC</category>
         <category>qnap</category>
         <category>rss</category>
+        <category>任务计划程序</category>
         <category>Steam</category>
         <category>手机游戏</category>
         <category>电脑游戏</category>
         <category>单机游戏</category>
         <category>网络游戏</category>
-        <category>windows</category>
-        <category>UAC</category>
-        <category>小说</category>
         <category>蔚蓝档案</category>
         <category>科幻</category>
-        <category>任务计划程序</category>
         <category>拖延症</category>
         <category>学习方法</category>
         <category>Bing</category>
-        <category>English</category>
+        <category>Gal</category>
+        <category>同人</category>
+        <category>夏日口袋</category>
         <category>象征</category>
         <category>规则</category>
         <category>css</category>
         <category>flexbox</category>
         <category>web</category>
-        <category>Gal</category>
-        <category>同人</category>
-        <category>夏日口袋</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/%E8%8B%8D%20After%20Story%20Part2/</guid>
             <title>苍 After Story Part2</title>
@@ -784,7 +784,7 @@
 &lt;h2 id=&#34;Steam&#34;&gt;&lt;a href=&#34;#Steam&#34; class=&#34;headerlink&#34; title=&#34;Steam&#34;&gt;&lt;/a&gt;Steam&lt;/h2&gt;&lt;h3 id=&#34;如何下载Steam？&#34;&gt;&lt;a href=&#34;#如何下载Steam？&#34; class=&#34;headerlink&#34; title=&#34;如何下载Steam？&#34;&gt;&lt;/a&gt;如何下载Steam？&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;先开加速器&lt;/li&gt;
 &lt;li&gt;打开网址：&lt;a href=&#34;https://store.steampowered.com/&#34;&gt;https://store.steampowered.com/&lt;/a&gt;,点击安装Steam&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;警告！切勿在搜索引擎上自行搜索后随便点击错误的网址，否则你下载的Steam可能不是正版！请认准上面的官网&lt;/strong&gt;&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pPZPSpQ&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; alt=&#34;Steam商店&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;警告！切勿在搜索引擎上自行搜索后随便点击错误的网址，否则你下载的Steam可能不是正版！请认准上面的官网&lt;/strong&gt;&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pPZPSpQ&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/08/pPZPSpQ.png&#34; alt=&#34;Steam商店&#34;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;上方的这才是Steam的图标&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;警告！存在问题的Steam可能导致盗号，尽量在自己的计算机上安装使用！安装前确认无病毒和间谍、流氓软件！&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;接下来就是注册并使用了，傻瓜式的，不用多说，注意使用时全程需要加速器打开&lt;/li&gt;

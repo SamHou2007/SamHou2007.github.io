@@ -3,44 +3,44 @@
     <channel>
         <title>SamHou&#39;s blog • Posts by &#34;uac&#34; tag</title>
         <link>https://blog.samhou.top</link>
-        <description>A blog</description>
+        <description>SamHou 的一个博客，包括技术文章，小说和生活学习方法分享。</description>
         <language>zh-CN</language>
         <pubDate>Tue, 05 Oct 2021 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0800</lastBuildDate>
-        <category>winform</category>
         <category>AI</category>
+        <category>winform</category>
         <category>csharp</category>
-        <category>csharp图解教程</category>
-        <category>hfc</category>
         <category>窗口控制</category>
         <category>焦点</category>
+        <category>csharp图解教程</category>
+        <category>hfc</category>
+        <category>小说</category>
+        <category>English</category>
         <category>obsidian</category>
         <category>hexo</category>
+        <category>windows</category>
+        <category>UAC</category>
         <category>qnap</category>
         <category>rss</category>
+        <category>任务计划程序</category>
         <category>Steam</category>
         <category>手机游戏</category>
         <category>电脑游戏</category>
         <category>单机游戏</category>
         <category>网络游戏</category>
-        <category>windows</category>
-        <category>UAC</category>
-        <category>小说</category>
         <category>蔚蓝档案</category>
         <category>科幻</category>
-        <category>任务计划程序</category>
         <category>拖延症</category>
         <category>学习方法</category>
         <category>Bing</category>
-        <category>English</category>
+        <category>Gal</category>
+        <category>同人</category>
+        <category>夏日口袋</category>
         <category>象征</category>
         <category>规则</category>
         <category>css</category>
         <category>flexbox</category>
         <category>web</category>
-        <category>Gal</category>
-        <category>同人</category>
-        <category>夏日口袋</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/windowsUAC%E8%B7%B3%E8%BF%87%E6%95%99%E7%A8%8B/</guid>
             <title>windows UAC跳过教程</title>
@@ -48,7 +48,7 @@
             <category>windows</category>
             <category>UAC</category>
             <pubDate>Tue, 05 Oct 2021 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;什么是UAC&#34;&gt;&lt;a href=&#34;#什么是UAC&#34; class=&#34;headerlink&#34; title=&#34;什么是UAC&#34;&gt;&lt;/a&gt;什么是UAC&lt;/h1&gt;&lt;p&gt;安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3kxf.png&#34; alt=&#34;管理员运行记事本&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5p3kxf.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;什么是UAC&#34;&gt;&lt;a href=&#34;#什么是UAC&#34; class=&#34;headerlink&#34; title=&#34;什么是UAC&#34;&gt;&lt;/a&gt;什么是UAC&lt;/h1&gt;&lt;p&gt;安装软件时、运行部分程序时弹出的窗口就是UAC，比如下面这个以管理员权限运行的记事本&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3kxf.png&#34; alt=&#34;管理员运行记事本&#34;&gt;&lt;/p&gt;
 &lt;p&gt;有时候，运行一些程序可能需要管理员权限，比如某些电脑清理软件。&lt;/p&gt;
 &lt;h1 id=&#34;第一种方法：直接关闭UAC&#34;&gt;&lt;a href=&#34;#第一种方法：直接关闭UAC&#34; class=&#34;headerlink&#34; title=&#34;第一种方法：直接关闭UAC&#34;&gt;&lt;/a&gt;第一种方法：直接关闭UAC&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;打开控制面板-系统和安全-安全和维护&lt;/li&gt;
@@ -60,8 +60,8 @@
 &lt;li&gt;选择计算机管理&lt;/li&gt;
 &lt;li&gt;选择左侧的任务计划程序-任务计划程序库&lt;/li&gt;
 &lt;li&gt;点击右侧“创建任务…”&lt;/li&gt;
-&lt;li&gt;名称随便填，勾选&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3iGt.png&#34; alt=&#34;最高权限运行&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5p3iGt.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;操作一栏中选择新建，弹出这么个窗口：&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5pIiY4.png&#34; alt=&#34;新建操作&#34; srcset=&#34;data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20300%20300&#39;%3E%3C/svg%3E&#34; data-src=&#34;https://z3.ax1x.com/2021/10/07/5pIiY4.png&#34; class=&#34;lozad post-image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;名称随便填，勾选&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5p3iGt.png&#34; alt=&#34;最高权限运行&#34;&gt;&lt;/li&gt;
+&lt;li&gt;操作一栏中选择新建，弹出这么个窗口：&lt;br&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/10/07/5pIiY4.png&#34; alt=&#34;新建操作&#34;&gt;&lt;/li&gt;
 &lt;li&gt;这里就选择启动程序，点浏览，选择要跳过UAC的程序，确定保存&lt;/li&gt;
 &lt;li&gt;根据需要设定剩下的条件、设置、触发器&lt;/li&gt;
 &lt;li&gt;如果需要开机启动，请选择&lt;strong&gt;登录时&lt;/strong&gt;，不要选择&lt;del&gt;启动时&lt;/del&gt;（因为要登陆再启动程序）&lt;/li&gt;
