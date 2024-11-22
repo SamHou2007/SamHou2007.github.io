@@ -4,40 +4,40 @@
     <title>SamHou&#39;s blog • Posts by &#34;窗口控制&#34; tag</title>
     <link href="https://blog.samhou.top" />
     <updated>2023-12-08T07:12:38.000Z</updated>
-    <category term="winform" />
+    <category term="AI" />
     <category term="csharp" />
     <category term="窗口控制" />
     <category term="焦点" />
     <category term="hfc" />
     <category term="csharp图解教程" />
-    <category term="AI" />
+    <category term="winform" />
     <category term="小说" />
     <category term="English" />
-    <category term="obsidian" />
-    <category term="hexo" />
-    <category term="windows" />
-    <category term="UAC" />
     <category term="Steam" />
     <category term="手机游戏" />
     <category term="电脑游戏" />
     <category term="单机游戏" />
     <category term="网络游戏" />
+    <category term="obsidian" />
+    <category term="hexo" />
     <category term="qnap" />
     <category term="rss" />
-    <category term="任务计划程序" />
+    <category term="windows" />
+    <category term="UAC" />
     <category term="蔚蓝档案" />
     <category term="科幻" />
-    <category term="Bing" />
+    <category term="任务计划程序" />
     <category term="拖延症" />
     <category term="学习方法" />
-    <category term="象征" />
-    <category term="规则" />
     <category term="Gal" />
     <category term="同人" />
     <category term="夏日口袋" />
+    <category term="Bing" />
     <category term="css" />
     <category term="flexbox" />
     <category term="web" />
+    <category term="象征" />
+    <category term="规则" />
     <entry>
         <id>https://blog.samhou.top/Winform%20Csharp%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E7%AA%97%E5%8F%A3%E6%8E%A7%E5%88%B6%E8%AF%A6%E8%A7%A3/</id>
         <title>Winform C#多显示器窗口控制详解</title>
@@ -64,9 +64,9 @@
 &lt;p&gt;注意到了吗？这里我们用的是&lt;code&gt;WorkingArea&lt;/code&gt;来获取长宽高，以及位置。&lt;code&gt;WorkingArea&lt;/code&gt;不包括任务栏，所以高度较少，这两种需要看情况使用。&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;[1] &lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.screen&#34;&gt;System.Windows.Forms.Screen&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="winform" />
         <category term="csharp" />
         <category term="窗口控制" />
+        <category term="winform" />
         <updated>2023-12-08T07:12:38.000Z</updated>
     </entry>
     <entry>
