@@ -43,14 +43,13 @@
         <category>规则</category>
         <category>Hyper-V</category>
         <category>卸载</category>
-        <category>Windows</category>
         <item>
             <guid isPermalink="true">https://blog.samhou.top/say-goodbye-to-hyper-v/</guid>
             <title>和 Hyper-V 说再见——完全迁移&amp;卸载指南</title>
             <link>https://blog.samhou.top/say-goodbye-to-hyper-v/</link>
+            <category>windows</category>
             <category>Hyper-V</category>
             <category>卸载</category>
-            <category>Windows</category>
             <pubDate>Fri, 22 Nov 2024 19:11:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;花了点时间，终于摆脱了 Hyper-V 这个恶心的东西，用上了 VirturalBox，遂记录在此。&lt;/p&gt;
 &lt;h2 id=&#34;转换磁盘&#34;&gt;&lt;a href=&#34;#转换磁盘&#34; class=&#34;headerlink&#34; title=&#34;转换磁盘&#34;&gt;&lt;/a&gt;转换磁盘&lt;/h2&gt;&lt;p&gt;hyper-v 和 virtualbox 的虚拟硬盘不是同一个格式，需要进行转换。同时，还要进行合并操作。这里已经有大佬写过了，看&lt;a href=&#34;https://blog.dowhat.top/archives/1340&#34;&gt;这个&lt;/a&gt;吧。&lt;/p&gt;

@@ -40,7 +40,6 @@
     <category term="规则" />
     <category term="Hyper-V" />
     <category term="卸载" />
-    <category term="Windows" />
     <entry>
         <id>https://blog.samhou.top/say-goodbye-to-hyper-v/</id>
         <title>和 Hyper-V 说再见——完全迁移&amp;卸载指南</title>
@@ -64,9 +63,9 @@
 &lt;p&gt;重启设备。&lt;/p&gt;
 &lt;p&gt;再打开 VirtualBox，谢天谢地，它好了。&lt;img src=&#34;https://img.samhou.top/1732274115722.png&#34;&gt;&lt;/p&gt;
 </content>
+        <category term="windows" />
         <category term="Hyper-V" />
         <category term="卸载" />
-        <category term="Windows" />
         <updated>2024-11-22T11:11:57.000Z</updated>
     </entry>
     <entry>
@@ -1604,6 +1603,7 @@
         <category term="csharp" />
         <category term="窗口控制" />
         <category term="焦点" />
+        <category term="windows" />
         <updated>2023-01-27T01:01:20.000Z</updated>
     </entry>
     <entry>
@@ -1642,6 +1642,7 @@
 &lt;/ul&gt;
 </content>
         <category term="winform" />
+        <category term="windows" />
         <updated>2022-05-29T08:05:02.000Z</updated>
     </entry>
     <entry>
