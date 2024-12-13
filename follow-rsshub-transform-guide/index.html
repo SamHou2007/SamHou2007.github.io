@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源 | SamHou's blog</title><meta name="author" content="Sam Hou"><meta name="copyright" content="Sam Hou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近在用 Follow 读 RSS，确实很好用。不仅能自己订阅，还能把列表分享给别人。但是，有很多网站不提供 RSS 源，RSSHub 的订阅路径也还没有人做（特别是新网站），就特别难受。 直到我看到了这个。 一番尝试后发现，这个转换 (Transform) 居然用的就是 RSSHub！不得不看看文档了。 开始食用首先，打开 Follow，转到添加-转换（如上面的图片所示）。看起来很可怕，但是别担">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源">
+<meta property="og:url" content="https://blog.samhou.top/follow-rsshub-transform-guide/">
+<meta property="og:site_name" content="SamHou&#39;s blog">
+<meta property="og:description" content="最近在用 Follow 读 RSS，确实很好用。不仅能自己订阅，还能把列表分享给别人。但是，有很多网站不提供 RSS 源，RSSHub 的订阅路径也还没有人做（特别是新网站），就特别难受。 直到我看到了这个。 一番尝试后发现，这个转换 (Transform) 居然用的就是 RSSHub！不得不看看文档了。 开始食用首先，打开 Follow，转到添加-转换（如上面的图片所示）。看起来很可怕，但是别担">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.samhou.top/img/SamHou.png">
+<meta property="article:published_time" content="2024-12-13T10:12:06.000Z">
+<meta property="article:modified_time" content="2024-12-13T10:46:24.615Z">
+<meta property="article:author" content="Sam Hou">
+<meta property="article:tag" content="rss">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="rsshub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.samhou.top/img/SamHou.png"><link rel="shortcut icon" href="/img/blog.svg"><link rel="canonical" href="https://blog.samhou.top/follow-rsshub-transform-guide/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 10 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RQECZS079J"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-RQECZS079J')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-RQECZS079J', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: Sam Hou","link":"链接: ","source":"来源: SamHou's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/rss.xml" title="SamHou's blog" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/SamHou.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 禁书目录</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-list"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-address-card"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-heart"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/binary-code.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/blog.svg" alt="Logo"><span class="site-name">SamHou's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 禁书目录</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-list"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-address-card"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-heart"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-13T10:12:06.000Z" title="发表于 2024-12-13 18:12:06">2024-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-13T10:46:24.615Z" title="更新于 2024-12-13 18:46:24">2024-12-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/rss%E6%95%99%E7%A8%8B/">rss教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:730,&quot;messagePrev&quot;:&quot;本文距离更新已经过了&quot;,&quot;messageNext&quot;:&quot;天，部分信息可能过时，请注意识别。&quot;,&quot;postUpdate&quot;:&quot;2024-12-13 18:46:24&quot;}" hidden></div><p>最近在用 <a target="_blank" rel="noopener" href="https://github.com/RSSNext/Follow">Follow</a> 读 RSS，确实很好用。不仅能自己订阅，还能把列表分享给别人。但是，有很多网站不提供 RSS 源，<a target="_blank" rel="noopener" href="https://github.com/DIYgod/RSSHub">RSSHub</a> 的订阅路径也还没有人做（特别是新网站），就特别难受。</p>
+<p>直到我看到了这个。<img src="https://img.samhou.top/1734080939940.png" alt="订阅转换器"></p>
+<p>一番尝试后发现，这个转换 (Transform) 居然用的就是 RSSHub！不得不看看<a target="_blank" rel="noopener" href="https://docs.rsshub.app/zh/routes/other#transformation-html">文档</a>了。</p>
+<h2 id="开始食用"><a href="#开始食用" class="headerlink" title="开始食用"></a>开始食用</h2><p>首先，打开 Follow，转到添加-转换（如上面的图片所示）。看起来很可怕，但是别担心！只需要一点 Html 基础，本文将手把手教你提取文章内容。你将会学到如何用 CSS 选择器，来选择需要的内容。</p>
+<p>我们将以 <a target="_blank" rel="noopener" href="https://englishnewsinlevels.com/news/level-3">https://englishnewsinlevels.com/news/level-3</a> 为例，详细解释订阅源的制作方法。</p>
+<h3 id="提取文章-Item"><a href="#提取文章-Item" class="headerlink" title="提取文章 Item"></a>提取文章 Item</h3><p>首先，在目标网站右键，菜单中选择检查，查看界面的 Html。<img src="https://img.samhou.top/1734082127549.png" alt="打开 Html 查看器"></p>
+<p>在此处，你可以看到网页的源代码。你可以从代码中大致看出网页的层次。在这个网站上，它首先是一个容器，而其中包含了几篇文章。我们的目标是获取文章元素，填入到 Item 栏中。Item 栏中的元素应该包含每篇文章的所有内容（即，标题+描述+……）。为了获得文章元素，可以先点击如图所示的选择器，然后把鼠标移动到文章标题，目标元素的代码便会自动高亮。</p>
+<p><img src="https://img.samhou.top/1734082449124.png" alt="选择页面元素"></p>
+<p>在本例中，标题+北极熊图片是整个 Item，而 <code>Brave Man Saves Wife from Polar Bear Attack</code> 是标题。</p>
+<p>让我们仔细看看这段代码。（此处省略了一些内容，来便于你理解）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">&quot;flex flex-col items-start justify-start&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;relative w-full&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">alt</span>=<span class="string">&quot;Brave Man Saves Wife from Polar Bear Attack&quot;</span> <span class="attr">class</span>=<span class="string">&quot;...&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;...&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/news/level-3/brave-man-saves-wife-from-polar-bear-attack&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;max-w-xl w-full&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mt-5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-stone-500 text-xs&quot;</span>&gt;</span>10 December, 2024<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;...&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/news/level-3/brave-man-saves-wife-from-polar-bear-attack&quot;</span>&gt;</span>Brave Man Saves Wife from Polar Bear Attack<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mt-3&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;relative flex items-center gap-x-2&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;...&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/news/level-3/brave-man-saves-wife-from-polar-bear-attack&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>Level 3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;text-gray-400&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">svg</span> <span class="attr">viewBox</span>=<span class="string">&quot;0 0 2 2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;size-0.5 fill-current&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;1&quot;</span> <span class="attr">r</span>=<span class="string">&quot;1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>210 words<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，这篇文章是放在 <code>&lt;/article&gt;</code> 母容器中的，因此，Item 栏内需要填入 <code>article</code> 作为元素。</p>
+<h3 id="提取标题"><a href="#提取标题" class="headerlink" title="提取标题"></a>提取标题</h3><p>标题，RSS 必要的东西。在这里，要填写的是 ItemTitle。</p>
+<p>那么填写什么呢？当然是提取网页 html 元素！</p>
+<p>怎么提取呢？来看看 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_selectors">CSS 选择器</a> 吧！它可以指定网页中的某个 Html 标签内容。</p>
+<p>还是通过例子来解释吧！</p>
+<p>把上面的 Html 属性都去掉，然后删掉点不需要的内容，简化为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Time<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>清楚多了。</p>
+<p>也就是说，我们需要取得 h2 中的内容。很简单，要什么元素就写什么，直接把 <code>h2</code> 填入ItemTitle。尝试预览下，果然文章有标题了。</p>
+<p><img src="https://img.samhou.top/1734085681152.png" alt="有标题的文章"></p>
+<h3 id="提取链接"><a href="#提取链接" class="headerlink" title="提取链接"></a>提取链接</h3><p>每个 RSS 都应该指向一个链接，以便于你访问源网站。在此，我们需要填写 ItemLink。一样的道理，还是用 CSS 选择器，不过这次选择的是 a 元素，因为它是链接元素。</p>
+<p>那么，<strong>h2 下的 a</strong> 怎么取出呢？当然可以直接写 <code>a</code>。但这样有个问题，整个网页里有多个 a 元素，你怎么知道要取出哪一个呢？你可能已经注意到了，上面的代码里所有 a 的 href（链接）都是一样的，所以选哪个都一样。但是，如果你选的网页和我不一样，那么可能出现一些问题（比如存在<strong>多个不同的链接</strong>）。</p>
+<p>根据 CSS 选择器文档，可以使用组合器取出元素中的子元素。</p>
+<p>格式：<code>母 子 子 ...</code> <strong>把元素用空格隔开</strong>。</p>
+<p>在这个例子里，应该这样写 <code>h2 a</code> 。</p>
+<p>预览，添加，大功告成！（剩下的不是必填项，如果你感兴趣，可以自己查文档填写）</p>
+<p><img src="https://img.samhou.top/1734086198740.png" alt="最终填写内容"></p>
+<h3 id="一点小遗憾"><a href="#一点小遗憾" class="headerlink" title="一点小遗憾"></a>一点小遗憾</h3><p>由于 Transform 的限制，似乎不能添加不在同一界面上的 Html 内容。因此，生成的文章只有标题和自动提取的一点简介，没有全文 RSS。如果想要更好体验的话，还是自己编写路由规则比较好~</p>
+<h2 id="手动添加"><a href="#手动添加" class="headerlink" title="手动添加"></a>手动添加</h2><p><strong>一个小提示：为避免安全问题，官方 RSSHub 实例不提供 Transform。如果你把构建的订阅源粘贴后，得到 <code>ConfigNotFoundError: This RSS is disabled unless &#39;ALLOW_USER_SUPPLY_UNSAFE_DOMAIN&#39; is set to &#39;true&#39;.</code> 的错误，请改用自建 RSSHub。如果你没有服务器，那么建议<a href="#%E5%BC%80%E5%A7%8B%E9%A3%9F%E7%94%A8">使用 Follow</a>。</strong></p>
+<p>众所周知，RSSHub 利用的是路由。而我们这里使用的转换，就是路由的其中一条。让我们看看文档里是怎么说的。</p>
+<blockquote>
+<p>🛎️ Route: <code>/rsshub/transform/html/:url/:routeParams</code></p>
+</blockquote>
+<p>翻译为中文——</p>
+<blockquote>
+<p>🛎️ 路由: <code>/rsshub/transform/html/想要生成的网站Url/路径参数</code></p>
+</blockquote>
+<p>很清楚吧？那么有哪些参数呢？</p>
+<p>实际上，Follow 前面的菜单上已经列出来这些参数了，上面我们也涉及了它们其中的一些。因此，这里就不再赘述了，感兴趣的可以自己看看文档</p>
+<p><strong>小提示：网页链接需要编码转换，自己搜一下在线转换就好啦。</strong></p>
+<p>那么，本文就到这里了~希望各位都能用好 RSS。</p>
+<p>顺便推荐一下本站的 RSS（不需要本文的方法就能直接用！）：<a href="https://blog.samhou.top/rss.xml">https://blog.samhou.top/rss.xml</a></p>
+<p>Follow 上可以直接订阅，不用复制粘贴：<a target="_blank" rel="noopener" href="https://app.follow.is/share/feeds/85515549426631680">https://app.follow.is/share/feeds/85515549426631680</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/SamHou0">Sam Hou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.samhou.top/follow-rsshub-transform-guide/">https://blog.samhou.top/follow-rsshub-transform-guide/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.samhou.top" target="_blank">SamHou's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/rss/">rss</a><a class="post-meta__tags" href="/tags/web/">web</a><a class="post-meta__tags" href="/tags/rsshub/">rsshub</a></div><div class="post-share"><div class="social-share" data-image="/img/SamHou.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/sorakado-ao-comes-to-life-1/" title="空门苍穿越到我身边！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">空门苍穿越到我身边！</div></div><div class="info-2"><div class="info-item-1">01 过去与未来我已经无法控制地爱上小苍了。 吃饭时想着她，洗澡时想着她，甚至玩其它 Gal...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/qnap%E6%90%AD%E5%BB%BArss%E5%85%A8%E6%94%BB%E7%95%A5/" title="qnap搭建rss全攻略"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-16</div><div class="info-item-2">qnap搭建rss全攻略</div></div><div class="info-2"><div class="info-item-1">目标在qnap nas上搭建ttrss、rsshub，并通过fluent reader连接到所搭建的服务，实现多端同步。过程中踩了很多坑，所以这篇文章将列出所有遇到的坑，完整详细地讲解如何搭建一个可以正常使用的rss系统。 nas搭建教程awesome ttrss （文档）简介一个一站式rss客户端解决方案，可以多端同步浏览记录。其中的fever插件允许应用程序接入。 创建数据库文件夹ttrss需要数据库来保存文件。在File...</div></div></div></a><a class="pagination-related" href="/%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90/" title="通俗理解css弹性盒子"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-24</div><div class="info-item-2">通俗理解css弹性盒子</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/SamHou.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sam Hou</div><div class="author-info-description">SamHou 的一个博客，有技术文章，小说和生活学习方法分享。包含 C#、html、css、NAS、windows 的技术博客文章，以及大量二次创作小说和原创作品。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SamHou0"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/SamHou0" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:samhou0@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://blog.samhou.top/rss.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #c76e09;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">SamHou 的 blog，致力于产出高质量内容！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E9%A3%9F%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">开始食用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%96%87%E7%AB%A0-Item"><span class="toc-number">1.1.</span> <span class="toc-text">提取文章 Item</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%A0%87%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">提取标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text">提取链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%82%B9%E5%B0%8F%E9%81%97%E6%86%BE"><span class="toc-number">1.4.</span> <span class="toc-text">一点小遗憾</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.</span> <span class="toc-text">手动添加</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/follow-rsshub-transform-guide/" title="利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源">利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源</a><time datetime="2024-12-13T10:12:06.000Z" title="发表于 2024-12-13 18:12:06">2024-12-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/sorakado-ao-comes-to-life-1/" title="空门苍穿越到我身边！">空门苍穿越到我身边！</a><time datetime="2024-12-07T06:13:10.000Z" title="发表于 2024-12-07 14:13:10">2024-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/say-goodbye-to-hyper-v/" title="和 Hyper-V 说再见——完全迁移&amp;卸载指南">和 Hyper-V 说再见——完全迁移&amp;卸载指南</a><time datetime="2024-11-22T11:11:57.000Z" title="发表于 2024-11-22 19:11:57">2024-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E8%8B%8D%20After%20Story%20Part2/" title="苍 After Story Part2">苍 After Story Part2</a><time datetime="2024-09-30T13:09:32.000Z" title="发表于 2024-09-30 21:09:32">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E8%8B%8D%20After%20Story%20Part1/" title="苍 After Story Part1">苍 After Story Part1</a><time datetime="2024-06-30T04:06:53.000Z" title="发表于 2024-06-30 12:06:53">2024-06-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Sam Hou</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Sleep for a better life.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: 'Ov23li0n12gXCXFTtDQd',
+      clientSecret: '5d0b960207838a371da6bf68198bad3785f6bd76',
+      repo: 'SamHou0.github.io',
+      owner: 'SamHou0',
+      admin: ['SamHou0'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '512d71b368a599ed0a35a6ecf3886f49'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script><script src="https://cdn.jsdelivr.net/combine/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js,npm/pixi.js@6.5.2/dist/browser/pixi.min.js,npm/pixi-live2d-display/dist/index.min.js,gh/Weidows-projects/Live2dLoader/dist/Live2dLoader.min.js"></script><script>addEventListener("DOMContentLoaded",function(){let models=[{width:300,height:200,right:"60px",bottom:"0px",role:"https://live2d.samhou.top/SorakadoAO/SorakadoAO.model3.json",background:"",opacity:0.6,mobile:false,draggable:false,scale:0.2,pierceThrough:true},];new Live2dLoader(models)});</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="0,1,10,11,别点了,很累的,不听是吧,你再点,SamHou" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
