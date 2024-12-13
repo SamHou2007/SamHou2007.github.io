@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.samhou.top/about/</loc>
+    
+    <lastmod>2024-12-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.samhou.top/follow-rsshub-transform-guide/</loc>
     
     <lastmod>2024-12-13</lastmod>
@@ -48,15 +57,6 @@
   
   <url>
     <loc>https://blog.samhou.top/games-from-download-to-play/</loc>
-    
-    <lastmod>2024-11-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.samhou.top/about/</loc>
     
     <lastmod>2024-11-22</lastmod>
     
