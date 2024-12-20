@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://blog.samhou.top/link/</loc>
+    <loc>https://blog.samhou.top/links/</loc>
     
     <lastmod>2024-11-22</lastmod>
     
@@ -488,6 +488,27 @@
   </url>
   
   <url>
+    <loc>https://blog.samhou.top/tags/obsidian/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.samhou.top/tags/hexo/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.samhou.top/tags/qnap/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.samhou.top/tags/Hyper-V/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -516,27 +537,6 @@
   </url>
   
   <url>
-    <loc>https://blog.samhou.top/tags/qnap/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.samhou.top/tags/obsidian/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.samhou.top/tags/hexo/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.samhou.top/tags/%E8%94%9A%E8%93%9D%E6%A1%A3%E6%A1%88/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -545,6 +545,13 @@
   
   <url>
     <loc>https://blog.samhou.top/tags/%E7%A7%91%E5%B9%BB/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.samhou.top/tags/Bing/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -580,13 +587,6 @@
   
   <url>
     <loc>https://blog.samhou.top/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.samhou.top/tags/Bing/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -665,7 +665,7 @@
   </url>
   
   <url>
-    <loc>https://blog.samhou.top/categories/windows%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.samhou.top/categories/hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -679,7 +679,7 @@
   </url>
   
   <url>
-    <loc>https://blog.samhou.top/categories/hexo%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.samhou.top/categories/windows%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
