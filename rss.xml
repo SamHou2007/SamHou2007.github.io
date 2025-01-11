@@ -9,8 +9,39 @@
     <atom:link href="https://blog.samhou.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>SamHou 的一个博客，有技术文章，小说和生活学习方法分享。包含 C#、html、css、js 等前后端技术博客文章，以及大量二次创作小说和原创作品。本站基本为每月更新，持续产出优质技术内容。博客以简洁易懂为特色，注重动手实践学习。</description>
-    <pubDate>Fri, 13 Dec 2024 10:46:24 GMT</pubDate>
+    <pubDate>Sat, 11 Jan 2025 15:30:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>解锁最佳看番姿势 (1) qbitorrent 的部署</title>
+      <link>https://blog.samhou.top/bangumi-media-server-1/</link>
+      <guid>https://blog.samhou.top/bangumi-media-server-1/</guid>
+      <pubDate>Sat, 11 Jan 2025 13:02:33 GMT</pubDate>
+      
+      <description>本文是一篇关于如何搭建家庭媒体中心的教程。文章首先介绍了所需的设备准备，包括电脑、服务器/NAS/软路由和手机/平板。接着，详细指导了如何通过SSH连接到服务器、安装Docker以及运行qBittorrent下载服务器。文章强调了BT下载的优势和做种的重要性，并提供了qBittorrent的Docker配置示例。最后，文章预告了下一篇将介绍RSS和自动下载内容的内容，并鼓励读者订阅更新。整体上，本文为技术爱好者提供了一个全面的家庭媒体中心搭建指南。</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>你是否已经厌倦了线上看番，想要找一个免费，还高清且稳定的解决方案？</p><p>又或许，你厌倦了手动管理各种本地文件，想要找到一个自动保存观看进度的方案？</p><p>那么你来对地方了。</p><p>在本系列教程中，我将详细地指导你，完成（家庭）媒体中心的搭建。</p><p>你将在实践中，学到许多知识，包括怎么和命令行打交道，怎么管理 docker，怎么为你的应用添加各种方便的自动化。</p><p>准备好了吗？那么让我们开始吧！</p><p>如果你发现自己已经完全掌握了某些内容，请毫不犹豫地跳过，以节省时间！</p><h2 id="等等……在开始之前……"><a href="#等等……在开始之前……" class="headerlink" title="等等……在开始之前……"></a>等等……在开始之前……</h2><p>工欲善其事，必先利其器。要完成这些操作，你必须准备以下设备——</p><ul><li>一台正常运行的电脑（这个不可能没有吧！）</li><li>一台服务器&#x2F;NAS&#x2F;软路由（旧电脑也行，只要是能跑 x86 的都可以！请先安装好 linux，或者任何能跑 docker 的系统）</li><li>手机&#x2F;平板（可选，如果你想在这里看番的话）</li></ul><h2 id="本文要做什么？"><a href="#本文要做什么？" class="headerlink" title="本文要做什么？"></a>本文要做什么？</h2><p>看番，总有两派。一派是在线党，他们热衷于便捷的在线流媒体；另一派则是下载党，他们喜欢下载各种各种的资源，坚信硬盘上的才是自己的。</p><p>既然你来到了这里，那么我假设你是下载党。</p><p><strong>当然，我并没有任何不支持正版的意思。</strong></p><p>我只是觉得，目前国内的正版看番环境实在是一言难尽。</p><p>又是删减，又是延迟播出，会员还贵。</p><p>因此，下载资源是一条通往解脱的道路。不如先拿它做解决方案，直到国内环境变好为止。</p><p>希望在并不遥远的将来，我们每个人都能享受到优质的正版资源。</p><p>因此，本系列将从下载说起，本文先搭建一个可 24 小时运行的下载服务器。</p><h2 id="BT-的真谛"><a href="#BT-的真谛" class="headerlink" title="BT 的真谛"></a>BT 的真谛</h2><p>提到下载，不得不说 BT。作为<em>点对点网络</em>，BT 的优势在于<em>去中心化</em>。</p><p><del>啥玩意？听不懂啦一堆术语……</del></p><p>简而言之，你的下载速度都是别人上传提供的。如果没人提供上传，那么你别想下载任何东西。</p><p>因此，在下载完之后保持 BT 开启（这称为<em>做种</em>），是一个方便他人，并且对自己也没太大影响的行为。</p><p><strong>请不要使用迅某下载。它只下载，只上传给某雷客户端，并把资源存在自己服务器上，对非会员限速。这严重破坏了 BT 生态。</strong></p><p>如果你从来没用过 BT，建议自己先试试：<a href="https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases" rel="external nofollow noreferrer">qBittorrent-Enhanced-Edition 优化的 QBT 客户端</a>。这是优化版，能阻止某雷和非正常客户端吸血（即产生下载流量，却不上传）</p><p>番剧的种子文件可以去 mikanani&#x2F;nyaa&#x2F;动漫花园&#x2F;acg.rip 等 BT 平台找。</p><p>那么，让我们开始部署一个 24 小时帮你下载的服务器吧！</p><h2 id="连接到你的服务器"><a href="#连接到你的服务器" class="headerlink" title="连接到你的服务器"></a>连接到你的服务器</h2><p>打开你的服务器（或者上述任何设备），然后通过 ssh 连接到它（不知道什么是 ssh？上网搜索下就好啦。记得在服务端上装好 ssh-server 哦~）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh username@ip</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者……</span></span><br><span class="line">ssh username@domain.com</span><br></pre></td></tr></table></figure><p>上面的命令，需要在终端中执行。我们假设你用的是最新版 Windows……</p><p>按下 Win + R，输入 <code>wt</code>，回车。</p><p>Wow，是一切的根基，命令行！</p><p>输入上面的命令，记得改成自己的设备的用户名和 ip 哦。</p><p><strong>来自作者的提示</strong>：虽然这篇文章看起来零基础，但第一步对零基础看起来就有些困难了呢。一篇博客文章不可能覆盖那么多小白内容＞﹏＜</p><p>但是别着急，我给零基础的读者找了一些教程——</p><ol><li><a href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work" rel="external nofollow noreferrer">网络是如何工作的？</a></li><li><a href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview" rel="external nofollow noreferrer">安装 Ubuntu（英文）</a></li><li><a href="https://swcarpentry.github.io/shell-novice/" rel="external nofollow noreferrer">Shell 命令行教程（英文）</a></li><li><a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" rel="external nofollow noreferrer">SSH 教程</a></li></ol><h2 id="安装-docker"><a href="#安装-docker" class="headerlink" title="安装 docker"></a>安装 docker</h2><p>docker 是一个容器平台，用于运行各种各样的程序，并且可以让每个程序环境隔离开来。并且，docker 还支持一次构建，到处运行——只需一行命令，即可自动下载依赖并直接运行服务端程序。</p><p>请参阅 <a href="https://docs.docker.com/engine/install/" rel="external nofollow noreferrer">Docker 文档</a>，安装引擎。参阅 <a href="https://docs.docker.com/compose/install/" rel="external nofollow noreferrer">Docker-Compose 文档</a>，安装 Compose。</p><p>如果你使用软路由或者 NAS，请自行寻找教程。</p><h2 id="运行-QBT"><a href="#运行-QBT" class="headerlink" title="运行 QBT"></a>运行 QBT</h2><h3 id="使用-docker（适合大部分环境）"><a href="#使用-docker（适合大部分环境）" class="headerlink" title="使用 docker（适合大部分环境）"></a>使用 docker（适合大部分环境）</h3><p>新建一个文件夹，并创建一个 <code>docker-compose.yaml</code>，打开编辑。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir qbit</span><br><span class="line">cd qbit</span><br><span class="line">touch docker-compose.yaml</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure><p>先粘贴下内容：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.9&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">qbittorrent:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">tlan16/qbittorrent-enhanced:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">qbittorrent</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PUID=1000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PGID=1000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Etc/UTC</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">WEBUI_PORT=8080</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/path/to/downloads:/downloads</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6881:6881&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6881:6881/udp&quot;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>提示：打开 vim 后，按下 i 开始输入。按鼠标右键&#x2F; shift+insert 粘贴。输入完毕，按 esc，然后输入 <code>:wq</code> 保存退出。</strong></p><p>哇，好乱。但其实，你只需要修改一处——<code>/path/to/downloads</code> 改成下载路径</p><p>但我们还得知其所以然。</p><p>上面的英语应该已经非常清晰了，只有以下几点需要声明——</p><ol><li><code>environment:</code> 中保存了应用的环境变量，通常可以修改来自定义程序行为</li><li><code>volumes:</code> 表示容器内外映射关系。没错，你必须以 <code>real_path:container_path</code> 的方式，将外部文件夹挂载到容器内部，容器内程序才能访问。</li><li><code>ports:</code> 表示网络端口映射 <code>real_port:container_port</code>。比如我容器里程序开了 88 端口，我想要在主机上以 9999 访问，就写 <code>9999:88</code>。<br>接下来，我们就能启动第一个容器了！<br>输入以下命令：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure><p>启动！我这里第一次创建一不小心端口占用了，不过换了一个就好啦。</p><p><img src="https://img.samhou.top/1736605220661.png" alt="命令行界面"></p><p><img src="https://img.samhou.top/1736606762513.png" alt="改配置！"></p><p>然后你可以在浏览器中打开 <code>ip:port</code>，看到下面就是成功。</p><p><img src="https://img.samhou.top/1736606876877.png" alt="Web UI"></p><p>然而，初始密码是随机生成的。因此，你需要查看日志</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs qbittorrent</span><br></pre></td></tr></table></figure><p>运行结果应该如下所示</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">******** Information ********</span><br><span class="line">To control qBittorrent, access the WebUI at: http://localhost:8085</span><br><span class="line"></span><br><span class="line">The WebUI administrator username is: admin</span><br><span class="line">The WebUI administrator password was not set. A temporary password is provided for this session: cNPJXEsV4</span><br><span class="line">You should set your own password in program preferences.</span><br><span class="line">Connection to localhost (::1) 8085 port [tcp/*] succeeded!</span><br><span class="line">[ls.io-init] done.</span><br></pre></td></tr></table></figure><p>看到了吧？密码在这里。登录后记得改密码！选项-Web UI 里改密码，行为-语言里可以改中文。</p><h3 id="用点其它软件包"><a href="#用点其它软件包" class="headerlink" title="用点其它软件包"></a>用点其它软件包</h3><p>如果你在用软路由，那么可以直接使用它的软件包。</p><p><img src="https://img.samhou.top/1736607205204.png" alt="Qbittorrent 软件包"></p><p>然后去 luci 面板-服务里找，就能直接到达那个界面啦。</p><h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>看完本文，你应该学到了许多东西吧？</p><p>你的服务器已经在运行了，不用开电脑也能下载了~</p><p>在下一篇里，我们将认识 RSS，了解它对于 BT 的作用，并尝试自动下载内容，敬请期待哦。你可以用 RSS 阅读器订阅我的网站，这样就可以了解文章更新了！</p><p>如果你遇到任何问题，可以用下面的评论区，或者右边的邮件地址与我联系，我很乐意交流解决你的问题。</p><p>Enjoy!</p>]]></content:encoded>
+      
+      
+      <category domain="https://blog.samhou.top/categories/nas%E6%95%99%E7%A8%8B/">nas教程</category>
+      
+      
+      <category domain="https://blog.samhou.top/tags/rss/">rss</category>
+      
+      <category domain="https://blog.samhou.top/tags/bt/">bt</category>
+      
+      <category domain="https://blog.samhou.top/tags/%E4%B8%8B%E8%BD%BD/">下载</category>
+      
+      <category domain="https://blog.samhou.top/tags/nas/">nas</category>
+      
+      <category domain="https://blog.samhou.top/tags/docker/">docker</category>
+      
+      
+      <comments>https://blog.samhou.top/bangumi-media-server-1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>利用 Follow 的 RSSHub Transform 转换生成任意网站的 RSS 订阅源</title>
@@ -234,39 +265,6 @@
       
       
       <comments>https://blog.samhou.top/ProjeTom%20--%20A%20story%20to%20test%20new%20words/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>规则</title>
-      <link>https://blog.samhou.top/%E8%A7%84%E5%88%99/</link>
-      <guid>https://blog.samhou.top/%E8%A7%84%E5%88%99/</guid>
-      <pubDate>Fri, 09 Feb 2024 13:02:29 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;小镇里的羊都很瘦弱。&lt;/p&gt;
-&lt;p&gt;牧羊人们没有很多钱，买不起太多的饲料给羊。&lt;/p&gt;
-&lt;p&gt;小镇之外是一大片草原，曾经有人给羊挂上标签，然后把羊放到草原上去，让它们自由地吃草，但是到了第二天，只找回来一半。那一次，牧羊人发现附近有狼，会把在草原上游荡的羊吃掉。&lt;/p&gt;
-&lt;</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>小镇里的羊都很瘦弱。</p><p>牧羊人们没有很多钱，买不起太多的饲料给羊。</p><p>小镇之外是一大片草原，曾经有人给羊挂上标签，然后把羊放到草原上去，让它们自由地吃草，但是到了第二天，只找回来一半。那一次，牧羊人发现附近有狼，会把在草原上游荡的羊吃掉。</p><p>于是，牧羊人们没人再敢把羊放出去。大家都修好了围栏，防止狼来光顾。</p><p>羊群因为营养不良，越来越瘦弱。</p><p>一天，一只羊终于无法忍受这样的生活，在半夜里牧羊人熟睡的时候，用力把羊圈的门撞开，跑到了草原上。</p><p>大部分羊都认为它疯掉了，不敢跟着一起出去。据说，后来它回来的时候，已经被狼咬了一口，第二天就死了。</p><p>牧羊人发现了这件事，于是给羊圈加了一把锁。每天晚上，他都会把羊圈锁起来，防止羊逃出去。</p><p>羊群因为营养不良，更加瘦弱了。</p><p>在羊群中，有一只聪明的羊。它对同伴说：“狼只会在晚上出没，我们可以白天去吃草。这样就不会被狼群袭击了。”</p><p>它的同伴说：“可是白天牧羊人在啊，你怎么出去？”</p><p>聪明的羊有了一个绝妙的计划。在牧羊人在屋子里和商人商量羊的价格的时候，它撞开羊圈的门，逃了出去。</p><p>它吃到了草原上最新鲜的草。等到夜幕快要降临时，它偷偷回到了羊圈。</p><p>“看吧，这样真的很安全。只要不跑太远，没有狼会来的。”它对自己的同伴说。</p><p>于是羊群中的羊纷纷效仿，在白天偷偷溜出去。当然，也有一些羊决定听从牧羊人的命令，不离开羊圈。</p><p>牧羊人惊喜地发现自己的羊有些变得肥了起来，并且一只都没有少。他不知道原因，以为是新饲料的效果。</p><p>就这样过了一个月，牧羊人一天突然发现自己的羊少了一只。小镇里的猎人找到牧羊人，说自己在狼窝中找到了带有他羊群标签的羊。</p><p>他终于发现了羊群白天也会逃跑的事实，决定把羊圈全天锁起来。聪明的羊对他说：“我们出去是为了去吃草啊！那一只羊是因为贪玩乱跑到了狼群里，才被吃掉的，我出去是不会这样的！”牧羊人对它说：“可是，我需要保证所有羊的安全。可能有些羊确实能够只吃草，不乱跑，但是为了安全，这是必要的牺牲。你们只能呆在这里，这是规矩。”</p><p>羊群因为营养不良，又瘦弱了下来。</p><p>最后，那些羊因为和之前肥的时候不一样，商人只给了牧羊人原先一半的价格。</p><p>实际上，小镇里还有另外一个牧羊人。他发现自己的羊瘦弱不堪之后，向小镇里有智慧的人打听，知道了羊群需要吃草这件事情，决定给羊一定的自由。</p><p>他白天带着羊出去，引导着羊去吃最鲜嫩的草，同时远离潜在的危险。晚上，他把羊圈一样锁起来，让羊好好休息。</p><p>最终，另外一个牧羊人的羊卖出了全镇最高的价格。</p><p>至于第一个牧羊人，他因为赚不到钱，放弃了牧羊，成为了小镇的清洁工。</p>]]></content:encoded>
-      
-      
-      <category domain="https://blog.samhou.top/categories/%E5%B0%8F%E8%AF%B4/">小说</category>
-      
-      
-      <category domain="https://blog.samhou.top/tags/%E5%B0%8F%E8%AF%B4/">小说</category>
-      
-      <category domain="https://blog.samhou.top/tags/%E8%B1%A1%E5%BE%81/">象征</category>
-      
-      <category domain="https://blog.samhou.top/tags/%E8%A7%84%E5%88%99/">规则</category>
-      
-      
-      <comments>https://blog.samhou.top/%E8%A7%84%E5%88%99/#disqus_thread</comments>
       
     </item>
     
