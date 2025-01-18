@@ -9,7 +9,7 @@
     <atom:link href="https://blog.samhou.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>SamHou 的一个博客，有技术文章，小说和生活学习方法分享。包含 C#、html、css、js 等前后端技术博客文章，以及大量二次创作小说和原创作品。本站基本为每月更新，持续产出优质技术内容。博客以简洁易懂为特色，注重动手实践学习。</description>
-    <pubDate>Sat, 18 Jan 2025 13:48:14 GMT</pubDate>
+    <pubDate>Sat, 18 Jan 2025 13:54:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,12 +18,7 @@
       <guid>https://blog.samhou.top/bangumi-media-server-2/</guid>
       <pubDate>Sat, 18 Jan 2025 13:01:54 GMT</pubDate>
       
-        
-        
-      <description>&lt;p&gt;在上一篇中，我们一起连接了服务器并安装了 Docker，利用容器技术搭建了 Qbittorrent 的服务端。而今天我们将更进一步，来好好开发一下这个下载器。&lt;/p&gt;
-&lt;p&gt;而提到下载，就不得不提 RSS 技术了。但在实际操作之前，我们先来看看 RSS 是什么吧！&lt;/p&gt;
-</description>
-        
+      <description>本文介绍了如何使用 RSS 技术与下载器结合，实现自动批量下载资源的功能。通过详细的步骤和示例，帮助读者轻松掌握 RSS 的使用方法，并配置自动下载规则，提高下载效率。</description>
       
       
       
